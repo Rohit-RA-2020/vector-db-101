@@ -1,0 +1,1736 @@
+[
+    {
+        "text": " In the last chapter, UNI started to step through the internal workings of a transformer.",
+        "start": 0.0,
+        "end": 4.0,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=0"
+    },
+    {
+        "text": " This is one of the key pieces of technology inside large language models,",
+        "start": 4.52,
+        "end": 7.62,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=4"
+    },
+    {
+        "text": " and a lot of other tools in the modern wave of AI. It first hit the scene in a now famous 2017",
+        "start": 8.06,
+        "end": 13.22,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=8"
+    },
+    {
+        "text": " paper called Attention is All You Need, and in this chapter, UNI will dig into what this attention",
+        "start": 13.22,
+        "end": 18.56,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=13"
+    },
+    {
+        "text": " mechanism is, visualizing how it processes data.",
+        "start": 18.56,
+        "end": 21.6,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=18"
+    },
+    {
+        "text": " As a quick recap, here's the important context I want you to have in mind.",
+        "start": 26.14,
+        "end": 29.52,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=26"
+    },
+    {
+        "text": " The goal of the model that UNI are studying is to take in a piece of text and predict what",
+        "start": 30.0,
+        "end": 35.02,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=30"
+    },
+    {
+        "text": " word comes next. The input text is broken up into little pieces that we call tokens,",
+        "start": 35.02,
+        "end": 39.96,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=35"
+    },
+    {
+        "text": " and these are very often words or pieces of words. But just to make the examples in this video",
+        "start": 40.62,
+        "end": 45.12,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=40"
+    },
+    {
+        "text": " easier for you and me to think about, let's simplify by pretending that tokens are always just words.",
+        "start": 45.12,
+        "end": 50.42,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=45"
+    },
+    {
+        "text": " The first step in a transformer is to associate each token with a high-dimensional vector,",
+        "start": 51.26,
+        "end": 56.06,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=51"
+    },
+    {
+        "text": " what we call its embedding. Now the most important idea I want you to have in mind is how",
+        "start": 56.06,
+        "end": 60.8,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=56"
+    },
+    {
+        "text": " directions in this high-dimensional space of all possible embeddings can correspond with semantic",
+        "start": 60.8,
+        "end": 66.54,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=60"
+    },
+    {
+        "text": " meaning. In the last chapter, we saw an example for how direction can correspond to gender,",
+        "start": 66.54,
+        "end": 71.22,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=66"
+    },
+    {
+        "text": " in the sense that adding a certain step in this space can take you from the embedding of a",
+        "start": 71.62,
+        "end": 76.16,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=71"
+    },
+    {
+        "text": " masculine noun to the embedding of the corresponding feminine noun. That's just one example you",
+        "start": 76.16,
+        "end": 81.22,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=76"
+    },
+    {
+        "text": " could imagine how many other directions in this high-dimensional space could correspond to numerous",
+        "start": 81.22,
+        "end": 85.68,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=81"
+    },
+    {
+        "text": " other aspects of a word's meaning. The aim of a transformer is to progressively adjust these",
+        "start": 85.68,
+        "end": 91.9,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=85"
+    },
+    {
+        "text": " embeddings so that they don't merely encode an individual word, but instead they bake in some",
+        "start": 91.9,
+        "end": 97.12,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=91"
+    },
+    {
+        "text": " much richer contextual meaning. I should say at front that a lot of people find the attention",
+        "start": 97.12,
+        "end": 102.48,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=97"
+    },
+    {
+        "text": " mechanism, this key piece in a transformer, very confusing, so don't worry if it takes some time",
+        "start": 102.48,
+        "end": 107.82,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=102"
+    },
+    {
+        "text": " for things to sink in. I think that before we dive into the computational details and all the",
+        "start": 107.82,
+        "end": 112.58,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=107"
+    },
+    {
+        "text": " matrix multiplications, it's worth thinking about a couple examples for the kind of behavior that",
+        "start": 112.58,
+        "end": 117.38,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=112"
+    },
+    {
+        "text": " we want attention to enable. Consider the phrase's American true mole, one mole of carbon dioxide,",
+        "start": 117.38,
+        "end": 124.0,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=117"
+    },
+    {
+        "text": " and take a biopsy of the mole. You and I know that the word mole has different meanings in each one",
+        "start": 124.48,
+        "end": 129.48,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=124"
+    },
+    {
+        "text": " of these, based on the context. But after the first step of a transformer, the one that breaks up",
+        "start": 129.48,
+        "end": 133.98,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=129"
+    },
+    {
+        "text": " the text and associates each token with a vector, the vector that's associated with mole would be",
+        "start": 133.98,
+        "end": 139.24,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=133"
+    },
+    {
+        "text": " the same in all three of these cases, because this initial token embedding is effectively a look-up",
+        "start": 139.24,
+        "end": 144.36,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=139"
+    },
+    {
+        "text": " table with no reference to the context. It's only in the next step of the transformer that the",
+        "start": 144.36,
+        "end": 149.86,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=144"
+    },
+    {
+        "text": " surrounding embeddings have the chance to pass information into this one. The picture you might",
+        "start": 149.86,
+        "end": 154.5,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=149"
+    },
+    {
+        "text": " have in mind is that there are multiple distinct directions in this embedding space, encoding the",
+        "start": 154.5,
+        "end": 158.96,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=154"
+    },
+    {
+        "text": " multiple distinct meanings of the word mole, and that a well-trained attention block calculates",
+        "start": 158.96,
+        "end": 164.08,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=158"
+    },
+    {
+        "text": " what you need to add to the generic embedding to move it to one of these more specific directions",
+        "start": 164.08,
+        "end": 169.56,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=164"
+    },
+    {
+        "text": " as a function of the context. To take another example, consider the embedding of the word tower.",
+        "start": 169.56,
+        "end": 176.14,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=169"
+    },
+    {
+        "text": " This is presumably some very generic, non-specific direction in the space,",
+        "start": 176.78,
+        "end": 180.44,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=176"
+    },
+    {
+        "text": " associated with lots of other large tall nouns. If this word was immediately preceded by",
+        "start": 180.9,
+        "end": 185.9,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=180"
+    },
+    {
+        "text": " Eiffel, you could imagine wanting the mechanism to update this vector so that it points in a direction",
+        "start": 185.9,
+        "end": 191.66,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=185"
+    },
+    {
+        "text": " that more specifically encodes the Eiffel Tower, maybe correlated with vectors associated with",
+        "start": 191.66,
+        "end": 196.86,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=191"
+    },
+    {
+        "text": " Paris and France and things made of steel. If it was also preceded by the word miniature,",
+        "start": 196.86,
+        "end": 202.16,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=196"
+    },
+    {
+        "text": " then the vector should be updated even further so that it no longer correlates with large tall things.",
+        "start": 202.88,
+        "end": 207.4,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=202"
+    },
+    {
+        "text": " More generally than just refining the meaning of a word, the attention block allows the model to",
+        "start": 209.2,
+        "end": 214.02,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=209"
+    },
+    {
+        "text": " move information encoded in one embedding to that of another, potentially ones that are quite far",
+        "start": 214.02,
+        "end": 219.4,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=214"
+    },
+    {
+        "text": " away, and potentially with information that's much richer than just a single word. What we saw in",
+        "start": 219.4,
+        "end": 224.5,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=219"
+    },
+    {
+        "text": " the last chapter was how after all of the vectors flow through the network, including many different",
+        "start": 224.5,
+        "end": 228.86,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=224"
+    },
+    {
+        "text": " attention blocks, the computation that you perform to produce a prediction of the next token",
+        "start": 228.86,
+        "end": 234.22,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=228"
+    },
+    {
+        "text": " is entirely a function of the last vector in the sequence. So imagine, for example, that the",
+        "start": 234.76,
+        "end": 240.28,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=234"
+    },
+    {
+        "text": " text you input is most of an entire mystery novel, all the way up to a point near the end,",
+        "start": 240.28,
+        "end": 245.24,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=240"
+    },
+    {
+        "text": " which reads, therefore, the murderer was, if the model is going to accurately predict the next word,",
+        "start": 245.24,
+        "end": 250.86,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=245"
+    },
+    {
+        "text": " that final vector in the sequence, which began its life simply embedding the word was,",
+        "start": 251.24,
+        "end": 255.96,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=251"
+    },
+    {
+        "text": " will have to have been updated by all of the attention blocks to represent much, much more than",
+        "start": 256.34,
+        "end": 260.86,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=256"
+    },
+    {
+        "text": " any individual word, somehow encoding all of the information from the full context window that's",
+        "start": 260.86,
+        "end": 266.54,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=260"
+    },
+    {
+        "text": " relevant to predicting the next word. To step through the computations, though, let's take a",
+        "start": 266.54,
+        "end": 271.48,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=266"
+    },
+    {
+        "text": " simpler example, imagine that the input includes the phrase, a fluffy blue creature roamed the",
+        "start": 271.66,
+        "end": 277.2,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=271"
+    },
+    {
+        "text": " verdant forest, and for the moment, suppose that the only type of update that we care about is having",
+        "start": 277.2,
+        "end": 282.76,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=277"
+    },
+    {
+        "text": " the adjectives adjust the meanings of their corresponding nouns. What I'm about to describe is",
+        "start": 282.76,
+        "end": 288.02,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=282"
+    },
+    {
+        "text": " what we would call a single head of attention, and later we will see how the attention block consists",
+        "start": 288.02,
+        "end": 293.2,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=288"
+    },
+    {
+        "text": " of many different heads run in parallel. Again, the initial embedding for each word is some high",
+        "start": 293.2,
+        "end": 298.58,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=293"
+    },
+    {
+        "text": " dimensional vector that only encodes the meaning of that particular word with no context. Actually,",
+        "start": 298.58,
+        "end": 304.26,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=298"
+    },
+    {
+        "text": " that's not quite true. They also encode the position of the word. There's a lot more to say",
+        "start": 304.54,
+        "end": 308.94,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=304"
+    },
+    {
+        "text": " about the specific way that positions are encoded, but right now, all you need to know is that the",
+        "start": 308.94,
+        "end": 313.46,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=308"
+    },
+    {
+        "text": " entries of this vector are enough to tell you both what the word is and where it exists in the",
+        "start": 313.46,
+        "end": 318.34,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=313"
+    },
+    {
+        "text": " context. Let's go ahead and denote these embeddings with the letter E. The goal is to have a series",
+        "start": 318.34,
+        "end": 323.68,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=318"
+    },
+    {
+        "text": " of computations produce a new refined set of embeddings where, for example, those corresponding",
+        "start": 323.68,
+        "end": 328.76,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=323"
+    },
+    {
+        "text": " to the nouns have ingested the meaning from their corresponding adjectives. And playing the",
+        "start": 328.76,
+        "end": 334.46,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=328"
+    },
+    {
+        "text": " deep learning game, we want most of the computations involved to look like matrix vector products,",
+        "start": 334.46,
+        "end": 339.2,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=334"
+    },
+    {
+        "text": " where the matrices are full of tunable weights, things that the model will learn based on data.",
+        "start": 339.44,
+        "end": 343.92,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=339"
+    },
+    {
+        "text": " To be clear, I'm making up this example of adjectives updating nouns just to illustrate the type",
+        "start": 344.66,
+        "end": 349.42,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=344"
+    },
+    {
+        "text": " of behavior that you could imagine an intention had to doing. As with so much deep learning,",
+        "start": 349.42,
+        "end": 353.96,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=349"
+    },
+    {
+        "text": " the true behavior is much harder to parse, because it's based on tweaking and tuning a huge number",
+        "start": 354.2,
+        "end": 358.86,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=354"
+    },
+    {
+        "text": " of parameters to minimize some cost function. It's just that as we step through all of the different",
+        "start": 358.86,
+        "end": 363.84,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=358"
+    },
+    {
+        "text": " matrices filled with parameters that are involved in this process, I think it's really helpful to",
+        "start": 363.84,
+        "end": 368.52,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=363"
+    },
+    {
+        "text": " have an imagined example of something that it could be doing to help keep it all more concrete.",
+        "start": 368.52,
+        "end": 373.1,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=368"
+    },
+    {
+        "text": " For the first step of this process, you might imagine each noun, like creature,",
+        "start": 373.96,
+        "end": 377.58,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=373"
+    },
+    {
+        "text": " asking the question, hey, are there any adjectives sitting in front of me? And for the words fluffy",
+        "start": 377.58,
+        "end": 383.3,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=377"
+    },
+    {
+        "text": " and blue to each be able to answer, yeah, I'm an adjective and I'm in that position.",
+        "start": 383.3,
+        "end": 387.94,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=383"
+    },
+    {
+        "text": " That question is somehow encoded as yet another vector, another list of numbers,",
+        "start": 389.32,
+        "end": 393.6,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=389"
+    },
+    {
+        "text": " which we call the query for this word. This query vector, though, has a much smaller dimension than",
+        "start": 394.1,
+        "end": 399.64,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=394"
+    },
+    {
+        "text": " the embedding vector, say 128. Computing this query looks like taking a certain matrix, which I'll",
+        "start": 399.64,
+        "end": 406.04,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=399"
+    },
+    {
+        "text": " label WQ, and multiplying it by the embedding. Compressing things a bit, let's write that query",
+        "start": 406.04,
+        "end": 412.78,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=406"
+    },
+    {
+        "text": " vector as Q, and then anytime you see me put a matrix next to an arrow like this one, it's meant to",
+        "start": 412.78,
+        "end": 419.06,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=412"
+    },
+    {
+        "text": " represent that multiplying this matrix by the vector at the arrow's start gives you the vector at",
+        "start": 419.06,
+        "end": 423.92,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=419"
+    },
+    {
+        "text": " the arrow's end. In this case, you multiply this matrix by all of the embeddings in the context,",
+        "start": 423.92,
+        "end": 429.72,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=423"
+    },
+    {
+        "text": " producing one query vector for each token. The entries of this matrix are parameters of the",
+        "start": 430.18,
+        "end": 435.86,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=430"
+    },
+    {
+        "text": " model, which means the true behavior is learned from data, and in practice what this matrix does in",
+        "start": 435.86,
+        "end": 440.9,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=435"
+    },
+    {
+        "text": " a particular attention head is challenging to parse. But for R-Sake, imagining an example that we",
+        "start": 440.9,
+        "end": 446.16,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=440"
+    },
+    {
+        "text": " might hope that it would learn, we'll suppose that this query matrix maps the embeddings of nouns",
+        "start": 446.16,
+        "end": 450.46,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=446"
+    },
+    {
+        "text": " to certain directions in this smaller query space that somehow encodes the notion of looking for",
+        "start": 450.46,
+        "end": 456.22,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=450"
+    },
+    {
+        "text": " adjectives in preceding positions. As to what it does to other embeddings, who knows? Maybe",
+        "start": 456.22,
+        "end": 465.4,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=456"
+    },
+    {
+        "text": " they're focused on the nouns. At the same time associated with this is a second matrix called the",
+        "start": 465.4,
+        "end": 470.96,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=465"
+    },
+    {
+        "text": " key matrix, which you also multiply by every one of the embeddings. This produces a second sequence",
+        "start": 470.96,
+        "end": 476.8,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=470"
+    },
+    {
+        "text": " of vectors that we call the keys. Conceptually, you want to think of the keys as potentially answering",
+        "start": 476.8,
+        "end": 482.46,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=476"
+    },
+    {
+        "text": " the queries. This key matrix is also full of tunable parameters, and just like the query matrix,",
+        "start": 482.46,
+        "end": 487.9,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=482"
+    },
+    {
+        "text": " it maps the embedding vectors to that same smaller dimensional space. You think of the keys as",
+        "start": 488.12,
+        "end": 493.42,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=488"
+    },
+    {
+        "text": " matching the queries whenever they closely align with each other. In our example, you would imagine",
+        "start": 493.42,
+        "end": 498.82,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=493"
+    },
+    {
+        "text": " that the key matrix maps the adjectives, like fluffy and blue, to vectors that are closely aligned",
+        "start": 498.82,
+        "end": 504.26,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=498"
+    },
+    {
+        "text": " with the query produced by the word creature. To measure how well each key matches each query,",
+        "start": 504.26,
+        "end": 510.1,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=504"
+    },
+    {
+        "text": " you compute a dot product between each possible key query pair. I like to visualize a grid full",
+        "start": 510.52,
+        "end": 516.66,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=510"
+    },
+    {
+        "text": " of a bunch of dots where the bigger dots correspond to the larger dot products, the places where the",
+        "start": 516.66,
+        "end": 521.34,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=516"
+    },
+    {
+        "text": " keys and queries align. For our adjective noun example, that would look a little more like this,",
+        "start": 521.34,
+        "end": 526.86,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=521"
+    },
+    {
+        "text": " where if the keys produced by fluffy and blue really do align closely with the query produced by",
+        "start": 527.58,
+        "end": 532.94,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=527"
+    },
+    {
+        "text": " creature, then the dot products in these two spots would be some large positive numbers. In the",
+        "start": 532.94,
+        "end": 539.42,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=532"
+    },
+    {
+        "text": " lingo machine learning people would say that this means the embeddings of fluffy and blue",
+        "start": 539.42,
+        "end": 543.08,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=539"
+    },
+    {
+        "text": " attend to the embedding of creature. By contrast to the dot product between the key for some other",
+        "start": 543.08,
+        "end": 549.02,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=543"
+    },
+    {
+        "text": " word like the and the query for creature, would be some small or negative value that reflects that",
+        "start": 549.02,
+        "end": 555.02,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=549"
+    },
+    {
+        "text": " these are unrelated to each other. So we have this grid of values that can be any real number from",
+        "start": 555.02,
+        "end": 561.28,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=555"
+    },
+    {
+        "text": " negative infinity to infinity, giving us a score for how relevant each word is to updating the",
+        "start": 561.28,
+        "end": 567.0,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=561"
+    },
+    {
+        "text": " meaning of every other word. The way we're about to use these scores is to take a certain weighted",
+        "start": 567.0,
+        "end": 572.44,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=567"
+    },
+    {
+        "text": " sum along each column weighted by the relevance. So instead of having values range from negative",
+        "start": 572.44,
+        "end": 578.24,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=572"
+    },
+    {
+        "text": " infinity to infinity, what we want is for the numbers in these columns to be between 0 and 1,",
+        "start": 578.24,
+        "end": 583.68,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=578"
+    },
+    {
+        "text": " and for each column to add up to 1, as if they were a probability distribution. If you're coming in",
+        "start": 584.08,
+        "end": 589.8,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=584"
+    },
+    {
+        "text": " from the last chapter, you know what we need to do then. We compute a softmax along each one of",
+        "start": 589.8,
+        "end": 595.02,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=589"
+    },
+    {
+        "text": " these columns to normalize the values. In our picture, after you apply softmax to all of the",
+        "start": 595.02,
+        "end": 602.62,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=595"
+    },
+    {
+        "text": " columns, we'll fill in the grid with these normalized values. At this point, you're safe to",
+        "start": 602.62,
+        "end": 607.9,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=602"
+    },
+    {
+        "text": " think about each column as giving weights, according to how relevant the word on the left is to the",
+        "start": 607.9,
+        "end": 612.96,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=607"
+    },
+    {
+        "text": " corresponding value at the top. We call this grid an attention pattern. Now if you look at the",
+        "start": 612.96,
+        "end": 618.68,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=612"
+    },
+    {
+        "text": " original transformer paper, there's a really compact way that they write this all down. Here,",
+        "start": 618.68,
+        "end": 624.0,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=618"
+    },
+    {
+        "text": " the variables q and k represent the full arrays of query and key vectors respectively, those little",
+        "start": 624.16,
+        "end": 631.3,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=624"
+    },
+    {
+        "text": " vectors you get by multiplying the embeddings by the query and the key matrices. This expression",
+        "start": 631.3,
+        "end": 635.82,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=631"
+    },
+    {
+        "text": " up in the numerator is a really compact way to represent the grid of all possible dot products",
+        "start": 635.82,
+        "end": 641.02,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=635"
+    },
+    {
+        "text": " between pairs of keys and queries. A small technical detail that I didn't mention is that for numerical",
+        "start": 641.02,
+        "end": 646.88,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=641"
+    },
+    {
+        "text": " stability, it happens to be helpful to divide all of these values by the square root of the dimension",
+        "start": 646.88,
+        "end": 652.1,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=646"
+    },
+    {
+        "text": " in that key query space. Then this softmax that's wrapped around the full expression is meant to be",
+        "start": 652.1,
+        "end": 658.6,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=652"
+    },
+    {
+        "text": " understood to apply column by column. As to that v term, we'll talk about it in just a second. Before",
+        "start": 658.6,
+        "end": 665.24,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=658"
+    },
+    {
+        "text": " that, there's one other technical detail that so far I've skipped. During the training process,",
+        "start": 665.24,
+        "end": 669.94,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=665"
+    },
+    {
+        "text": " when you run this model on a given text example, and all of the weights are slightly adjusted and",
+        "start": 670.3,
+        "end": 674.84,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=670"
+    },
+    {
+        "text": " tuned to either reward or punish it based on how high a probability it assigns to the true next",
+        "start": 674.84,
+        "end": 679.7,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=674"
+    },
+    {
+        "text": " word in the passage, it turns out to make the whole training process a lot more efficient. If you",
+        "start": 679.7,
+        "end": 684.22,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=679"
+    },
+    {
+        "text": " simultaneously have it predict every possible next token following each initial sub sequence of",
+        "start": 684.22,
+        "end": 690.16,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=684"
+    },
+    {
+        "text": " tokens in this passage. For example, with the phrase that we've been focusing on, it might",
+        "start": 690.16,
+        "end": 694.7,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=690"
+    },
+    {
+        "text": " also be predicting what words follow creature and what words follow the. This is really nice because",
+        "start": 694.7,
+        "end": 701.28,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=694"
+    },
+    {
+        "text": " it means what would otherwise be a single training example effectively acts as many. For the purposes",
+        "start": 701.28,
+        "end": 706.68,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=701"
+    },
+    {
+        "text": " of our attention pattern, it means that you never want to allow later words to influence earlier",
+        "start": 706.68,
+        "end": 712.02,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=706"
+    },
+    {
+        "text": " words, since otherwise they could kind of give away the answer for what comes next. What this means",
+        "start": 712.02,
+        "end": 716.98,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=712"
+    },
+    {
+        "text": " is that we want all of these spots here, the ones representing later tokens influencing earlier ones,",
+        "start": 716.98,
+        "end": 722.2,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=716"
+    },
+    {
+        "text": " to somehow be forced to be zero. The simplest thing you might think to do is to set them equal to zero,",
+        "start": 722.2,
+        "end": 728.62,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=722"
+    },
+    {
+        "text": " but if you did that, the columns wouldn't add up to one anymore, they wouldn't be normalized.",
+        "start": 728.92,
+        "end": 732.34,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=728"
+    },
+    {
+        "text": " So instead, a common way to do this is that before applying softmax, you set all of those entries",
+        "start": 732.96,
+        "end": 737.78,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=732"
+    },
+    {
+        "text": " to be negative infinity. If you do that, then after applying softmax, all of those get turned",
+        "start": 737.78,
+        "end": 742.92,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=737"
+    },
+    {
+        "text": " into zero, but the columns stay normalized. This process is called masking. There are versions of",
+        "start": 742.92,
+        "end": 748.5,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=742"
+    },
+    {
+        "text": " attention where you don't apply it, but in our GPT example, even though this is more relevant during",
+        "start": 748.5,
+        "end": 753.24,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=748"
+    },
+    {
+        "text": " the training phase than it would be, say, running it as a chatbot or something like that, you do always",
+        "start": 753.24,
+        "end": 757.92,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=753"
+    },
+    {
+        "text": " apply this masking to prevent later tokens from influencing earlier ones. Another fact that's",
+        "start": 757.92,
+        "end": 763.26,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=757"
+    },
+    {
+        "text": " worth reflecting on about this attention pattern is how its size is equal to the square of the context",
+        "start": 763.26,
+        "end": 768.86,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=763"
+    },
+    {
+        "text": " size. So this is why context size can be a really huge bottleneck for large language models,",
+        "start": 768.86,
+        "end": 773.72,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=768"
+    },
+    {
+        "text": " and scaling it up is non-trivial. As you might imagine, motivated by a desire for bigger and bigger",
+        "start": 773.72,
+        "end": 779.36,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=773"
+    },
+    {
+        "text": " context windows, recent years have seen some variations to the attention mechanism aimed at making",
+        "start": 779.36,
+        "end": 784.22,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=779"
+    },
+    {
+        "text": " context more scalable, but right here, you and I are staying focused on the basics.",
+        "start": 784.22,
+        "end": 788.22,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=784"
+    },
+    {
+        "text": " Okay, great. Computing this pattern lets the model deduce which words are relevant to which",
+        "start": 790.28,
+        "end": 794.9,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=790"
+    },
+    {
+        "text": " other words. Now, you need to actually update the embeddings, allowing words to pass information",
+        "start": 794.9,
+        "end": 800.5,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=794"
+    },
+    {
+        "text": " to whichever other words they're relevant to. For example, you want the embedding of fluffy to",
+        "start": 800.5,
+        "end": 805.48,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=800"
+    },
+    {
+        "text": " somehow cause a change to creature that moves it to a different part of this 12,000-dimensional",
+        "start": 805.48,
+        "end": 810.98,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=805"
+    },
+    {
+        "text": " embedding space that more specifically encodes a fluffy creature. What I'm going to do here is",
+        "start": 810.98,
+        "end": 816.34,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=810"
+    },
+    {
+        "text": " first show you the most straightforward way that you could do this, though there's a slight",
+        "start": 816.34,
+        "end": 820.3,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=816"
+    },
+    {
+        "text": " way that this gets modified in the context of multi-headed attention. This most straightforward",
+        "start": 820.3,
+        "end": 824.82,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=820"
+    },
+    {
+        "text": " way would be to use a third matrix, what we call the value matrix, which you multiply by the",
+        "start": 824.82,
+        "end": 830.1,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=824"
+    },
+    {
+        "text": " embedding of that first word, for example, fluffy. The result of this is what you would call a",
+        "start": 830.1,
+        "end": 835.24,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=830"
+    },
+    {
+        "text": " value vector, and this is something that you add to the embedding of the second word. In this case,",
+        "start": 835.24,
+        "end": 840.28,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=835"
+    },
+    {
+        "text": " something you add to the embedding of creature. So this value vector lives in the same very high",
+        "start": 840.42,
+        "end": 845.26,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=840"
+    },
+    {
+        "text": " dimensional space as the embeddings. When you multiply this value matrix by the embedding of a word,",
+        "start": 845.26,
+        "end": 850.18,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=845"
+    },
+    {
+        "text": " you might think of it as saying, if this word is relevant to adjusting the meaning of something else,",
+        "start": 850.54,
+        "end": 855.26,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=850"
+    },
+    {
+        "text": " what exactly should be added to the embedding of that something else in order to reflect this?",
+        "start": 855.26,
+        "end": 861.14,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=855"
+    },
+    {
+        "text": " Looking back in our diagram, let's set aside all of the keys and the queries since after you compute",
+        "start": 861.98,
+        "end": 867.46,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=861"
+    },
+    {
+        "text": " the attention pattern you're done with those, then you're going to take this value matrix and",
+        "start": 867.46,
+        "end": 871.54,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=867"
+    },
+    {
+        "text": " multiply it by every one of those embeddings to produce a sequence of value vectors.",
+        "start": 871.54,
+        "end": 875.94,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=871"
+    },
+    {
+        "text": " You might think of these value vectors as being kind of associated with the corresponding keys.",
+        "start": 876.7,
+        "end": 881.1,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=876"
+    },
+    {
+        "text": " For each column in this diagram, you multiply each of the value vectors by the corresponding weight",
+        "start": 881.88,
+        "end": 888.16,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=881"
+    },
+    {
+        "text": " in that column. For example, here, under the embedding of creature, you would be adding large",
+        "start": 888.16,
+        "end": 893.68,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=888"
+    },
+    {
+        "text": " proportions of the value vectors for fluffy and blue, while all of the other value vectors get",
+        "start": 893.68,
+        "end": 899.14,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=893"
+    },
+    {
+        "text": " zeroed out, or at least nearly zeroed out. And then finally, the way to actually update the",
+        "start": 899.14,
+        "end": 904.48,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=899"
+    },
+    {
+        "text": " embedding associated with this column, previously encoding some context-free meaning of creature,",
+        "start": 904.48,
+        "end": 909.06,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=904"
+    },
+    {
+        "text": " you add together all of these rescaled values in the column, producing a change that you want to add",
+        "start": 909.06,
+        "end": 915.08,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=909"
+    },
+    {
+        "text": " that I'll label Delta E, and then you add that to the original embedding. Hopefully,",
+        "start": 915.08,
+        "end": 919.98,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=915"
+    },
+    {
+        "text": " what results is a more refined vector encoding the more contextually rich meaning,",
+        "start": 920.28,
+        "end": 924.68,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=920"
+    },
+    {
+        "text": " like that of a fluffy blue creature. And of course, you don't just do this to one embedding,",
+        "start": 925.02,
+        "end": 929.54,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=925"
+    },
+    {
+        "text": " you apply the same weighted sum across all of the columns in this picture, producing a sequence of",
+        "start": 929.88,
+        "end": 935.16,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=929"
+    },
+    {
+        "text": " changes. Adding all of those changes to the corresponding embeddings produces a full sequence",
+        "start": 935.16,
+        "end": 940.56,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=935"
+    },
+    {
+        "text": " of more refined embeddings popping out of the attention block.",
+        "start": 940.56,
+        "end": 943.28,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=940"
+    },
+    {
+        "text": " Zooming out, this whole process is what you would describe as a single head of attention.",
+        "start": 944.54,
+        "end": 949.0,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=944"
+    },
+    {
+        "text": " As I've described things so far, this process is parameterized by three distinct matrices,",
+        "start": 949.64,
+        "end": 954.3,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=949"
+    },
+    {
+        "text": " all filled with tunable parameters, the key, the query, and the value. I want to take a moment to",
+        "start": 954.82,
+        "end": 960.4,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=954"
+    },
+    {
+        "text": " continue what we started in the last chapter with the scorekeeping where we count up the total",
+        "start": 960.4,
+        "end": 964.62,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=960"
+    },
+    {
+        "text": " number of model parameters using the numbers from GPT-3. These key and query matrices each have 12,288",
+        "start": 964.62,
+        "end": 972.58,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=964"
+    },
+    {
+        "text": " columns, matching the embedding dimension, and 128 rows, matching the dimension of that smaller key",
+        "start": 972.58,
+        "end": 978.82,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=972"
+    },
+    {
+        "text": " query space. This gives us an additional 1.5 million or so parameters for each one. If you look",
+        "start": 978.82,
+        "end": 985.18,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=978"
+    },
+    {
+        "text": " at that value matrix by contrast, the way I've described things so far would suggest that it's a",
+        "start": 985.18,
+        "end": 990.38,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=985"
+    },
+    {
+        "text": " square matrix that has 12,288 columns and 12,288 rows, since both its inputs and its outputs live in",
+        "start": 990.38,
+        "end": 999.28,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=990"
+    },
+    {
+        "text": " this very large embedding space. If true, that would mean about 150 million added parameters. And to",
+        "start": 999.28,
+        "end": 1005.82,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=999"
+    },
+    {
+        "text": " be clear, you could do that. You could devote orders of magnitude more parameters to the value map",
+        "start": 1005.82,
+        "end": 1010.52,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1005"
+    },
+    {
+        "text": " than to the key and query. But in practice, it is much more efficient if instead you make it so that",
+        "start": 1010.52,
+        "end": 1015.5,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1010"
+    },
+    {
+        "text": " the number of parameters devoted to this value map is the same as the number devoted to the key",
+        "start": 1015.5,
+        "end": 1020.24,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1015"
+    },
+    {
+        "text": " in the query. This is especially relevant in the setting of running multiple attention heads in",
+        "start": 1020.24,
+        "end": 1024.72,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1020"
+    },
+    {
+        "text": " parallel. The way this looks is that the value map is factored as a product of two smaller matrices.",
+        "start": 1024.72,
+        "end": 1030.06,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1024"
+    },
+    {
+        "text": " Conceptually, I would still encourage you to think about the overall linear map, one with inputs and",
+        "start": 1031.1,
+        "end": 1035.8,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1031"
+    },
+    {
+        "text": " outputs both in this larger embedding space, for example, taking the embedding of blue to this",
+        "start": 1035.8,
+        "end": 1041.06,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1035"
+    },
+    {
+        "text": " blueness direction that you would add to nouns. It's just that it's broken up into two separate steps.",
+        "start": 1041.06,
+        "end": 1046.06,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1041"
+    },
+    {
+        "text": " The first matrix on the right here has a smaller number of rows, typically the same size as the key",
+        "start": 1047.1,
+        "end": 1052.08,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1047"
+    },
+    {
+        "text": " query space. What this means, as you can think of it as mapping the large embedding vectors",
+        "start": 1052.08,
+        "end": 1056.44,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1052"
+    },
+    {
+        "text": " down to a much smaller space. This is not the conventional naming, but I'm going to call this the",
+        "start": 1056.44,
+        "end": 1061.7,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1056"
+    },
+    {
+        "text": " value down matrix. The second matrix, maps from this smaller space back up to the embedding space,",
+        "start": 1061.7,
+        "end": 1067.74,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1061"
+    },
+    {
+        "text": " producing the vectors that you use to make the actual updates. I'm going to call this one the value",
+        "start": 1067.74,
+        "end": 1072.14,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1067"
+    },
+    {
+        "text": " up matrix, which again is not conventional. The way that you would see this written in most papers",
+        "start": 1072.14,
+        "end": 1076.98,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1072"
+    },
+    {
+        "text": " looks a little different. I'll talk about it in a minute, in my opinion, it tends to make things",
+        "start": 1076.98,
+        "end": 1081.04,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1076"
+    },
+    {
+        "text": " a little more conceptually confusing. To throw in linear algebra jargon here, what we're basically",
+        "start": 1081.04,
+        "end": 1085.82,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1081"
+    },
+    {
+        "text": " doing is constraining the overall value map to be a low rank transformation. Turning back to the",
+        "start": 1085.82,
+        "end": 1092.12,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1085"
+    },
+    {
+        "text": " parameter count, all four of these matrices have the same size, and adding them all up, we get about",
+        "start": 1092.12,
+        "end": 1097.32,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1092"
+    },
+    {
+        "text": " 6.3 million parameters for one attention head. As a quick side note, to be a little more accurate,",
+        "start": 1097.32,
+        "end": 1103.92,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1097"
+    },
+    {
+        "text": " everything describes so far is what people would call a self attention head, to distinguish it from",
+        "start": 1104.12,
+        "end": 1108.52,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1104"
+    },
+    {
+        "text": " a variation that comes up in other models that's called cross attention. This isn't relevant to our",
+        "start": 1108.52,
+        "end": 1113.48,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1108"
+    },
+    {
+        "text": " GPT example, but if you're curious, cross attention involves models that process two distinct",
+        "start": 1113.48,
+        "end": 1118.42,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1113"
+    },
+    {
+        "text": " types of data, like text in one language and text in another language that's part of an ongoing",
+        "start": 1118.42,
+        "end": 1123.62,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1118"
+    },
+    {
+        "text": " generation of a translation, or maybe audio input of speech and an ongoing transcription.",
+        "start": 1123.62,
+        "end": 1129.24,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1123"
+    },
+    {
+        "text": " A cross attention head looks almost identical. The only difference is that the key and query maps",
+        "start": 1130.18,
+        "end": 1135.26,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1130"
+    },
+    {
+        "text": " act on different data sets. In a model-doing translation, for example, the keys might come from one",
+        "start": 1135.26,
+        "end": 1141.36,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1135"
+    },
+    {
+        "text": " language, while the queries come from another, and the attention pattern could describe which words",
+        "start": 1141.36,
+        "end": 1146.46,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1141"
+    },
+    {
+        "text": " from one language correspond to which words in another. And in this setting, there would typically",
+        "start": 1146.46,
+        "end": 1151.58,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1146"
+    },
+    {
+        "text": " be no masking, since there's not really any notion of later tokens affecting earlier ones.",
+        "start": 1151.58,
+        "end": 1156.22,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1151"
+    },
+    {
+        "text": " Staying focused on self attention, though, if you understood everything so far, and if you were",
+        "start": 1157.12,
+        "end": 1161.42,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1157"
+    },
+    {
+        "text": " to stop here, you would come away with the essence of what attention really is. All that's really",
+        "start": 1161.42,
+        "end": 1166.42,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1161"
+    },
+    {
+        "text": " left to us is to lay out the sense in which you do this many, many different times. In our central",
+        "start": 1166.42,
+        "end": 1172.7,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1166"
+    },
+    {
+        "text": " example, we focused on adjectives updating nouns, but of course, there are lots of different ways",
+        "start": 1172.7,
+        "end": 1177.5,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1172"
+    },
+    {
+        "text": " that context can influence the meaning of a word. If the words they crashed the, preceded the word",
+        "start": 1177.5,
+        "end": 1183.02,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1177"
+    },
+    {
+        "text": " car, it has implications for the shape and the structure of that car. And a lot of associations",
+        "start": 1183.02,
+        "end": 1188.08,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1183"
+    },
+    {
+        "text": " might be less grammatical. If the word wizard is anywhere in the same passage as Harry, it suggests",
+        "start": 1188.08,
+        "end": 1193.84,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1188"
+    },
+    {
+        "text": " that this might be referring to Harry Potter. Whereas if instead, the words queen, Sussex, and William",
+        "start": 1193.84,
+        "end": 1199.14,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1193"
+    },
+    {
+        "text": " were in that passage, then perhaps the embedding of Harry should instead be updated to refer to",
+        "start": 1199.14,
+        "end": 1203.9,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1199"
+    },
+    {
+        "text": " the prints. For every different type of contextual updating that you might imagine, the parameters of",
+        "start": 1203.9,
+        "end": 1209.54,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1203"
+    },
+    {
+        "text": " these key inquiry matrices would be different to capture the different attention patterns, and the",
+        "start": 1209.54,
+        "end": 1214.18,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1209"
+    },
+    {
+        "text": " parameters of our value map would be different based on what should be added to the embeddings.",
+        "start": 1214.18,
+        "end": 1219.1,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1214"
+    },
+    {
+        "text": " And again, in practice, the true behavior of these maps is much more difficult to interpret,",
+        "start": 1219.78,
+        "end": 1224.16,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1219"
+    },
+    {
+        "text": " where the weights are set to do whatever the model needs them to do to best accomplish its goal",
+        "start": 1224.5,
+        "end": 1228.66,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1224"
+    },
+    {
+        "text": " of predicting the next token. As I said before, everything were described as a single head of",
+        "start": 1228.66,
+        "end": 1234.44,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1228"
+    },
+    {
+        "text": " attention, and a full attention block inside a transformer consists of what's called multi-headed",
+        "start": 1234.44,
+        "end": 1239.48,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1234"
+    },
+    {
+        "text": " attention, where you run a lot of these operations in parallel, each with its own distinct key query",
+        "start": 1239.48,
+        "end": 1244.9,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1239"
+    },
+    {
+        "text": " and value maps. GPT3 for example uses 96 attention heads inside each block, considering that each",
+        "start": 1244.9,
+        "end": 1252.74,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1244"
+    },
+    {
+        "text": " one is already a bit confusing, it's certainly a lot to hold near head, just to spell it all out",
+        "start": 1252.74,
+        "end": 1257.82,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1252"
+    },
+    {
+        "text": " very explicitly. This means you have 96 distinct key inquiry matrices, producing 96 distinct",
+        "start": 1257.82,
+        "end": 1264.0,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1257"
+    },
+    {
+        "text": " attention patterns, then each head has its own distinct value matrices used to produce 96",
+        "start": 1264.0,
+        "end": 1270.14,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1264"
+    },
+    {
+        "text": " sequences of value vectors. These are all added together using the corresponding attention patterns",
+        "start": 1270.14,
+        "end": 1275.9,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1270"
+    },
+    {
+        "text": " as weights. What this means is that for each position in the context, each token, every one of these",
+        "start": 1275.9,
+        "end": 1282.54,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1275"
+    },
+    {
+        "text": " heads produces a proposed change to be added to the embedding in that position. So what you do",
+        "start": 1282.54,
+        "end": 1288.08,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1282"
+    },
+    {
+        "text": " is you sum together all of those proposed changes, one for each head, and you add the result to the",
+        "start": 1288.08,
+        "end": 1293.8,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1288"
+    },
+    {
+        "text": " original embedding of that position. This entire sum here would be one slice of what's outputted",
+        "start": 1293.8,
+        "end": 1300.88,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1293"
+    },
+    {
+        "text": " from this multi-headed attention block, a single one of those refined embeddings that pops out the",
+        "start": 1300.88,
+        "end": 1306.68,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1300"
+    },
+    {
+        "text": " other end of it. Again, this is a lot to think about, so don't worry at all if it takes some time",
+        "start": 1306.68,
+        "end": 1311.44,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1306"
+    },
+    {
+        "text": " to sink in. The overall idea is that by running many distinct heads in parallel, you're giving the",
+        "start": 1311.44,
+        "end": 1316.9,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1311"
+    },
+    {
+        "text": " model the capacity to learn many distinct ways that context changes meaning. Pulling up our running",
+        "start": 1316.9,
+        "end": 1324.62,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1316"
+    },
+    {
+        "text": " tally for parameter count, with 96 heads, each including its own variation of these four matrices,",
+        "start": 1324.62,
+        "end": 1329.72,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1324"
+    },
+    {
+        "text": " each block of multi-headed attention, ends up with around 600 million parameters.",
+        "start": 1330.36,
+        "end": 1334.96,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1330"
+    },
+    {
+        "text": " There's one added slightly annoying thing that I should really mention for any of you who go on",
+        "start": 1336.0800000000002,
+        "end": 1340.3,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1336"
+    },
+    {
+        "text": " to read more about Transformers, you remember how I said that the value map is factored out into",
+        "start": 1340.3,
+        "end": 1344.98,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1340"
+    },
+    {
+        "text": " these two distinct matrices, which I labeled as the value down and the value up matrices.",
+        "start": 1344.98,
+        "end": 1349.24,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1344"
+    },
+    {
+        "text": " The way that I framed things would suggest that you see this pair of matrices inside each attention",
+        "start": 1349.88,
+        "end": 1355.22,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1349"
+    },
+    {
+        "text": " head, and you could absolutely implement it this way, that would be a valid design. But the way",
+        "start": 1355.22,
+        "end": 1360.72,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1355"
+    },
+    {
+        "text": " that you see this written in papers and the way that it's implemented in practice looks a little",
+        "start": 1360.72,
+        "end": 1364.52,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1360"
+    },
+    {
+        "text": " different. All of these value up matrices for each head appear stapled together. In one giant",
+        "start": 1364.52,
+        "end": 1371.06,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1364"
+    },
+    {
+        "text": " matrix that we call the output matrix, associated with the entire multi-headed attention block.",
+        "start": 1371.06,
+        "end": 1376.24,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1371"
+    },
+    {
+        "text": " And when you see people refer to the value matrix for a given attention head, they're typically",
+        "start": 1376.8,
+        "end": 1380.84,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1376"
+    },
+    {
+        "text": " only referring to this first step, the one that I was labeling as the value down projection",
+        "start": 1380.84,
+        "end": 1385.8,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1380"
+    },
+    {
+        "text": " into the smaller space. For the curious among you, I've left an onscreen note about it,",
+        "start": 1385.8,
+        "end": 1390.94,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1385"
+    },
+    {
+        "text": " it's one of those details that runs the risk of distracting from the main conceptual points,",
+        "start": 1390.94,
+        "end": 1394.9,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1390"
+    },
+    {
+        "text": " but I do want to call it out just so that you know if you read about this in other sources.",
+        "start": 1395.16,
+        "end": 1398.46,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1395"
+    },
+    {
+        "text": " Setting aside all the technical nuances, in the preview from the last chapter, we saw how data",
+        "start": 1399.4,
+        "end": 1403.94,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1399"
+    },
+    {
+        "text": " flowing through a Transformer doesn't just flow through a single attention block. For one thing,",
+        "start": 1403.94,
+        "end": 1409.02,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1403"
+    },
+    {
+        "text": " it also goes through these other operations called multi-layer perceptrons, we'll talk more about",
+        "start": 1409.26,
+        "end": 1413.72,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1409"
+    },
+    {
+        "text": " those in the next chapter, and then it repeatedly goes through many, many copies of both of these",
+        "start": 1413.72,
+        "end": 1418.66,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1413"
+    },
+    {
+        "text": " operations. What this means is that after a given word imbibes some of its context, there are many",
+        "start": 1418.66,
+        "end": 1424.86,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1418"
+    },
+    {
+        "text": " more chances for this more nuanced embedding to be influenced by its more nuanced surroundings.",
+        "start": 1424.86,
+        "end": 1429.96,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1424"
+    },
+    {
+        "text": " The further down the network you go, with each embedding taking in more and more meaning from all",
+        "start": 1430.8,
+        "end": 1435.56,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1430"
+    },
+    {
+        "text": " the other embeddings, which themselves are getting more and more nuanced, the hope is that there's",
+        "start": 1435.56,
+        "end": 1440.06,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1435"
+    },
+    {
+        "text": " the capacity to encode higher level and more abstract ideas about a given input beyond just",
+        "start": 1440.06,
+        "end": 1445.24,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1440"
+    },
+    {
+        "text": " descriptors and grammatical structure, things like sentiment and tone and whether it's a poem,",
+        "start": 1445.24,
+        "end": 1450.84,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1445"
+    },
+    {
+        "text": " and what underlying scientific truths are relevant to the piece and things like that.",
+        "start": 1451.26,
+        "end": 1455.18,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1451"
+    },
+    {
+        "text": " Turning back one more time to our scorekeeping, GPT-3 includes 96 distinct layers,",
+        "start": 1456.2,
+        "end": 1462.12,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1456"
+    },
+    {
+        "text": " so the total number of key query and value parameters is multiplied by another 96,",
+        "start": 1462.64,
+        "end": 1467.6,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1462"
+    },
+    {
+        "text": " which brings the total sum to just under 58 billion distinct parameters devoted to all of the",
+        "start": 1468.06,
+        "end": 1473.78,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1468"
+    },
+    {
+        "text": " attention heads. That is a lot to be sure, but it's only about a third of the 175 billion that are",
+        "start": 1473.78,
+        "end": 1479.9,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1473"
+    },
+    {
+        "text": " in the network in total. So even though attention gets all of the attention, the majority of parameters",
+        "start": 1479.9,
+        "end": 1485.48,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1479"
+    },
+    {
+        "text": " come from the blocks sitting in between these steps. In the next chapter you and I will talk",
+        "start": 1485.48,
+        "end": 1489.9,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1485"
+    },
+    {
+        "text": " more about those other blocks, and also a lot more about the training process. A big part of the",
+        "start": 1489.9,
+        "end": 1494.78,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1489"
+    },
+    {
+        "text": " story for the success of the attention mechanism is not so much any specific kind of behavior that",
+        "start": 1494.78,
+        "end": 1500.26,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1494"
+    },
+    {
+        "text": " it enables, but the fact that it's extremely parallelizable, meaning that you can run a huge",
+        "start": 1500.26,
+        "end": 1505.56,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1500"
+    },
+    {
+        "text": " number of computations in a short time using GPUs. Given that one of the big lessons about deep learning",
+        "start": 1505.56,
+        "end": 1511.34,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1505"
+    },
+    {
+        "text": " in the last decade or two has been that scale alone seems to give huge qualitative improvements",
+        "start": 1511.34,
+        "end": 1516.08,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1511"
+    },
+    {
+        "text": " and model performance, there's a huge advantage to parallelizable architectures that let you do this.",
+        "start": 1516.08,
+        "end": 1520.88,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1516"
+    },
+    {
+        "text": " If you want to learn more about this stuff, I've left lots of links in the description. In particular,",
+        "start": 1521.86,
+        "end": 1526.46,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1521"
+    },
+    {
+        "text": " anything produced by Andre Carpathia or Chris Ola tend to be pure gold. In this video, I wanted",
+        "start": 1526.46,
+        "end": 1531.54,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1526"
+    },
+    {
+        "text": " to just jump into attention in its current form, but if you're curious about more of the history for",
+        "start": 1531.54,
+        "end": 1535.78,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1531"
+    },
+    {
+        "text": " how we got here and how you might reinvent this idea for yourself, my friend Vivek just put up a",
+        "start": 1535.78,
+        "end": 1540.14,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1535"
+    },
+    {
+        "text": " couple videos giving a lot more of that motivation. Also, Brit Cruise from the channel The Art of the",
+        "start": 1540.14,
+        "end": 1556.44,
+        "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1540"
+    }
+]

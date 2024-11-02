@@ -1,0 +1,842 @@
+[
+    {
+        "text": " Here we tackle back propagation, the core algorithm behind how neural networks learn.",
+        "start": 4.06,
+        "end": 8.86,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=4"
+    },
+    {
+        "text": " After a quick recap for where we are, the first thing I'll do is an intuitive walkthrough",
+        "start": 9.4,
+        "end": 13.4,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=9"
+    },
+    {
+        "text": " for what the algorithm is actually doing without any reference to the formulas.",
+        "start": 13.4,
+        "end": 16.92,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=13"
+    },
+    {
+        "text": " Then for those of you who do want to dive into the math, the next video goes into the calculus",
+        "start": 17.54,
+        "end": 21.82,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=17"
+    },
+    {
+        "text": " underlying all this.",
+        "start": 21.82,
+        "end": 22.88,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=21"
+    },
+    {
+        "text": " If you watched the last two videos, or if you're just jumping in with the appropriate background,",
+        "start": 23.6,
+        "end": 27.6,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=23"
+    },
+    {
+        "text": " you know what a neural network is, and how it feeds forward information.",
+        "start": 27.6,
+        "end": 31.0,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=27"
+    },
+    {
+        "text": " Here we're doing the classic example of recognizing handwritten digits, whose pixel values",
+        "start": 31.58,
+        "end": 35.9,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=31"
+    },
+    {
+        "text": " get fed into the first layer of the network with 784 neurons, and I've been showing a network",
+        "start": 35.9,
+        "end": 40.92,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=35"
+    },
+    {
+        "text": " with two hidden layers having just 16 neurons each, and an output layer of 10 neurons, indicating",
+        "start": 40.92,
+        "end": 46.4,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=40"
+    },
+    {
+        "text": " which digit the network is choosing as a tensor.",
+        "start": 46.4,
+        "end": 48.96,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=46"
+    },
+    {
+        "text": " I'm also expecting you to understand gradient descent, as described in the last video,",
+        "start": 49.68000000000001,
+        "end": 53.82,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=49"
+    },
+    {
+        "text": " and how what we mean by learning is that we want to find which weights and biases",
+        "start": 54.38,
+        "end": 59.02,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=54"
+    },
+    {
+        "text": " minimize a certain cost function.",
+        "start": 59.02,
+        "end": 61.22,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=59"
+    },
+    {
+        "text": " As a quick reminder for the cost of a single training example, what you do is take the output",
+        "start": 61.86,
+        "end": 66.82,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=61"
+    },
+    {
+        "text": " that the network gives, along with the output that you wanted it to give, and you just",
+        "start": 66.82,
+        "end": 71.62,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=66"
+    },
+    {
+        "text": " add up the squares of the differences between each component.",
+        "start": 71.62,
+        "end": 74.6,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=71"
+    },
+    {
+        "text": " Doing this for all of your tens of thousands of training examples and averaging the results,",
+        "start": 75.3,
+        "end": 79.6,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=75"
+    },
+    {
+        "text": " this gives you the total cost of the network.",
+        "start": 80.02,
+        "end": 82.16,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=80"
+    },
+    {
+        "text": " And as if that's not enough to think about, as described in the last video, the thing that",
+        "start": 82.8,
+        "end": 86.62,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=82"
+    },
+    {
+        "text": " we're looking for is the negative gradient of this cost function, which tells you how you need",
+        "start": 86.62,
+        "end": 92.06,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=86"
+    },
+    {
+        "text": " to change all of the weights and biases, all of these connections, so as to most efficiently decrease",
+        "start": 92.06,
+        "end": 97.4,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=92"
+    },
+    {
+        "text": " the cost.",
+        "start": 97.4,
+        "end": 98.12,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=97"
+    },
+    {
+        "text": " Backpropagation, the topic of this video, is an algorithm for computing that crazy complicated",
+        "start": 103.28,
+        "end": 108.2,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=103"
+    },
+    {
+        "text": " gradient.",
+        "start": 108.2,
+        "end": 108.56,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=108"
+    },
+    {
+        "text": " And the one idea from the last video that I really want you to hold firmly in your mind right now,",
+        "start": 109.34,
+        "end": 113.62,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=109"
+    },
+    {
+        "text": " is that because thinking of the gradient vector as a direction in 13,000 dimensions is to put",
+        "start": 114.0,
+        "end": 119.16,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=114"
+    },
+    {
+        "text": " it lightly beyond the scope of our imaginations, there's another way you can think about it.",
+        "start": 119.16,
+        "end": 123.46,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=119"
+    },
+    {
+        "text": " The magnitude of each component here is telling you how sensitive the cost function is to each weight",
+        "start": 124.46,
+        "end": 130.26,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=124"
+    },
+    {
+        "text": " and bias. For example, let's say you go through the process I'm about to describe when you compute",
+        "start": 130.26,
+        "end": 135.2,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=130"
+    },
+    {
+        "text": " the negative gradient and the component associated with the weight on this edge here comes out to be",
+        "start": 135.2,
+        "end": 140.5,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=135"
+    },
+    {
+        "text": " 3.2, while the component associated with this edge here comes out as 0.1. The way you would interpret",
+        "start": 140.5,
+        "end": 147.76,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=140"
+    },
+    {
+        "text": " that is that the cost of the function is 32 times more sensitive to changes in that first weight.",
+        "start": 147.76,
+        "end": 152.92,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=147"
+    },
+    {
+        "text": " So if you were to wiggle that value just a little bit, it's going to cause some change to the cost,",
+        "start": 153.46,
+        "end": 157.76,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=153"
+    },
+    {
+        "text": " and that change is 32 times greater than what the same wiggle to that second weight would give.",
+        "start": 158.12,
+        "end": 163.04,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=158"
+    },
+    {
+        "text": " Personally, when I was first learning about back propagation, I think the most confusing aspect was",
+        "start": 168.4,
+        "end": 173.22,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=168"
+    },
+    {
+        "text": " just the notation and the index chasing of it all. But once you unwrap what each part of this algorithm",
+        "start": 173.22,
+        "end": 178.26,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=173"
+    },
+    {
+        "text": " is really doing, each individual effect that it's having is actually pretty intuitive,",
+        "start": 178.26,
+        "end": 182.7,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=178"
+    },
+    {
+        "text": " it's just that there's a lot of little adjustments getting layered on top of each other.",
+        "start": 183.1,
+        "end": 186.56,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=183"
+    },
+    {
+        "text": " So I'm going to start things off here with a complete disregard for the notation,",
+        "start": 187.5,
+        "end": 191.06,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=187"
+    },
+    {
+        "text": " and just step through those effects that each training example is having on the weights and biases.",
+        "start": 191.06,
+        "end": 196.04,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=191"
+    },
+    {
+        "text": " Because the cost function involves averaging a certain cost per example,",
+        "start": 196.9,
+        "end": 200.52,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=196"
+    },
+    {
+        "text": " over all the tens of thousands of training examples, the way that we adjust the weights and biases",
+        "start": 200.9,
+        "end": 206.14,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=200"
+    },
+    {
+        "text": " for a single gradient descent step also depends on every single example, or rather in principle it",
+        "start": 206.14,
+        "end": 212.9,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=206"
+    },
+    {
+        "text": " should, but for computational efficiency we're going to do a little trick later to keep you from",
+        "start": 212.9,
+        "end": 216.58,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=212"
+    },
+    {
+        "text": " needing to hit every single example for every single step. In other case, right now all we're",
+        "start": 216.58,
+        "end": 221.68,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=216"
+    },
+    {
+        "text": " going to do is focus our attention on one single example, this image of a two. What effect should",
+        "start": 221.68,
+        "end": 227.66,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=221"
+    },
+    {
+        "text": " this one training example have on how the weights and biases get adjusted? Let's say we're at a point",
+        "start": 227.66,
+        "end": 233.46,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=227"
+    },
+    {
+        "text": " where the network is not well trained yet, so the activations in the output are going to look pretty",
+        "start": 233.46,
+        "end": 237.38,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=233"
+    },
+    {
+        "text": " random, maybe something like 0.5, 0.8, 0.2 on a knot. Now we can't directly change those activations,",
+        "start": 237.38,
+        "end": 244.96,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=237"
+    },
+    {
+        "text": " we only have influence on the weights and biases, but it is helpful to keep track of which adjustments",
+        "start": 244.96,
+        "end": 249.82,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=244"
+    },
+    {
+        "text": " we wish should take place to that output layer. And since we want it to classify the image as a two,",
+        "start": 249.82,
+        "end": 255.44,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=249"
+    },
+    {
+        "text": " we want that third value to get nudged up while all of the others get nudged down. Moreover,",
+        "start": 256.04,
+        "end": 262.36,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=256"
+    },
+    {
+        "text": " the sizes of these nudges should be proportional to how far away each current value is from its",
+        "start": 262.86,
+        "end": 274.84,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=262"
+    },
+    {
+        "text": " more important than the decrease to the number 8 neuron, which is already pretty close to where it",
+        "start": 274.84,
+        "end": 280.02,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=274"
+    },
+    {
+        "text": " should be. So zooming in further, let's focus just on this one neuron, the one whose activation we",
+        "start": 280.02,
+        "end": 286.48,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=280"
+    },
+    {
+        "text": " wish to increase. Remember, that activation is defined as a certain weighted sum of all of the",
+        "start": 286.48,
+        "end": 293.12,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=286"
+    },
+    {
+        "text": " activations in the previous layer, plus a bias, which is all then plugged into something like the",
+        "start": 293.12,
+        "end": 298.52,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=293"
+    },
+    {
+        "text": " sigmoid squishification function or a ray-lew. So there are three different avenues that can",
+        "start": 298.53,
+        "end": 304.37,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=298"
+    },
+    {
+        "text": " team up together to help increase that activation. You can increase the bias, you can increase the weights,",
+        "start": 304.37,
+        "end": 310.39,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=304"
+    },
+    {
+        "text": " and you can change the activations from the previous layer. Focusing just on how the weights should",
+        "start": 310.85,
+        "end": 316.67,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=310"
+    },
+    {
+        "text": " be adjusted? Notice how the weights actually have differing levels of influence. The connections",
+        "start": 316.67,
+        "end": 321.83,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=316"
+    },
+    {
+        "text": " with the brightest neurons from the preceding layer have the biggest effect, since those weights",
+        "start": 321.83,
+        "end": 326.39,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=321"
+    },
+    {
+        "text": " are multiplied by larger activation values. So if you were to increase one of those weights,",
+        "start": 326.39,
+        "end": 333.09,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=326"
+    },
+    {
+        "text": " it actually has a stronger influence on the ultimate cost function than increasing the weights",
+        "start": 333.57,
+        "end": 338.55,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=333"
+    },
+    {
+        "text": " of connections with dimmer neurons, at least as far as this one training example is concerned.",
+        "start": 338.55,
+        "end": 343.41,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=338"
+    },
+    {
+        "text": " Remember, when we talk about gradient descent, we don't just care about whether each component should",
+        "start": 344.31,
+        "end": 348.85,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=344"
+    },
+    {
+        "text": " get nudged up or down, we care about which ones give you the most bang for your butt.",
+        "start": 348.85,
+        "end": 353.19,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=348"
+    },
+    {
+        "text": " This, by the way, is at least somewhat reminiscent of a theory in neuroscience for how biological",
+        "start": 355.01,
+        "end": 360.15,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=355"
+    },
+    {
+        "text": " networks of neurons learn, heavy in theory. Often summed up in the phrase, neurons that fire",
+        "start": 360.15,
+        "end": 365.25,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=360"
+    },
+    {
+        "text": " together wire together. Here, the biggest increases to weights, the biggest strengthening of connections,",
+        "start": 365.25,
+        "end": 371.53,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=365"
+    },
+    {
+        "text": " happens between neurons which are the most active, and the ones which we wish to become more active.",
+        "start": 372.23,
+        "end": 377.29,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=372"
+    },
+    {
+        "text": " In a sense, the neurons that are firing while seeing it too get more strongly linked to those",
+        "start": 378.01,
+        "end": 382.63,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=378"
+    },
+    {
+        "text": " firing when thinking about it too. To be clear, I really am not in a position to make statements one",
+        "start": 382.63,
+        "end": 388.13,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=382"
+    },
+    {
+        "text": " way or another about whether artificial networks of neurons behave anything like biological brains,",
+        "start": 388.13,
+        "end": 392.49,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=388"
+    },
+    {
+        "text": " and this fires together wire together idea comes with a couple meaningful asterisks.",
+        "start": 393.11,
+        "end": 396.87,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=393"
+    },
+    {
+        "text": " But, taken as a very loose analogy, I do find it interesting to note.",
+        "start": 397.21,
+        "end": 400.97,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=397"
+    },
+    {
+        "text": " Anyway, the third way that we can help increase this neurons activation is by changing all the",
+        "start": 401.87,
+        "end": 407.23,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=401"
+    },
+    {
+        "text": " activations in the previous layer. Namely, if everything connected to that digit two neuron",
+        "start": 407.23,
+        "end": 412.41,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=407"
+    },
+    {
+        "text": " with a positive weight got brighter, and if everything connected with a negative weight got dimmer,",
+        "start": 412.41,
+        "end": 417.79,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=412"
+    },
+    {
+        "text": " then that digit two neuron would become more active.",
+        "start": 418.25,
+        "end": 420.59,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=418"
+    },
+    {
+        "text": " And, similar to the weight changes, you're going to get the most bang for your buck by seeking",
+        "start": 422.17,
+        "end": 426.55,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=422"
+    },
+    {
+        "text": " changes that are proportional to the size of the corresponding weights.",
+        "start": 426.55,
+        "end": 430.19,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=426"
+    },
+    {
+        "text": " Now, of course, we cannot directly influence those activations. We only have control over the weights",
+        "start": 431.75,
+        "end": 436.87,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=431"
+    },
+    {
+        "text": " and biases. But, just as with the last layer, it's helpful to just keep a note of what those",
+        "start": 436.87,
+        "end": 442.19,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=436"
+    },
+    {
+        "text": " desire changes are. But keep in mind, zooming out one step here, this is only what that digit two",
+        "start": 442.19,
+        "end": 448.01,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=442"
+    },
+    {
+        "text": " output neuron wants. Remember, we also want all of the other neurons in the last layer to become",
+        "start": 448.01,
+        "end": 453.31,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=448"
+    },
+    {
+        "text": " less active, and each of those other output neurons has its own thoughts about what should happen",
+        "start": 453.31,
+        "end": 458.21,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=453"
+    },
+    {
+        "text": " to that second to last layer. So, the desire of this digit two neuron is added to",
+        "start": 458.21,
+        "end": 466.85,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=458"
+    },
+    {
+        "text": " together with the desires of all the other output neurons for what should happen to this second",
+        "start": 466.85,
+        "end": 472.27,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=466"
+    },
+    {
+        "text": " to last layer. Again, in proportion to the corresponding weights, and in proportion to how much",
+        "start": 472.27,
+        "end": 478.69,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=472"
+    },
+    {
+        "text": " each of those neurons needs to change. This right here is where the idea of propagating backwards comes in.",
+        "start": 478.69,
+        "end": 485.33,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=478"
+    },
+    {
+        "text": " By adding together all these desired effects, you basically get a list of nudges that you want to",
+        "start": 485.95,
+        "end": 491.69,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=485"
+    },
+    {
+        "text": " happen to this second to last layer. And once you have those, you can recursively apply the same",
+        "start": 491.69,
+        "end": 497.15,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=491"
+    },
+    {
+        "text": " process to the relevant weights and biases that determine those values, repeating the same process I",
+        "start": 497.15,
+        "end": 502.51,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=497"
+    },
+    {
+        "text": " just walked through and moving backwards through the network. And zooming out a bit further,",
+        "start": 502.51,
+        "end": 510.29,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=502"
+    },
+    {
+        "text": " remember that this is all just how a single training example wishes to nudge each one of those",
+        "start": 510.47,
+        "end": 516.13,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=510"
+    },
+    {
+        "text": " weights and biases. If we only listen to what that two wanted, the network would ultimately be",
+        "start": 516.13,
+        "end": 520.83,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=516"
+    },
+    {
+        "text": " incentivized just to classify all images as a two. So, what you do is you go through this same",
+        "start": 520.83,
+        "end": 525.85,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=520"
+    },
+    {
+        "text": " back-proproutine for every other training example, recording how each of them would like to change",
+        "start": 525.85,
+        "end": 531.81,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=525"
+    },
+    {
+        "text": " the weights and the biases. And you average together those desired changes.",
+        "start": 531.81,
+        "end": 535.91,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=531"
+    },
+    {
+        "text": " This collection here of the average to nudges to each weight and bias is, loosely speaking,",
+        "start": 541.75,
+        "end": 547.69,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=541"
+    },
+    {
+        "text": " the negative gradient of the cost function referenced in the last video, or at least something",
+        "start": 547.69,
+        "end": 552.67,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=547"
+    },
+    {
+        "text": " proportional to it. I say loosely speaking only because I have yet to get quantitatively precise",
+        "start": 552.67,
+        "end": 558.11,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=552"
+    },
+    {
+        "text": " about those nudges. But if you understood every change that I just referenced, why some are",
+        "start": 558.11,
+        "end": 562.93,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=558"
+    },
+    {
+        "text": " proportionally bigger than others, and how they all need to be added together, you understand the",
+        "start": 562.93,
+        "end": 568.19,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=562"
+    },
+    {
+        "text": " mechanics for what back propagation is actually doing. By the way, in practice, it takes computers",
+        "start": 568.19,
+        "end": 575.95,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=568"
+    },
+    {
+        "text": " an extremely long time to add up the influence of every single training example, every single gradient",
+        "start": 575.95,
+        "end": 581.67,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=575"
+    },
+    {
+        "text": " to sent step. So, here's what's commonly done instead. You randomly shuffle your training data,",
+        "start": 581.67,
+        "end": 587.11,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=581"
+    },
+    {
+        "text": " and then divide it into a whole bunch of mini batches. Let's say each one having 100 training",
+        "start": 587.37,
+        "end": 591.89,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=587"
+    },
+    {
+        "text": " examples. Then you compute a step according to the mini batch. It's not going to be the actual",
+        "start": 591.89,
+        "end": 597.91,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=591"
+    },
+    {
+        "text": " gradient of the cost function, which depends on all of the training data, not this tiny subset.",
+        "start": 597.91,
+        "end": 602.35,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=597"
+    },
+    {
+        "text": " So, it's not the most efficient step downhill. But each mini batch does give you a pretty good",
+        "start": 602.99,
+        "end": 607.85,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=602"
+    },
+    {
+        "text": " approximation, and more importantly, it gives you a significant computational speed up. If you",
+        "start": 607.85,
+        "end": 613.09,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=607"
+    },
+    {
+        "text": " would have plot the trajectory of your network under the relevant cost surface, it would be a little",
+        "start": 613.09,
+        "end": 617.41,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=613"
+    },
+    {
+        "text": " more like a drunk man stumbling aimlessly down a hill, but taking quick steps, rather than a",
+        "start": 617.41,
+        "end": 622.57,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=617"
+    },
+    {
+        "text": " carefully calculating man determining the exact downhill direction of each step before taking a",
+        "start": 622.57,
+        "end": 627.87,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=622"
+    },
+    {
+        "text": " very slow and careful step in that direction. This technique is referred to as stochastic gradient",
+        "start": 627.95,
+        "end": 634.25,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=627"
+    },
+    {
+        "text": " descent. There's kind of a lot going on here, so let's just sum it up for ourselves, shall we?",
+        "start": 634.25,
+        "end": 639.59,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=634"
+    },
+    {
+        "text": " Backpropagation is the algorithm for determining how a single training example would like to nudge",
+        "start": 640.59,
+        "end": 645.87,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=640"
+    },
+    {
+        "text": " the weights and biases, not just in terms of whether they should go up or down, but in terms of what",
+        "start": 645.87,
+        "end": 650.75,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=645"
+    },
+    {
+        "text": " relative proportions to those changes cause the most rapid decrease to the cost. A true gradient",
+        "start": 650.75,
+        "end": 657.33,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=650"
+    },
+    {
+        "text": " descent step would involve doing this for all your tens and thousands of training examples,",
+        "start": 657.33,
+        "end": 661.65,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=657"
+    },
+    {
+        "text": " and averaging the desired changes that you get. But that's computationally slow, so instead you",
+        "start": 661.93,
+        "end": 667.27,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=661"
+    },
+    {
+        "text": " randomly subdivide the data into these mini batches, and compute each step with respect to a mini batch.",
+        "start": 667.27,
+        "end": 673.31,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=667"
+    },
+    {
+        "text": " Repeatedly going through all of the mini batches and making these adjustments, you will converge",
+        "start": 673.93,
+        "end": 678.61,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=673"
+    },
+    {
+        "text": " towards a local minimum of the cost function, which is to say your network is going to end up doing",
+        "start": 678.61,
+        "end": 683.43,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=678"
+    },
+    {
+        "text": " a really good job on the training examples. So with all of that said, every line of code that would",
+        "start": 683.43,
+        "end": 690.27,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=683"
+    },
+    {
+        "text": " go into implementing Backprop actually corresponds with something that you have now seen, at least in",
+        "start": 690.27,
+        "end": 695.79,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=690"
+    },
+    {
+        "text": " informal terms. But sometimes knowing what the math does is only half the battle, and just",
+        "start": 695.79,
+        "end": 701.21,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=695"
+    },
+    {
+        "text": " representing the damn thing is where it gets all muddled and confusing. So for those of you who do",
+        "start": 701.21,
+        "end": 706.37,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=701"
+    },
+    {
+        "text": " want to go deeper, the next video goes through the same ideas that were just presented here, but in terms",
+        "start": 706.37,
+        "end": 711.29,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=706"
+    },
+    {
+        "text": " of the underlying calculus, which should hopefully make it a little more familiar as you see the topic",
+        "start": 711.29,
+        "end": 715.55,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=711"
+    },
+    {
+        "text": " in other resources. Before that, one thing worth emphasizing is that for this algorithm to work,",
+        "start": 715.55,
+        "end": 720.63,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=715"
+    },
+    {
+        "text": " and this goes for all sorts of machine learning beyond just neural networks, you need a lot of",
+        "start": 720.93,
+        "end": 725.29,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=720"
+    },
+    {
+        "text": " training data. In our case, one thing that makes handwritten digits such a nice example is that",
+        "start": 725.29,
+        "end": 730.15,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=725"
+    },
+    {
+        "text": " there exists the M-nist database, with so many examples that have been labeled by humans. So a",
+        "start": 730.15,
+        "end": 735.55,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=730"
+    },
+    {
+        "text": " common challenge that those of you working in machine learning will be familiar with is just",
+        "start": 735.55,
+        "end": 739.31,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=735"
+    },
+    {
+        "text": " getting the labeled training data that you actually need, whether that's having people label",
+        "start": 739.31,
+        "end": 743.55,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=739"
+    },
+    {
+        "text": " tens of thousands of images, or whatever other data type you might be dealing with.",
+        "start": 743.55,
+        "end": 747.43,
+        "url": "https://www.youtube.com/watch?v=Ilg3gGewQ5U&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=743"
+    }
+]

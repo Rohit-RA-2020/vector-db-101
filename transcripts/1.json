@@ -1,0 +1,1286 @@
+[
+    {
+        "text": " This is a 3.",
+        "start": 4.120000000000001,
+        "end": 5.36,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=4"
+    },
+    {
+        "text": " It's slobily written and rendered at an extremely low resolution of 28x28 pixels, but your brain",
+        "start": 5.88,
+        "end": 11.58,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=5"
+    },
+    {
+        "text": " has no trouble recognizing it as a 3.",
+        "start": 11.58,
+        "end": 13.68,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=11"
+    },
+    {
+        "text": " And I want you to take a moment to appreciate how crazy it is that brains can do this so",
+        "start": 14.24,
+        "end": 18.46,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=14"
+    },
+    {
+        "text": " effortlessly.",
+        "start": 18.46,
+        "end": 19.1,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=18"
+    },
+    {
+        "text": " I mean this, this and this are also recognizable as 3s, even though the specific values of each",
+        "start": 19.66,
+        "end": 25.5,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=19"
+    },
+    {
+        "text": " pixel is very different from one image to the next.",
+        "start": 25.5,
+        "end": 28.3,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=25"
+    },
+    {
+        "text": " The particular light-sensitive cells in your eye that are firing when you see this",
+        "start": 28.900000000000002,
+        "end": 33.26,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=28"
+    },
+    {
+        "text": " 3 are very different from the ones firing when you see this 3.",
+        "start": 33.26,
+        "end": 36.88,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=33"
+    },
+    {
+        "text": " But something in that crazy smart visual cortex of yours resolves these as representing",
+        "start": 37.46,
+        "end": 42.88,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=37"
+    },
+    {
+        "text": " the same idea, while at the same time recognizing other images as their own distinct ideas.",
+        "start": 42.88,
+        "end": 48.18,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=42"
+    },
+    {
+        "text": " But if I told you, hey, sit down and write for me a program that takes in a grid of 28x28",
+        "start": 49.06,
+        "end": 55.48,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=49"
+    },
+    {
+        "text": " pixels like this, and outputs a single number between 0 and 10, telling you what it thinks",
+        "start": 55.48,
+        "end": 61.12,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=55"
+    },
+    {
+        "text": " the digit is, while the task goes from comically trivial to dauntingly difficult.",
+        "start": 61.12,
+        "end": 66.16,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=61"
+    },
+    {
+        "text": " Unless you've been living under a rock, I think I hardly need to motivate the relevance",
+        "start": 67.04,
+        "end": 70.56,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=67"
+    },
+    {
+        "text": " and importance of machine learning and neural networks to the present and to the future.",
+        "start": 70.56,
+        "end": 74.66,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=70"
+    },
+    {
+        "text": " But what I want to do here is show you what a neural network actually is, assuming no",
+        "start": 75.14,
+        "end": 79.36,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=75"
+    },
+    {
+        "text": " background, and to help visualize what it's doing, not as a buzzword, but as a piece of",
+        "start": 79.36,
+        "end": 84.1,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=79"
+    },
+    {
+        "text": " math.",
+        "start": 84.1,
+        "end": 84.34,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=84"
+    },
+    {
+        "text": " My hope is just that you come away feeling like the structure itself is motivated, and to",
+        "start": 85.14,
+        "end": 89.4,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=85"
+    },
+    {
+        "text": " feel like you know what it means when you read or you hear about a neural network quote",
+        "start": 89.4,
+        "end": 93.48,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=89"
+    },
+    {
+        "text": " unquote learning.",
+        "start": 93.48,
+        "end": 94.38,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=93"
+    },
+    {
+        "text": " This video is just going to be devoted to the structure component of that, and the following",
+        "start": 95.14,
+        "end": 99.06,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=95"
+    },
+    {
+        "text": " one is going to tackle learning.",
+        "start": 99.06,
+        "end": 100.22,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=99"
+    },
+    {
+        "text": " What we're going to do is put together a neural network that can learn to recognize handwritten",
+        "start": 100.9,
+        "end": 105.48,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=100"
+    },
+    {
+        "text": " digits.",
+        "start": 105.48,
+        "end": 105.92,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=105"
+    },
+    {
+        "text": " This is a somewhat classic example for introducing the topic, and I'm happy to stick with",
+        "start": 109.38,
+        "end": 113.7,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=109"
+    },
+    {
+        "text": " the status quo here, because at the end of the two videos, I want to point you to a couple",
+        "start": 113.7,
+        "end": 117.42,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=113"
+    },
+    {
+        "text": " good resources where you can learn more, and where you can download the code that does",
+        "start": 117.42,
+        "end": 121.24,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=117"
+    },
+    {
+        "text": " this and play with it on your own computer.",
+        "start": 121.24,
+        "end": 123.04,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=121"
+    },
+    {
+        "text": " There are many, many variants of neural networks, and in recent years there's been sort",
+        "start": 124.9,
+        "end": 129.68,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=124"
+    },
+    {
+        "text": " of a boom in research towards these variants.",
+        "start": 129.68,
+        "end": 132.06,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=129"
+    },
+    {
+        "text": " But in these two introductory videos, you and I are just going to look at the simplest,",
+        "start": 132.52,
+        "end": 136.64,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=132"
+    },
+    {
+        "text": " plain vanilla form with no added frills.",
+        "start": 136.96,
+        "end": 139.18,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=136"
+    },
+    {
+        "text": " This is kind of a necessary prerequisite for understanding any of the more powerful",
+        "start": 139.18,
+        "end": 143.56,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=139"
+    },
+    {
+        "text": " modern variants, and trust me, it still has plenty of complexity for us to wrap our",
+        "start": 143.56,
+        "end": 147.94,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=143"
+    },
+    {
+        "text": " minds around.",
+        "start": 147.94,
+        "end": 148.46,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=147"
+    },
+    {
+        "text": " But even in this simplest form, it can learn to recognize handwritten digits, which is",
+        "start": 149.06,
+        "end": 153.5,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=149"
+    },
+    {
+        "text": " a pretty cool thing for a computer to be able to do.",
+        "start": 153.5,
+        "end": 156.34,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=153"
+    },
+    {
+        "text": " And at the same time, you'll see how it does fall short of a couple hopes that we might",
+        "start": 157.24,
+        "end": 161.4,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=157"
+    },
+    {
+        "text": " have for it.",
+        "start": 161.4,
+        "end": 162.08,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=161"
+    },
+    {
+        "text": " As the name suggests, neural networks are inspired by the brain, but let's break that down.",
+        "start": 163.32,
+        "end": 168.46,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=163"
+    },
+    {
+        "text": " What are the neurons and in what sense are they linked together?",
+        "start": 169.02,
+        "end": 171.7,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=169"
+    },
+    {
+        "text": " Right now, when I say neuron, all I want you to think about is a thing that holds a",
+        "start": 172.5,
+        "end": 177.5,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=172"
+    },
+    {
+        "text": " number, specifically a number between zero and one.",
+        "start": 177.5,
+        "end": 180.4,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=177"
+    },
+    {
+        "text": " It's really not more than that.",
+        "start": 180.82,
+        "end": 182.28,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=180"
+    },
+    {
+        "text": " For example, the network starts with a bunch of neurons corresponding to each of the",
+        "start": 183.5,
+        "end": 188.24,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=183"
+    },
+    {
+        "text": " 28 times 28 pixels of the input image, which is 784 neurons in total.",
+        "start": 188.24,
+        "end": 194.22,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=188"
+    },
+    {
+        "text": " Each one of these holds a number that represents the gray scale value of the corresponding pixel,",
+        "start": 194.22,
+        "end": 200.4,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=194"
+    },
+    {
+        "text": " ranging from zero for black pixels up to one for white pixels.",
+        "start": 200.98,
+        "end": 204.26,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=200"
+    },
+    {
+        "text": " This number inside the neuron is called its activation.",
+        "start": 205.18,
+        "end": 208.4,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=205"
+    },
+    {
+        "text": " And the image you might have in mind here is that each neuron is lit up when its activation",
+        "start": 209.18,
+        "end": 213.22,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=209"
+    },
+    {
+        "text": " is a high number.",
+        "start": 213.22,
+        "end": 214.0,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=213"
+    },
+    {
+        "text": " So all of these 784 neurons make up the first layer of our network.",
+        "start": 216.24,
+        "end": 221.62,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=216"
+    },
+    {
+        "text": " Now jumping over to the last layer, this has 10 neurons, each representing one of the digits.",
+        "start": 225.98000000000002,
+        "end": 231.26,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=225"
+    },
+    {
+        "text": " The activation in these neurons, again, some number that's between zero and one,",
+        "start": 231.96,
+        "end": 236.44,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=231"
+    },
+    {
+        "text": " represents how much the system thinks that a given image corresponds with a given digit.",
+        "start": 236.88,
+        "end": 242.08,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=236"
+    },
+    {
+        "text": " There's also a couple layers in between called the hidden layers, which for the time being,",
+        "start": 242.78,
+        "end": 247.82,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=242"
+    },
+    {
+        "text": " should just be a giant question mark.",
+        "start": 248.14,
+        "end": 249.7,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=248"
+    },
+    {
+        "text": " For how on earth this process of recognizing digits is going to be handled.",
+        "start": 250.0,
+        "end": 253.54,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=250"
+    },
+    {
+        "text": " In this network, I chose two hidden layers, each one with 16 neurons.",
+        "start": 254.12,
+        "end": 257.64,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=254"
+    },
+    {
+        "text": " And admittedly, that's kind of an arbitrary choice.",
+        "start": 258.24,
+        "end": 260.58,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=258"
+    },
+    {
+        "text": " To be honest, I chose two layers based on how I want to motivate the structure in just a moment.",
+        "start": 261.1,
+        "end": 264.78,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=261"
+    },
+    {
+        "text": " And 16, well, that was just a nice number to fit on the screen.",
+        "start": 265.32,
+        "end": 268.2,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=265"
+    },
+    {
+        "text": " And practice there is a lot of room for experiment with a specific structure here.",
+        "start": 268.2,
+        "end": 272.28,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=268"
+    },
+    {
+        "text": " The way the network operates, activations in one layer determine the activations of the next layer.",
+        "start": 272.92,
+        "end": 278.48,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=272"
+    },
+    {
+        "text": " And of course, the heart of the network, as an information processing mechanism,",
+        "start": 279.18,
+        "end": 282.88,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=279"
+    },
+    {
+        "text": " comes down to exactly how those activations from one layer bring about activations in the next layer.",
+        "start": 283.3,
+        "end": 288.56,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=283"
+    },
+    {
+        "text": " It's meant to be loosely analogous to how in biological networks of neurons,",
+        "start": 289.18,
+        "end": 293.28,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=289"
+    },
+    {
+        "text": " some groups of neurons firing cause certain others to fire.",
+        "start": 293.74,
+        "end": 297.16,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=293"
+    },
+    {
+        "text": " Now the network I'm showing here has already been trained to recognize digits.",
+        "start": 297.88000000000005,
+        "end": 301.42,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=297"
+    },
+    {
+        "text": " And let me show you what I mean by that.",
+        "start": 301.8,
+        "end": 303.28,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=301"
+    },
+    {
+        "text": " It means if you feed in an image, lighting up all 784 neurons of the input layer,",
+        "start": 303.66,
+        "end": 309.34,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=303"
+    },
+    {
+        "text": " according to the brightness of each pixel in the image,",
+        "start": 309.7,
+        "end": 312.24,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=309"
+    },
+    {
+        "text": " that pattern of activations causes some very specific pattern in the next layer,",
+        "start": 312.72,
+        "end": 317.16,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=312"
+    },
+    {
+        "text": " which causes some pattern in the one after it, which finally gives some pattern in the output layer.",
+        "start": 317.62,
+        "end": 322.06,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=317"
+    },
+    {
+        "text": " And the brightest neuron of that output layer is the network's choice, so to speak,",
+        "start": 322.06,
+        "end": 327.54,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=322"
+    },
+    {
+        "text": " for what digit this image represents.",
+        "start": 327.76,
+        "end": 329.32,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=327"
+    },
+    {
+        "text": " And before jumping into the math for how one layer influences the next or how training works,",
+        "start": 332.16,
+        "end": 337.02,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=332"
+    },
+    {
+        "text": " let's just talk about why it's even reasonable to expect a layered structure like this",
+        "start": 337.38,
+        "end": 341.84,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=337"
+    },
+    {
+        "text": " to behave intelligently. What are we expecting here? What is the best hope for what those middle",
+        "start": 341.84,
+        "end": 347.28,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=341"
+    },
+    {
+        "text": " layers might be doing? Well, when you or I recognize digits, we piece together various components.",
+        "start": 347.28,
+        "end": 353.52,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=347"
+    },
+    {
+        "text": " A 9 has a loop up top and a line on the right. And 8 also has a loop up top, but it's paired with",
+        "start": 354.2,
+        "end": 360.08,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=354"
+    },
+    {
+        "text": " another loop down low. A 4 basically breaks down into 3 specific lines and things like that.",
+        "start": 360.08,
+        "end": 366.68,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=360"
+    },
+    {
+        "text": " Now in a perfect world, we might hope that each neuron in the second to last layer corresponds",
+        "start": 367.68,
+        "end": 372.96,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=367"
+    },
+    {
+        "text": " with one of these subcomponents. That anytime you feed in an image with, say, a loop up top,",
+        "start": 372.96,
+        "end": 378.54,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=372"
+    },
+    {
+        "text": " like a 9 or an 8, there's some specific neuron whose activation is going to be close to 1.",
+        "start": 378.86,
+        "end": 383.76,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=378"
+    },
+    {
+        "text": " And I don't mean this specific loop of pixels. The hope would be that any generally loop",
+        "start": 384.46,
+        "end": 388.88,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=384"
+    },
+    {
+        "text": " pattern towards the top sets off this neuron. That way, going from the third layer to the last one,",
+        "start": 388.88,
+        "end": 395.0,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=388"
+    },
+    {
+        "text": " just requires learning which combination of subcomponents corresponds to which digits.",
+        "start": 395.38,
+        "end": 399.92,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=395"
+    },
+    {
+        "text": " Of course, that just kicks the problem down the road because how would you recognize these subcomponents",
+        "start": 400.7,
+        "end": 405.28,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=400"
+    },
+    {
+        "text": " or even learn what the right subcomponents should be? And I still haven't even talked about how one",
+        "start": 405.28,
+        "end": 409.62,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=405"
+    },
+    {
+        "text": " layer influences the next, but run with me on this one for a moment. Recognizing a loop can also",
+        "start": 409.62,
+        "end": 415.24,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=409"
+    },
+    {
+        "text": " break down into subproblems. One reasonable way to do this would be to first recognize the various",
+        "start": 415.24,
+        "end": 420.84,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=415"
+    },
+    {
+        "text": " little edges that make it up. Similarly, a long line, like the kind you might see in the digits 1",
+        "start": 420.84,
+        "end": 427.08,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=420"
+    },
+    {
+        "text": " or 4 or 7, well that's really just a long edge, or maybe you think of it as a certain pattern",
+        "start": 427.08,
+        "end": 432.54,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=427"
+    },
+    {
+        "text": " of several smaller edges. So maybe, our hope is that each neuron in the second layer of the",
+        "start": 432.54,
+        "end": 439.42,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=432"
+    },
+    {
+        "text": " network corresponds with the various relevant little edges. Maybe, when an image like this one",
+        "start": 439.42,
+        "end": 445.54,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=439"
+    },
+    {
+        "text": " comes in, it lights up all of the neurons associated with around 8 to 10 specific little edges,",
+        "start": 445.54,
+        "end": 451.68,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=445"
+    },
+    {
+        "text": " which in turn lights up the neurons associated with the upper loop and a long vertical line,",
+        "start": 452.24,
+        "end": 456.82,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=452"
+    },
+    {
+        "text": " and those light up the neuron associated with the 9. Whether or not this is what our final",
+        "start": 457.4,
+        "end": 461.96,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=457"
+    },
+    {
+        "text": " network actually does is another question, one that I'll come back to once we see how to train",
+        "start": 461.96,
+        "end": 466.64,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=461"
+    },
+    {
+        "text": " the network. But this is a hope that we might have, a sort of goal with the layered structure like",
+        "start": 466.64,
+        "end": 472.04,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=466"
+    },
+    {
+        "text": " this. Moreover, you can imagine how being able to detect edges and patterns like this would be",
+        "start": 472.04,
+        "end": 477.6,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=472"
+    },
+    {
+        "text": " really useful for other image recognition tasks. And even beyond image recognition, there are",
+        "start": 477.74,
+        "end": 482.92,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=477"
+    },
+    {
+        "text": " all sorts of intelligent things you might want to do that break down into layers of abstraction.",
+        "start": 482.92,
+        "end": 487.22,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=482"
+    },
+    {
+        "text": " Parsing speech, for example, involves taking raw audio and picking out distinct sounds,",
+        "start": 487.9,
+        "end": 492.72,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=487"
+    },
+    {
+        "text": " which combine to make certain syllables, which combine to form words, which combine to make up phrases",
+        "start": 493.12,
+        "end": 498.3,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=493"
+    },
+    {
+        "text": " and more abstract thoughts, etc. But getting back to how any of this actually works,",
+        "start": 498.3,
+        "end": 503.52,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=498"
+    },
+    {
+        "text": " picture yourself right now designing how exactly the activations in one layer might determine",
+        "start": 503.52,
+        "end": 509.04,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=503"
+    },
+    {
+        "text": " the activations in the next. The goal is to have some mechanism that could conceivably combine",
+        "start": 509.04,
+        "end": 514.96,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=509"
+    },
+    {
+        "text": " pixels into edges, or edges into patterns, or patterns into digits. And to zoom in on one",
+        "start": 514.96,
+        "end": 520.36,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=514"
+    },
+    {
+        "text": " very specific example, let's say the hope is for one particular neuron in the second layer,",
+        "start": 520.36,
+        "end": 526.02,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=520"
+    },
+    {
+        "text": " to pick up on whether or not the image has an edge in this region here. The question at hand is",
+        "start": 526.38,
+        "end": 532.5,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=526"
+    },
+    {
+        "text": " what parameters should the network have? What dials and knobs should you be able to tweak so that",
+        "start": 532.5,
+        "end": 538.98,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=532"
+    },
+    {
+        "text": " it's expressive enough to potentially capture this pattern, or any other pixel pattern, or the pattern",
+        "start": 538.98,
+        "end": 545.18,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=538"
+    },
+    {
+        "text": " that several edges can make a loop and other such things? Well, what we'll do is assign a weight",
+        "start": 545.18,
+        "end": 550.58,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=545"
+    },
+    {
+        "text": " to each one of the connections between our neuron and the neurons from the first layer.",
+        "start": 550.58,
+        "end": 555.54,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=550"
+    },
+    {
+        "text": " These weights are just numbers. Then take all of those activations from the first layer",
+        "start": 556.18,
+        "end": 562.06,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=556"
+    },
+    {
+        "text": " and compute their weighted sum according to these weights. I find it helpful to think of these weights",
+        "start": 562.06,
+        "end": 569.08,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=562"
+    },
+    {
+        "text": " as being organized into a little grid of their own, and I'm going to use green pixels to indicate",
+        "start": 569.08,
+        "end": 574.24,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=569"
+    },
+    {
+        "text": " positive weights and red pixels to indicate negative weights, where the brightness of that pixel",
+        "start": 574.24,
+        "end": 578.94,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=574"
+    },
+    {
+        "text": " is some loose depiction of the weights value. Now if we made the weights associated with almost all",
+        "start": 578.94,
+        "end": 585.04,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=578"
+    },
+    {
+        "text": " of the pixels zero, except for some positive weights in this region that we care about,",
+        "start": 585.04,
+        "end": 589.42,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=585"
+    },
+    {
+        "text": " then taking the weighted sum of all the pixel values really just amounts to adding up the values of",
+        "start": 589.74,
+        "end": 595.16,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=589"
+    },
+    {
+        "text": " the pixel just in the region that we care about. And if you really wanted to pick up on whether there's",
+        "start": 595.16,
+        "end": 601.12,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=595"
+    },
+    {
+        "text": " an edge here, what you might do is have some negative weights associated with the surrounding pixels.",
+        "start": 601.12,
+        "end": 606.52,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=601"
+    },
+    {
+        "text": " Then the sum is largest when those middle pixels are bright, but the surrounding pixels are darker.",
+        "start": 607.26,
+        "end": 612.64,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=607"
+    },
+    {
+        "text": " When you compute a weighted sum like this, you might come out with any number, but for this network,",
+        "start": 614.36,
+        "end": 619.58,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=614"
+    },
+    {
+        "text": " what we want is for activations to be some value between zero and one. So a common thing to do is",
+        "start": 619.84,
+        "end": 625.34,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=619"
+    },
+    {
+        "text": " to pump this weighted sum into some function that squishes the real number line into the range between",
+        "start": 625.34,
+        "end": 631.0,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=625"
+    },
+    {
+        "text": " zero and one. And a common function that does this is called the sigmoid function, also known as",
+        "start": 631.0,
+        "end": 642.62,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=631"
+    },
+    {
+        "text": " the x-tune, and it just steadily increases around the input zero.",
+        "start": 642.62,
+        "end": 646.52,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=642"
+    },
+    {
+        "text": " So the activation of the neuron here is basically a measure of how positive the relevant weighted sum is.",
+        "start": 649.16,
+        "end": 656.2,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=649"
+    },
+    {
+        "text": " But maybe it's not that you want the neuron to light up when the weighted sum is bigger than zero.",
+        "start": 657.54,
+        "end": 661.86,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=657"
+    },
+    {
+        "text": " Maybe you only want it to be active when the sum is bigger than say 10. That is, you want some bias",
+        "start": 662.44,
+        "end": 668.72,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=662"
+    },
+    {
+        "text": " for it to be inactive. What we'll do then is just add in some other number, like negative 10,",
+        "start": 668.72,
+        "end": 674.98,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=668"
+    },
+    {
+        "text": " to this weighted sum, before plugging it through the sigmoid squishing function.",
+        "start": 675.32,
+        "end": 679.6,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=675"
+    },
+    {
+        "text": " That additional number is called the bias. So the weights tell you what pixel pattern this neuron",
+        "start": 680.42,
+        "end": 686.56,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=680"
+    },
+    {
+        "text": " in the second layer is picking up on, and the bias tells you how high the weighted sum needs to be",
+        "start": 686.56,
+        "end": 692.16,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=686"
+    },
+    {
+        "text": " before the neuron starts getting meaningfully active. And that is just one neuron. Every other neuron",
+        "start": 692.16,
+        "end": 699.44,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=692"
+    },
+    {
+        "text": " in this layer is going to be connected to all 784 pixel neurons from the first layer, and each one",
+        "start": 699.44,
+        "end": 706.26,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=699"
+    },
+    {
+        "text": " of those 784 connections has its own weight associated with it. Also, each one has some bias,",
+        "start": 706.26,
+        "end": 713.12,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=706"
+    },
+    {
+        "text": " some other number that you add onto the weighted sum before squishing it with the sigmoid.",
+        "start": 713.52,
+        "end": 717.66,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=713"
+    },
+    {
+        "text": " And that's a lot to think about. With this hidden layer of 16 neurons, that's a total of 784",
+        "start": 717.66,
+        "end": 724.32,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=717"
+    },
+    {
+        "text": " times 16 weights, along with 16 biases. And all of that is just the connections from the first layer",
+        "start": 724.32,
+        "end": 731.34,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=724"
+    },
+    {
+        "text": " to the second. The connections between the other layers also have a bunch of weights and biases",
+        "start": 731.34,
+        "end": 736.16,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=731"
+    },
+    {
+        "text": " associated with them. All said and done, this network has almost exactly 13,000 total weights and",
+        "start": 736.16,
+        "end": 743.34,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=736"
+    },
+    {
+        "text": " 13,000 knobs and dials that can be tweaked and turned to make this network behave in different ways.",
+        "start": 744.04,
+        "end": 749.88,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=744"
+    },
+    {
+        "text": " So when we talk about learning, what that's referring to is getting the computer to find a valid",
+        "start": 750.58,
+        "end": 756.58,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=750"
+    },
+    {
+        "text": " setting for all of these many, many numbers so that it'll actually solve the problem at hand.",
+        "start": 756.58,
+        "end": 761.34,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=756"
+    },
+    {
+        "text": " One thought experiment that is at once fun and kind of horrifying is to imagine sitting down and",
+        "start": 762.46,
+        "end": 767.8,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=762"
+    },
+    {
+        "text": " setting all of these weights and biases by hand, purposefully tweaking the numbers so that the",
+        "start": 767.8,
+        "end": 772.38,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=767"
+    },
+    {
+        "text": " second layer picks up on edges, the third layer picks up on patterns, etc. I personally find this",
+        "start": 772.38,
+        "end": 778.28,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=772"
+    },
+    {
+        "text": " satisfying rather than just treating the network as a total black box, because when the network",
+        "start": 778.28,
+        "end": 783.12,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=778"
+    },
+    {
+        "text": " doesn't perform the way you anticipate, if you've built up a little bit of a relationship with",
+        "start": 783.12,
+        "end": 787.84,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=783"
+    },
+    {
+        "text": " what those weights and biases actually mean, you have a starting place for experimenting with how",
+        "start": 787.84,
+        "end": 792.52,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=787"
+    },
+    {
+        "text": " to change the structure to improve. Or when the network does work, but not for the reasons you might",
+        "start": 792.52,
+        "end": 797.66,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=792"
+    },
+    {
+        "text": " expect, digging into what the weights and biases are doing is a good way to challenge your assumptions",
+        "start": 797.66,
+        "end": 802.76,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=797"
+    },
+    {
+        "text": " and really expose the full space of possible solutions. By the way, the actual function here is a",
+        "start": 802.76,
+        "end": 808.92,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=802"
+    },
+    {
+        "text": " little cumbersome to write down, don't you think? So let me show you a more notationally compact way",
+        "start": 808.92,
+        "end": 815.62,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=808"
+    },
+    {
+        "text": " that these connections are represented. This is how you'd see it if you choose to read out more",
+        "start": 815.62,
+        "end": 819.54,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=815"
+    },
+    {
+        "text": " about neural networks. Organize all of the activations from one layer into a column as a vector.",
+        "start": 819.54,
+        "end": 825.98,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=819"
+    },
+    {
+        "text": " Then organize all of the weights as a matrix, where each row of that matrix corresponds to the",
+        "start": 827.66,
+        "end": 833.66,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=827"
+    },
+    {
+        "text": " connections between one layer and a particular neuron in the next layer. What that means is that",
+        "start": 833.66,
+        "end": 839.42,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=833"
+    },
+    {
+        "text": " taking the weighted sum of the activations in the first layer, according to these weights,",
+        "start": 839.42,
+        "end": 843.82,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=839"
+    },
+    {
+        "text": " corresponds to one of the terms in the matrix vector product of everything we have on the left here.",
+        "start": 844.06,
+        "end": 849.48,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=844"
+    },
+    {
+        "text": " By the way, so much of machine learning just comes down to having a good grasp of linear algebra.",
+        "start": 853.66,
+        "end": 858.26,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=853"
+    },
+    {
+        "text": " So for any of you who want a nice visual understanding for matrices and what matrix vector",
+        "start": 858.78,
+        "end": 863.06,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=858"
+    },
+    {
+        "text": " multiplication means, take a look at the series I did on linear algebra, especially chapter 3.",
+        "start": 863.06,
+        "end": 868.4,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=863"
+    },
+    {
+        "text": " Back to our expression, instead of talking about adding the bias to each one of these values",
+        "start": 869.18,
+        "end": 873.54,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=869"
+    },
+    {
+        "text": " independently, we represent it by organizing all those biases into a vector and adding the entire",
+        "start": 873.54,
+        "end": 879.7,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=873"
+    },
+    {
+        "text": " vector to the previous matrix vector product. Then as a final step, I'll wrap a sigmoid around the",
+        "start": 879.7,
+        "end": 886.56,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=879"
+    },
+    {
+        "text": " outside here. And what that's supposed to represent is that you're going to apply the sigmoid",
+        "start": 886.56,
+        "end": 891.0,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=886"
+    },
+    {
+        "text": " function to each specific component of the resulting vector inside. So once you write down this weight",
+        "start": 891.0,
+        "end": 897.74,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=891"
+    },
+    {
+        "text": " matrix and these vectors as their own symbols, you can communicate the full transition of activations",
+        "start": 897.74,
+        "end": 903.44,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=897"
+    },
+    {
+        "text": " from one layer to the next in an extremely tight and neat little expression.",
+        "start": 903.44,
+        "end": 907.38,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=903"
+    },
+    {
+        "text": " And this makes the relevant code both a lot simpler and a lot faster, since many libraries",
+        "start": 908.12,
+        "end": 913.4,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=908"
+    },
+    {
+        "text": " optimize the hack out of matrix multiplication. Remember how earlier I said these neurons are simply",
+        "start": 913.4,
+        "end": 920.14,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=913"
+    },
+    {
+        "text": " things that hold numbers? Well, of course, the specific numbers that they hold depends on the image",
+        "start": 920.14,
+        "end": 925.76,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=920"
+    },
+    {
+        "text": " you feed in. So it's actually more accurate to think of each neuron as a function,",
+        "start": 925.76,
+        "end": 931.6,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=925"
+    },
+    {
+        "text": " one that takes in the outputs of all the neurons in the previous layer and spits out a number",
+        "start": 931.6,
+        "end": 937.26,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=931"
+    },
+    {
+        "text": " between 0 and 1. Really, the entire network is just a function, one that takes in 784 numbers",
+        "start": 937.26,
+        "end": 943.64,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=937"
+    },
+    {
+        "text": " as an input and spits out 10 numbers as an output. It's an absurdly complicated function, one that",
+        "start": 943.64,
+        "end": 950.12,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=943"
+    },
+    {
+        "text": " involves 13,000 parameters in the forms of these weights and biases that pick up on certain patterns",
+        "start": 950.12,
+        "end": 955.18,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=950"
+    },
+    {
+        "text": " and which involves iterating many matrix vector products and the sigmoid squish-off-cation function.",
+        "start": 955.18,
+        "end": 960.32,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=955"
+    },
+    {
+        "text": " But it's just a function nonetheless. And in a way, it's kind of reassuring that it looks",
+        "start": 960.88,
+        "end": 966.04,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=960"
+    },
+    {
+        "text": " complicated. I mean, if there were any simpler, what hope would we have that it could take on the",
+        "start": 966.04,
+        "end": 970.78,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=966"
+    },
+    {
+        "text": " challenge of recognizing digits? And how does it take on that challenge? How does this network",
+        "start": 970.78,
+        "end": 976.1,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=970"
+    },
+    {
+        "text": " learn the appropriate weights and biases just by looking at data? Oh, that's what I'll show in the",
+        "start": 976.1,
+        "end": 981.26,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=976"
+    },
+    {
+        "text": " next video. And I'll also dig a little more into what this particular network we're seeing is",
+        "start": 981.26,
+        "end": 985.56,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=981"
+    },
+    {
+        "text": " really doing. Now is the point I suppose I should say subscribe to stay notified about when that",
+        "start": 985.56,
+        "end": 991.02,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=985"
+    },
+    {
+        "text": " video or any new videos come out, but realistically most of you don't actually receive notifications from",
+        "start": 991.02,
+        "end": 996.54,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=991"
+    },
+    {
+        "text": " YouTube, do you? Maybe more honestly, I should say subscribe so that the neural networks that",
+        "start": 996.54,
+        "end": 1001.48,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=996"
+    },
+    {
+        "text": " underlie YouTube's recommendation algorithm are primed to believe that you want to see content",
+        "start": 1001.48,
+        "end": 1006.06,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1001"
+    },
+    {
+        "text": " from this channel get recommended to you. Anyway, stay posted for more. Thank you very much to",
+        "start": 1006.06,
+        "end": 1011.78,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1006"
+    },
+    {
+        "text": " everyone supporting these videos on Patreon. I've been a little slow to progress in the",
+        "start": 1011.78,
+        "end": 1015.56,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1011"
+    },
+    {
+        "text": " probability series this summer, but I'm jumping back into it after this project. So patrons,",
+        "start": 1015.56,
+        "end": 1019.96,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1015"
+    },
+    {
+        "text": " you can look out for updates there. To close things off here, I have with me Lisa Lee who did her",
+        "start": 1020.24,
+        "end": 1026.52,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1020"
+    },
+    {
+        "text": " PhD work on the theoretical side of deep learning and who currently works at a venture capital firm",
+        "start": 1026.52,
+        "end": 1030.92,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1026"
+    },
+    {
+        "text": " called Amplify Partners who kindly provided some of the funding for this video. So, Lisa,",
+        "start": 1030.92,
+        "end": 1035.94,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1030"
+    },
+    {
+        "text": " one thing I think we should quickly bring up is this sigmoid function. As I understand it, early",
+        "start": 1036.22,
+        "end": 1040.62,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1036"
+    },
+    {
+        "text": " networks use this to squish the relevant weighted sum into that interval between 0 and 1,",
+        "start": 1040.62,
+        "end": 1045.22,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1040"
+    },
+    {
+        "text": " you know, kind of motivated by this biological analogy of neurons either being inactive or active.",
+        "start": 1045.34,
+        "end": 1049.84,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1045"
+    },
+    {
+        "text": " Exactly. But relatively few modern networks actually use sigmoid anymore. Yeah. It's kind of old",
+        "start": 1049.92,
+        "end": 1054.88,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1049"
+    },
+    {
+        "text": " school, right? Yeah, or rather, relu seems to be much easier to train. And relu stands for",
+        "start": 1054.88,
+        "end": 1060.96,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1054"
+    },
+    {
+        "text": " rectified linear unit? Yes, it's this kind of function where you're just taking a max of 0 and a",
+        "start": 1060.96,
+        "end": 1067.34,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1060"
+    },
+    {
+        "text": " where a is given by what you were explaining in the video. And what this was sort of motivated from,",
+        "start": 1067.34,
+        "end": 1073.28,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1067"
+    },
+    {
+        "text": " I think, was a partially biobiological analogy with how neurons would either be activated or not.",
+        "start": 1073.32,
+        "end": 1081.32,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1073"
+    },
+    {
+        "text": " And so if it passes a certain threshold, it would be the identity function. But if it did not,",
+        "start": 1081.5,
+        "end": 1087.14,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1081"
+    },
+    {
+        "text": " then it would just not be activated. So it'd be 0. So it's kind of a simplification. Using sigmoids",
+        "start": 1087.36,
+        "end": 1092.14,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1087"
+    },
+    {
+        "text": " didn't help training or it was very difficult to train at some point and people just tried",
+        "start": 1092.14,
+        "end": 1097.18,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1092"
+    },
+    {
+        "text": " relu and it happened to work very well for these incredibly deep neural networks. All right, thank",
+        "start": 1097.18,
+        "end": 1105.52,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1097"
+    },
+    {
+        "text": " you, Misha.",
+        "start": 1105.52,
+        "end": 1105.86,
+        "url": "https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1105"
+    }
+]

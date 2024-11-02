@@ -1,0 +1,1850 @@
+[
+    {
+        "text": " The initials GPT stand for Generative Pre-Trained Transformer.",
+        "start": 0.0,
+        "end": 4.7,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=0"
+    },
+    {
+        "text": " So that first word is straightforward enough, these are bots that generate new text.",
+        "start": 4.96,
+        "end": 9.08,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=4"
+    },
+    {
+        "text": " Pre-trained refers to how the model went through a process of learning from a massive amount of data,",
+        "start": 9.58,
+        "end": 14.52,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=9"
+    },
+    {
+        "text": " and the prefix insinuates that there's more room to fine tune it on specific tasks with additional training.",
+        "start": 15.02,
+        "end": 20.0,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=15"
+    },
+    {
+        "text": " But the last word, that's the real key piece.",
+        "start": 20.66,
+        "end": 22.86,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=20"
+    },
+    {
+        "text": " A transformer is a specific kind of neural network, a machine learning model,",
+        "start": 23.42,
+        "end": 27.4,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=23"
+    },
+    {
+        "text": " and it's the core invention underlying the current boom in AI.",
+        "start": 27.4,
+        "end": 31.04,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=27"
+    },
+    {
+        "text": " What I want to do with this video and the following chapters is go through a visually driven",
+        "start": 31.5,
+        "end": 35.96,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=31"
+    },
+    {
+        "text": " explanation for what actually happens inside a transformer.",
+        "start": 35.96,
+        "end": 39.12,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=35"
+    },
+    {
+        "text": " We're going to follow the data that flows through it and go step by step.",
+        "start": 39.66,
+        "end": 42.68,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=39"
+    },
+    {
+        "text": " There are many different kinds of models that you can build using transformers.",
+        "start": 43.26,
+        "end": 47.44,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=43"
+    },
+    {
+        "text": " Some models take in audio and produce a transcript.",
+        "start": 47.74,
+        "end": 50.7,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=47"
+    },
+    {
+        "text": " This sentence comes from a model going the other way around,",
+        "start": 51.32,
+        "end": 53.56,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=51"
+    },
+    {
+        "text": " producing synthetic speech just from text.",
+        "start": 53.56,
+        "end": 56.2,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=53"
+    },
+    {
+        "text": " All those tools that took the world by storm in 2022,",
+        "start": 56.54,
+        "end": 59.32,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=56"
+    },
+    {
+        "text": " like Dolly and Mid-Journey that take in a text description and produce an image are based on",
+        "start": 59.32,
+        "end": 64.82,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=59"
+    },
+    {
+        "text": " transformers. Even if I can't quite get it to understand what a pie creature is supposed to be,",
+        "start": 64.82,
+        "end": 69.4,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=64"
+    },
+    {
+        "text": " I'm still blown away that this kind of thing is even remotely possible.",
+        "start": 69.72,
+        "end": 73.08,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=69"
+    },
+    {
+        "text": " And the original transformer introduced in 2017 by Google was invented for the specific use case",
+        "start": 73.96,
+        "end": 79.38,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=73"
+    },
+    {
+        "text": " of translating text from one language into another. But the variant that you and I will focus on,",
+        "start": 79.38,
+        "end": 84.86,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=79"
+    },
+    {
+        "text": " which is the type that underlies tools like ChatGPT, will be a model that's trained to take in a",
+        "start": 85.06,
+        "end": 90.3,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=85"
+    },
+    {
+        "text": " piece of text, maybe even with some surrounding images or sound accompanying it, and produce a",
+        "start": 90.3,
+        "end": 95.76,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=90"
+    },
+    {
+        "text": " prediction for what comes next in the passage. That prediction takes the form of a probability",
+        "start": 95.76,
+        "end": 100.44,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=95"
+    },
+    {
+        "text": " distribution over many different chunks of text that might follow.",
+        "start": 100.44,
+        "end": 103.8,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=100"
+    },
+    {
+        "text": " At first glance, you might think that predicting the next word feels like a very different",
+        "start": 104.58,
+        "end": 108.34,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=104"
+    },
+    {
+        "text": " goal from generating new text. But once you have a prediction model like this,",
+        "start": 108.34,
+        "end": 112.62,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=108"
+    },
+    {
+        "text": " a simple thing you could try to make it generate a longer piece of text is to give it an initial",
+        "start": 112.9,
+        "end": 117.34,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=112"
+    },
+    {
+        "text": " snippet to work with, have it take a random sample from the distribution it just generated,",
+        "start": 117.34,
+        "end": 121.96,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=117"
+    },
+    {
+        "text": " append that sample to the text, and then run the whole process again to make a new prediction,",
+        "start": 122.34,
+        "end": 126.6,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=122"
+    },
+    {
+        "text": " based on all the new text, including what it just added. I don't know about you, but it really",
+        "start": 126.98,
+        "end": 131.3,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=126"
+    },
+    {
+        "text": " doesn't feel like this should actually work. In this animation, for example, I'm running GPT2",
+        "start": 131.3,
+        "end": 136.02,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=131"
+    },
+    {
+        "text": " on my laptop and having it repeatedly predict and sample the next chunk of text to generate a",
+        "start": 136.02,
+        "end": 140.88,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=136"
+    },
+    {
+        "text": " story based on the seed text. And the story just doesn't actually really make that much sense.",
+        "start": 140.88,
+        "end": 146.14,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=140"
+    },
+    {
+        "text": " But if I swap it out for API calls to GPT3 instead, which is the same basic model just much bigger,",
+        "start": 146.6,
+        "end": 152.92,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=146"
+    },
+    {
+        "text": " suddenly almost magically we do get a sensible story, one that even seems to infer that a pie",
+        "start": 153.5,
+        "end": 158.42,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=153"
+    },
+    {
+        "text": " creature would live in a land of math and computation. This process here of repeated prediction and",
+        "start": 158.42,
+        "end": 163.4,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=158"
+    },
+    {
+        "text": " sampling is essentially what's happening when you interact with chat GPT or any of these other",
+        "start": 163.4,
+        "end": 168.6,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=163"
+    },
+    {
+        "text": " large language models and you see them producing one word at a time. In fact, one feature that I",
+        "start": 168.6,
+        "end": 173.82,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=168"
+    },
+    {
+        "text": " would very much enjoy is the ability to see the underlying distribution for each new word that it",
+        "start": 173.82,
+        "end": 178.84,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=173"
+    },
+    {
+        "text": " chooses. Let's kick things off with a very high level preview of how data flows through a",
+        "start": 178.84,
+        "end": 187.68,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=178"
+    },
+    {
+        "text": " transformer. We will spend much more time motivating and interpreting and expanding on the details",
+        "start": 187.68,
+        "end": 192.54,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=187"
+    },
+    {
+        "text": " of each step, but in broad strokes, when one of these chatbots generates a given word,",
+        "start": 192.54,
+        "end": 196.84,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=192"
+    },
+    {
+        "text": " here's what's going on under the hood. First, the input is broken up into a bunch of little pieces.",
+        "start": 197.3,
+        "end": 201.96,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=197"
+    },
+    {
+        "text": " These pieces are called tokens, and in the case of text these tend to be words or little pieces of",
+        "start": 202.56,
+        "end": 207.68,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=202"
+    },
+    {
+        "text": " words or other common character combinations. If images or sound are involved, then tokens could be",
+        "start": 207.68,
+        "end": 213.88,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=207"
+    },
+    {
+        "text": " little patches of that image, or little chunks of that sound. Each one of these tokens is then",
+        "start": 213.88,
+        "end": 218.94,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=213"
+    },
+    {
+        "text": " associated with a vector, meaning some list of numbers, which is meant to somehow encode the",
+        "start": 218.94,
+        "end": 224.38,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=218"
+    },
+    {
+        "text": " meaning of that piece. If you think of these vectors as giving coordinates in some very high",
+        "start": 224.38,
+        "end": 228.74,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=224"
+    },
+    {
+        "text": " dimensional space, words with similar meanings tend to land on vectors that are close to each other",
+        "start": 228.74,
+        "end": 233.9,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=228"
+    },
+    {
+        "text": " in that space. This sequence of vectors then passes through an operation that's known as an",
+        "start": 233.9,
+        "end": 238.72,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=233"
+    },
+    {
+        "text": " attention block, and this allows the vectors to talk to each other and pass information back and",
+        "start": 238.72,
+        "end": 243.1,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=238"
+    },
+    {
+        "text": " forth to update their values. For example, the meaning of the word model in the phrase a machine",
+        "start": 243.1,
+        "end": 248.18,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=243"
+    },
+    {
+        "text": " learning model is different from its meaning in the phrase a fashion model. The attention block is",
+        "start": 248.18,
+        "end": 253.18,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=248"
+    },
+    {
+        "text": " what's responsible for figuring out which words in the context are relevant to updating the meanings",
+        "start": 253.18,
+        "end": 257.9,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=253"
+    },
+    {
+        "text": " of which other words, and how exactly those meanings should be updated. And again, whenever I use",
+        "start": 257.9,
+        "end": 263.5,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=257"
+    },
+    {
+        "text": " the word meaning, this is somehow entirely encoded in the entries of those vectors. After that,",
+        "start": 263.5,
+        "end": 269.64,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=263"
+    },
+    {
+        "text": " these vectors pass through a different kind of operation, and depending on the source that you're",
+        "start": 269.82,
+        "end": 273.8,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=269"
+    },
+    {
+        "text": " reading, this will be referred to as a multi-layer perceptron, or maybe a feed-forward layer.",
+        "start": 273.8,
+        "end": 278.18,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=273"
+    },
+    {
+        "text": " And here, the vectors don't talk to each other. They all go through the same operation in parallel.",
+        "start": 278.64,
+        "end": 282.58,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=278"
+    },
+    {
+        "text": " And while this block is a little bit harder to interpret, later on we'll talk about how the",
+        "start": 283.16,
+        "end": 286.98,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=283"
+    },
+    {
+        "text": " step is a little bit like asking a long list of questions about each vector, and then updating",
+        "start": 286.98,
+        "end": 292.04,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=286"
+    },
+    {
+        "text": " them based on the answers to those questions. All of the operations in both of these blocks",
+        "start": 292.04,
+        "end": 297.02,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=292"
+    },
+    {
+        "text": " look like a giant pile of matrix multiplications, and our primary job is going to be to understand",
+        "start": 297.02,
+        "end": 303.1,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=297"
+    },
+    {
+        "text": " how to read the underlying matrices. I'm glossing over some details about some normalization steps",
+        "start": 303.1,
+        "end": 309.7,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=303"
+    },
+    {
+        "text": " that happen in between, but this is after all a high-level preview. After that, the process essentially",
+        "start": 309.7,
+        "end": 315.04,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=309"
+    },
+    {
+        "text": " repeats. You go back and forth between attention blocks and multi-layer perceptron blocks.",
+        "start": 315.04,
+        "end": 319.54,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=315"
+    },
+    {
+        "text": " Until at the very end, the hope is that all of the essential meaning of the passage",
+        "start": 320.28000000000003,
+        "end": 324.58,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=320"
+    },
+    {
+        "text": " has somehow been baked into the very last vector in the sequence. We then perform a certain",
+        "start": 324.58,
+        "end": 329.98,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=324"
+    },
+    {
+        "text": " operation on that last vector that produces a probability distribution over all possible tokens,",
+        "start": 329.98,
+        "end": 335.32,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=329"
+    },
+    {
+        "text": " all possible little chunks of text that might come next. And like I said, once you have a tool that",
+        "start": 335.68,
+        "end": 341.1,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=335"
+    },
+    {
+        "text": " predicts what comes next given a snippet of text, you can feed it a little bit of seed text",
+        "start": 341.1,
+        "end": 345.68,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=341"
+    },
+    {
+        "text": " and have it repeatedly play this game of predicting what comes next, sampling from the distribution,",
+        "start": 345.68,
+        "end": 350.42,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=345"
+    },
+    {
+        "text": " appending it, and then repeating over and over. Some of you in the know may remember how long",
+        "start": 350.92,
+        "end": 355.82,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=350"
+    },
+    {
+        "text": " before chat GPT came into the scene, this is what early demos of GPT3 looked like. You would have",
+        "start": 355.82,
+        "end": 361.42,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=355"
+    },
+    {
+        "text": " it auto-complete stories and essays based on an initial snippet. To make a tool like this into a chat",
+        "start": 361.42,
+        "end": 367.52,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=361"
+    },
+    {
+        "text": " bot, the easiest starting point is to have a little bit of text that establishes the setting of a",
+        "start": 367.52,
+        "end": 372.52,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=367"
+    },
+    {
+        "text": " user interacting with a helpful AI assistant, what you would call the system prompt, and then you",
+        "start": 372.52,
+        "end": 377.74,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=372"
+    },
+    {
+        "text": " would use the user's initial question or prompt as the first bit of dialogue, and then you have",
+        "start": 377.74,
+        "end": 382.48,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=377"
+    },
+    {
+        "text": " it start predicting what such a helpful AI assistant would say in response. There is more to say",
+        "start": 382.48,
+        "end": 388.58,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=382"
+    },
+    {
+        "text": " about an added step of training that's required to make this work well, but at a high level, this is",
+        "start": 388.58,
+        "end": 393.16,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=388"
+    },
+    {
+        "text": " the general idea. In this chapter, you and I are going to expand on the details of what happens at",
+        "start": 393.16,
+        "end": 399.5,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=393"
+    },
+    {
+        "text": " the very beginning of the network, at the very end of the network, and I also want to spend a lot",
+        "start": 399.5,
+        "end": 404.1,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=399"
+    },
+    {
+        "text": " of time reviewing some important bits of background knowledge, things that would have been second",
+        "start": 404.1,
+        "end": 408.4,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=404"
+    },
+    {
+        "text": " nature to any machine learning engineer by the time transformers came around. If you're comfortable",
+        "start": 408.4,
+        "end": 413.86,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=408"
+    },
+    {
+        "text": " with that background knowledge and a little impatient, you could probably feel free to skip to",
+        "start": 413.86,
+        "end": 417.3,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=413"
+    },
+    {
+        "text": " the next chapter, which is going to focus on the attention blocks, generally considered the heart",
+        "start": 417.3,
+        "end": 421.88,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=417"
+    },
+    {
+        "text": " of the transformer. After that, I want to talk more about these multi-layer perceptron blocks,",
+        "start": 421.88,
+        "end": 426.54,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=421"
+    },
+    {
+        "text": " how training works, and a number of other details that will have been skipped up to that point.",
+        "start": 427.1,
+        "end": 431.52,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=427"
+    },
+    {
+        "text": " For broader context, these videos are additions to a mini-series about deep learning,",
+        "start": 432.16,
+        "end": 436.36,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=432"
+    },
+    {
+        "text": " and it's okay if you haven't watched the previous ones, I think you can do it out of order,",
+        "start": 436.36,
+        "end": 440.26,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=436"
+    },
+    {
+        "text": " but before diving into transformer specifically, I do think it's worth making sure that we're on",
+        "start": 440.7,
+        "end": 445.18,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=440"
+    },
+    {
+        "text": " the same page about the basic premise and structure of deep learning. At the risk of stating the",
+        "start": 445.18,
+        "end": 450.22,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=445"
+    },
+    {
+        "text": " obvious, this is one approach to machine learning, which describes any model where you're using",
+        "start": 450.22,
+        "end": 455.32,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=450"
+    },
+    {
+        "text": " data to somehow determine how a model behaves. What I mean by that is, let's say you want a function",
+        "start": 455.32,
+        "end": 461.28,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=455"
+    },
+    {
+        "text": " that takes in an image and it produces a label describing it, or our example of predicting the next",
+        "start": 461.28,
+        "end": 466.22,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=461"
+    },
+    {
+        "text": " word given a passage of text, or any other task that seems to require some element of intuition",
+        "start": 466.22,
+        "end": 471.64,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=466"
+    },
+    {
+        "text": " and pattern recognition. We almost take this for granted these days, but the idea with machine",
+        "start": 471.64,
+        "end": 475.94,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=471"
+    },
+    {
+        "text": " learning is that rather than trying to explicitly define a procedure for how to do that task in code,",
+        "start": 475.94,
+        "end": 481.24,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=475"
+    },
+    {
+        "text": " which is what people would have done in the earliest days of AI, instead, you set up a very flexible",
+        "start": 481.44,
+        "end": 486.26,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=481"
+    },
+    {
+        "text": " structure with tunable parameters, like a bunch of knobs and dials, and then somehow, you use many",
+        "start": 486.26,
+        "end": 492.28,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=486"
+    },
+    {
+        "text": " examples of what the output should look like for a given input to tweak and tune the values of",
+        "start": 492.28,
+        "end": 497.72,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=492"
+    },
+    {
+        "text": " those parameters to mimic this behavior. For example, maybe the simplest form of machine learning is",
+        "start": 497.72,
+        "end": 503.36,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=497"
+    },
+    {
+        "text": " linear regression, where your inputs and your outputs are each single numbers, something like the",
+        "start": 503.36,
+        "end": 508.58,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=503"
+    },
+    {
+        "text": " square footage of a house and its price, and what you want is to find a line of best fit through",
+        "start": 508.58,
+        "end": 514.16,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=508"
+    },
+    {
+        "text": " this data, you know, to predict future house prices. That line is described by two continuous",
+        "start": 514.16,
+        "end": 519.62,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=514"
+    },
+    {
+        "text": " parameters, say the slope and the y intercept, and the goal of linear regression, is to",
+        "start": 519.62,
+        "end": 524.92,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=519"
+    },
+    {
+        "text": " determine those parameters to closely match the data. Needless to say, deep learning models",
+        "start": 524.92,
+        "end": 530.74,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=524"
+    },
+    {
+        "text": " get much more complicated, GPT-3, for example, has not two, but 175 billion parameters, but here's",
+        "start": 530.74,
+        "end": 538.7,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=530"
+    },
+    {
+        "text": " the thing, it's not a given that you can create some giant model with a huge number of parameters",
+        "start": 538.7,
+        "end": 543.58,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=538"
+    },
+    {
+        "text": " without it either grossly overfitting the training data, or being completely intractable to train.",
+        "start": 543.58,
+        "end": 549.54,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=543"
+    },
+    {
+        "text": " Deep learning describes a class of models that in the last couple decades have proven to scale",
+        "start": 550.24,
+        "end": 555.12,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=550"
+    },
+    {
+        "text": " remarkably well. What unifies them is that they all use the same training algorithm, it's called",
+        "start": 555.12,
+        "end": 560.04,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=555"
+    },
+    {
+        "text": " back propagation, we talked about it in previous chapters, and the context that I want you to have as",
+        "start": 560.04,
+        "end": 564.86,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=560"
+    },
+    {
+        "text": " we go in is that in order for this training algorithm to work well at scale, these models have to",
+        "start": 564.86,
+        "end": 569.58,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=564"
+    },
+    {
+        "text": " follow a certain specific format, and if you know this format going in, it helps to explain many",
+        "start": 569.58,
+        "end": 574.98,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=569"
+    },
+    {
+        "text": " of the choices for how a transformer processes language, which otherwise run the risk of feeling",
+        "start": 574.98,
+        "end": 579.5,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=574"
+    },
+    {
+        "text": " kind of arbitrary. First, whatever kind of model you're making, the input has to be formatted as",
+        "start": 579.5,
+        "end": 585.24,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=579"
+    },
+    {
+        "text": " an array of real numbers. This could simply mean a list of numbers, it could be a two-dimensional",
+        "start": 585.24,
+        "end": 590.42,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=585"
+    },
+    {
+        "text": " array, or very often you deal with higher dimensional arrays, where the general term used is tensor.",
+        "start": 590.42,
+        "end": 595.84,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=590"
+    },
+    {
+        "text": " You often think of that input data as being progressively transformed into many distinct layers,",
+        "start": 596.4,
+        "end": 601.82,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=596"
+    },
+    {
+        "text": " where again, each layer is always structured as some kind of array of real numbers,",
+        "start": 602.28,
+        "end": 605.8,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=602"
+    },
+    {
+        "text": " until you get to a final layer which you consider the output. For example, the final layer in our",
+        "start": 606.22,
+        "end": 610.96,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=606"
+    },
+    {
+        "text": " text processing model is a list of numbers representing the probability distribution for all possible",
+        "start": 610.96,
+        "end": 616.2,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=610"
+    },
+    {
+        "text": " next tokens. In deep learning, these model parameters are almost always referred to as weights,",
+        "start": 616.2,
+        "end": 621.74,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=616"
+    },
+    {
+        "text": " and this is because a key feature of these models is that the only way these parameters interact",
+        "start": 621.74,
+        "end": 626.64,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=621"
+    },
+    {
+        "text": " with the data being processed is through weighted sums. You also sprinkle some nonlinear functions",
+        "start": 626.64,
+        "end": 631.94,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=626"
+    },
+    {
+        "text": " throughout, but they won't depend on parameters. Typically, though, instead of seeing the weighted",
+        "start": 631.94,
+        "end": 637.36,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=631"
+    },
+    {
+        "text": " sums all naked and written out explicitly like this, you'll instead find them packaged together",
+        "start": 637.36,
+        "end": 642.5,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=637"
+    },
+    {
+        "text": " as various components in a matrix vector product. It amounts to saying the same thing, if you think",
+        "start": 642.5,
+        "end": 648.78,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=642"
+    },
+    {
+        "text": " back to how matrix vector multiplication works, each component in the output looks like a weighted sum.",
+        "start": 648.78,
+        "end": 654.14,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=648"
+    },
+    {
+        "text": " It's just often conceptually cleaner for you and me to think about matrices that are filled with",
+        "start": 654.92,
+        "end": 659.82,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=654"
+    },
+    {
+        "text": " tunable parameters that transform vectors that are drawn from the data being processed.",
+        "start": 659.82,
+        "end": 665.22,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=659"
+    },
+    {
+        "text": " For example, those 175 billion weights in GPT-3 are organized into just under 28,000 distinct",
+        "start": 666.34,
+        "end": 673.6,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=666"
+    },
+    {
+        "text": " matrices. Those matrices in turn fall into eight different categories, and what you and I are",
+        "start": 673.6,
+        "end": 678.32,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=673"
+    },
+    {
+        "text": " going to do is step through each one of those categories to understand what that type does.",
+        "start": 678.32,
+        "end": 682.56,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=678"
+    },
+    {
+        "text": " As we go through, I think it's kind of fun to reference the specific numbers from GPT-3",
+        "start": 683.14,
+        "end": 687.22,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=683"
+    },
+    {
+        "text": " to count up exactly where those 175 billion come from. Even if nowadays there are bigger and",
+        "start": 687.22,
+        "end": 693.76,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=687"
+    },
+    {
+        "text": " better models, this one has a certain charm as the first large language model to really capture",
+        "start": 693.76,
+        "end": 698.2,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=693"
+    },
+    {
+        "text": " the world's attention outside of ML communities. Also, practically speaking, companies tend to keep",
+        "start": 698.2,
+        "end": 703.5,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=698"
+    },
+    {
+        "text": " much tighter lips around the specific numbers for more modern networks. I just want to set the scene",
+        "start": 703.5,
+        "end": 708.3,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=703"
+    },
+    {
+        "text": " going in that as you peek under the hood to see what happens inside a tool like chat GPT, almost",
+        "start": 708.3,
+        "end": 713.62,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=708"
+    },
+    {
+        "text": " all of the actual computation looks like matrix vector multiplication. There's a little bit of a risk",
+        "start": 713.62,
+        "end": 718.86,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=713"
+    },
+    {
+        "text": " getting lost in the sea of billions of numbers, but you should draw a very sharp distinction in your",
+        "start": 718.86,
+        "end": 723.8,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=718"
+    },
+    {
+        "text": " mind between the weights of the model, which I'll always color in blue or red, and the data being",
+        "start": 723.8,
+        "end": 729.48,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=723"
+    },
+    {
+        "text": " processed, which I'll always color in gray. The weights are the actual brains. They are the things",
+        "start": 729.48,
+        "end": 734.86,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=729"
+    },
+    {
+        "text": " learned during training, and they determine how it behaves. The data being processed simply",
+        "start": 734.86,
+        "end": 740.18,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=734"
+    },
+    {
+        "text": " encodes whatever specific input is fed into the model for a given run, like an example snippet of text.",
+        "start": 740.18,
+        "end": 746.46,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=740"
+    },
+    {
+        "text": " With all of that as foundation, let's dig into the first step of this text processing example,",
+        "start": 747.26,
+        "end": 752.32,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=747"
+    },
+    {
+        "text": " which is to break up the input into little chunks and turn those chunks into vectors.",
+        "start": 752.32,
+        "end": 756.32,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=752"
+    },
+    {
+        "text": " I mentioned how those chunks are called tokens, which might be pieces of words or punctuation,",
+        "start": 756.92,
+        "end": 761.36,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=756"
+    },
+    {
+        "text": " but every now and then in this chapter and especially in the next one, I'd like to just pretend",
+        "start": 761.78,
+        "end": 765.86,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=761"
+    },
+    {
+        "text": " that it's broken more cleanly into words, because we humans think in words this will just make",
+        "start": 765.86,
+        "end": 770.8,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=765"
+    },
+    {
+        "text": " it much easier to reference little examples and clarify each step. The model has a pre-defined",
+        "start": 770.8,
+        "end": 776.56,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=770"
+    },
+    {
+        "text": " vocabulary, some list of all possible words, say 50,000 of them, and the first matrix that will",
+        "start": 776.56,
+        "end": 782.5,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=776"
+    },
+    {
+        "text": " encounter, known as the embedding matrix, has a single column for each one of these words.",
+        "start": 782.5,
+        "end": 787.64,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=782"
+    },
+    {
+        "text": " These columns are what determines what vector each word turns into in that first step.",
+        "start": 788.56,
+        "end": 793.7,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=788"
+    },
+    {
+        "text": " We label it WE, and like all the matrices we see, its values begin random, but they're",
+        "start": 794.6800000000001,
+        "end": 806.24,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=794"
+    },
+    {
+        "text": " machine learning long before transformers, but it's a little weird if you've never seen it before,",
+        "start": 806.24,
+        "end": 810.92,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=806"
+    },
+    {
+        "text": " and it sits the foundation for everything that follows, so let's take a moment to get familiar with it.",
+        "start": 811.34,
+        "end": 815.76,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=811"
+    },
+    {
+        "text": " We often call this embedding a word, which invites you to think of these vectors very geometrically,",
+        "start": 816.04,
+        "end": 821.04,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=816"
+    },
+    {
+        "text": " as points in some high dimensional space. Visualizing a list of three numbers, as coordinates for",
+        "start": 821.4,
+        "end": 826.76,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=821"
+    },
+    {
+        "text": " points in 3D space, would be no problem, but word embeddings tend to be much, much higher dimensional.",
+        "start": 826.76,
+        "end": 831.78,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=826"
+    },
+    {
+        "text": " In GPT3, they have 12,288 dimensions, and as you'll see, it matters to work in a space that has a",
+        "start": 831.78,
+        "end": 839.04,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=831"
+    },
+    {
+        "text": " lot of distinct directions. In the same way that you could take a two-dimensional slice through a 3D",
+        "start": 839.04,
+        "end": 844.34,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=839"
+    },
+    {
+        "text": " space and project all the points onto that slice, for the sake of animating word embeddings that",
+        "start": 844.34,
+        "end": 849.84,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=844"
+    },
+    {
+        "text": " a simple model is giving me, I'm going to do an analogous thing by choosing a three-dimensional",
+        "start": 849.84,
+        "end": 854.22,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=849"
+    },
+    {
+        "text": " slice through this very high dimensional space and projecting the word vectors down onto that",
+        "start": 854.22,
+        "end": 859.1,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=854"
+    },
+    {
+        "text": " and displaying the results. The big idea here is that as a model tweaks and tunes its weights to",
+        "start": 859.1,
+        "end": 865.24,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=859"
+    },
+    {
+        "text": " determine how exactly words get embedded as vectors during training, it tends to settle on a set of",
+        "start": 865.24,
+        "end": 870.6,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=865"
+    },
+    {
+        "text": " embeddings where directions in the space have a kind of semantic meaning. For the simple word to",
+        "start": 870.6,
+        "end": 876.08,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=870"
+    },
+    {
+        "text": " vector model I'm running here, if I run a search for all the words whose embeddings are closest to",
+        "start": 876.08,
+        "end": 881.02,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=876"
+    },
+    {
+        "text": " that of tower, you'll notice how they all seem to give very similar tower-ish vibes, and if you want",
+        "start": 881.02,
+        "end": 886.72,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=881"
+    },
+    {
+        "text": " to pull up some python and play along at home, this is the specific model that I'm using to make",
+        "start": 886.72,
+        "end": 890.8,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=886"
+    },
+    {
+        "text": " the animations. It's not a transformer, but it's enough to illustrate the idea that directions in",
+        "start": 890.8,
+        "end": 895.84,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=890"
+    },
+    {
+        "text": " the space can carry semantic meaning. A very classic example of this is how if you take the",
+        "start": 895.84,
+        "end": 901.38,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=895"
+    },
+    {
+        "text": " difference between the vectors for woman and man, something you would visualize as a little vector",
+        "start": 901.38,
+        "end": 906.28,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=901"
+    },
+    {
+        "text": " in the space connecting the tip of one to the tip of the other, it's very similar to the difference",
+        "start": 906.28,
+        "end": 911.38,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=906"
+    },
+    {
+        "text": " between king and queen. So let's say you didn't know the word for a female monarch,",
+        "start": 911.38,
+        "end": 917.54,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=911"
+    },
+    {
+        "text": " you could find it by taking king, adding this woman-man direction, and searching for the embeddings",
+        "start": 918.02,
+        "end": 924.22,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=918"
+    },
+    {
+        "text": " closest to that point. At least, kind of, despite this being a classic example for the model I'm",
+        "start": 924.22,
+        "end": 930.84,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=924"
+    },
+    {
+        "text": " playing with, the true embedding of queen is actually a little farther off than this would suggest,",
+        "start": 930.84,
+        "end": 934.88,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=930"
+    },
+    {
+        "text": " presumably because the way that queen is used in training data is not merely a feminine version of",
+        "start": 935.3,
+        "end": 940.5,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=935"
+    },
+    {
+        "text": " king. When I played around family relations seem to illustrate the idea much better. The point is,",
+        "start": 940.5,
+        "end": 946.84,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=940"
+    },
+    {
+        "text": " it looks like during training the model found it advantages to choose embeddings such that one",
+        "start": 946.98,
+        "end": 951.42,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=946"
+    },
+    {
+        "text": " direction in this space encodes gender information. Another example is that if you take the embedding",
+        "start": 951.42,
+        "end": 958.68,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=951"
+    },
+    {
+        "text": " of Italy and you subtract the embedding of Germany and then you add that to the embedding of Hitler,",
+        "start": 958.68,
+        "end": 964.36,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=958"
+    },
+    {
+        "text": " you get something very close to the embedding of Mussolini. It's as if the model learned to associate",
+        "start": 964.92,
+        "end": 970.4,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=964"
+    },
+    {
+        "text": " some directions with Italian-ness and others with World War II-Axis leaders. Maybe my favorite",
+        "start": 970.4,
+        "end": 977.2,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=970"
+    },
+    {
+        "text": " example in this vein is how in some models, if you take the difference between Germany and Japan,",
+        "start": 977.2,
+        "end": 982.3,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=977"
+    },
+    {
+        "text": " and you add it to sushi, you end up very close to broadwurst. Also in playing this game of finding",
+        "start": 982.84,
+        "end": 988.94,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=982"
+    },
+    {
+        "text": " nearest neighbors, I was very pleased to see how close cat was to both beast and monster. One",
+        "start": 988.94,
+        "end": 994.84,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=988"
+    },
+    {
+        "text": " bit of mathematical intuition that's helpful to have in mind, especially for the next chapter,",
+        "start": 994.84,
+        "end": 998.7,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=994"
+    },
+    {
+        "text": " is how the dot product of two vectors can be thought of as a way to measure how well they align.",
+        "start": 998.7,
+        "end": 1003.82,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=998"
+    },
+    {
+        "text": " Computationally, dot products involve multiplying all the corresponding components and then adding",
+        "start": 1004.86,
+        "end": 1009.86,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1004"
+    },
+    {
+        "text": " the results, which is good since so much of our computation has to look like weighted sums.",
+        "start": 1009.86,
+        "end": 1014.28,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1009"
+    },
+    {
+        "text": " Geometrically, the dot product is positive when vectors point in similar directions. It's",
+        "start": 1015.14,
+        "end": 1020.66,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1015"
+    },
+    {
+        "text": " zero if they're perpendicular, and it's negative whenever they point in opposite directions.",
+        "start": 1020.66,
+        "end": 1025.46,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1020"
+    },
+    {
+        "text": " For example, let's say you were playing with this model, and you hypothesize that the",
+        "start": 1026.2,
+        "end": 1030.86,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1026"
+    },
+    {
+        "text": " embedding of cats minus cat might represent a sort of plurality direction in this space.",
+        "start": 1030.86,
+        "end": 1036.96,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1030"
+    },
+    {
+        "text": " To test this, I'm going to take this vector and compute its dot product against the embeddings",
+        "start": 1037.44,
+        "end": 1041.72,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1037"
+    },
+    {
+        "text": " of certain singular nouns, and compare it to the dot products with the corresponding plural nouns.",
+        "start": 1041.72,
+        "end": 1046.5,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1041"
+    },
+    {
+        "text": " If you play around with this, you'll notice that the plural ones do indeed seem to consistently",
+        "start": 1047.1,
+        "end": 1051.2,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1047"
+    },
+    {
+        "text": " give higher values than the singular ones, indicating that they align more with this direction.",
+        "start": 1051.2,
+        "end": 1056.06,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1051"
+    },
+    {
+        "text": " It's also fun how if you take this dot product with the embeddings of the words 1, 2, 3, and so on,",
+        "start": 1056.94,
+        "end": 1062.18,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1056"
+    },
+    {
+        "text": " they give increasing values, so it's as if we can quantitatively measure how plural the model",
+        "start": 1062.62,
+        "end": 1067.84,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1062"
+    },
+    {
+        "text": " finds a given word. Again, the specifics for how words get embedded is learned using data.",
+        "start": 1067.84,
+        "end": 1073.56,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1067"
+    },
+    {
+        "text": " This embedding matrix, whose columns tell us what happens to each word, is the first pile of",
+        "start": 1074.04,
+        "end": 1079.08,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1074"
+    },
+    {
+        "text": " our model. Using the GPT-3 numbers, the vocabulary size specifically is 50,257, and again,",
+        "start": 1079.08,
+        "end": 1086.1,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1079"
+    },
+    {
+        "text": " technically this consists not of words per se but of tokens, and the embedding dimension is 12,288.",
+        "start": 1086.44,
+        "end": 1093.52,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1086"
+    },
+    {
+        "text": " Multiplying those tells us this consists of about 617 million weights. Let's go ahead and add this",
+        "start": 1093.86,
+        "end": 1099.18,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1093"
+    },
+    {
+        "text": " to a running tally, remembering that by the end we should count up to 175 billion.",
+        "start": 1099.18,
+        "end": 1103.86,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1099"
+    },
+    {
+        "text": " In the case of Transformers, you really want to think of the vectors in this embedding space as",
+        "start": 1105.16,
+        "end": 1109.56,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1105"
+    },
+    {
+        "text": " not merely representing individual words. For one thing, they also encode information about the",
+        "start": 1109.56,
+        "end": 1114.86,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1109"
+    },
+    {
+        "text": " position of that word, which we'll talk about later, but more importantly, you should think of",
+        "start": 1114.86,
+        "end": 1119.68,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1114"
+    },
+    {
+        "text": " them as having the capacity to soak in context. A vector that started its life as the embedding",
+        "start": 1119.68,
+        "end": 1125.54,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1119"
+    },
+    {
+        "text": " of the word king, for example, might progressively get tugged and pulled by various blocks in this",
+        "start": 1125.54,
+        "end": 1130.8,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1125"
+    },
+    {
+        "text": " network, so that by the end it points in a much more specific and nuanced direction that somehow",
+        "start": 1130.8,
+        "end": 1136.36,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1130"
+    },
+    {
+        "text": " encodes that it was a king who lived in Scotland, and who had achieved his post after murdering",
+        "start": 1136.36,
+        "end": 1141.36,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1136"
+    },
+    {
+        "text": " the previous king, and who's being described in Shakespearean language. Think about your own",
+        "start": 1141.36,
+        "end": 1146.22,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1141"
+    },
+    {
+        "text": " understanding of a given word. The meaning of that word is clearly informed by the surroundings,",
+        "start": 1146.22,
+        "end": 1151.32,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1146"
+    },
+    {
+        "text": " and sometimes this includes context from a long distance away, so in putting together a model",
+        "start": 1151.9,
+        "end": 1156.84,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1151"
+    },
+    {
+        "text": " that has the ability to predict what word comes next, the goal is to somehow empower it to",
+        "start": 1156.84,
+        "end": 1161.84,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1156"
+    },
+    {
+        "text": " incorporate context efficiently. To be clear, in that very first step, when you create the array of",
+        "start": 1161.84,
+        "end": 1166.88,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1161"
+    },
+    {
+        "text": " vectors based on the input text, each one of those is simply plucked out of the embedding matrix,",
+        "start": 1166.88,
+        "end": 1171.32,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1166"
+    },
+    {
+        "text": " so initially each one can only encode the meaning of a single word without any input from its",
+        "start": 1171.76,
+        "end": 1176.32,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1171"
+    },
+    {
+        "text": " surroundings. But you should think of the primary goal of this network that it flows through,",
+        "start": 1176.32,
+        "end": 1181.1,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1176"
+    },
+    {
+        "text": " as being to enable each one of those vectors to soak up a meaning that's much more rich and",
+        "start": 1181.56,
+        "end": 1185.9,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1181"
+    },
+    {
+        "text": " specific than what mere individual words could represent. The network can only process a fixed",
+        "start": 1185.9,
+        "end": 1191.2,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1185"
+    },
+    {
+        "text": " number of vectors at a time known as its context size. For GPT-3, it was trained with a context size",
+        "start": 1191.2,
+        "end": 1197.0,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1191"
+    },
+    {
+        "text": " of 2048, so the data flowing through the network always looks like this array of 2048 columns,",
+        "start": 1197.0,
+        "end": 1202.94,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1197"
+    },
+    {
+        "text": " each of which has 12,000 dimensions. This context size limits how much text the transformer can",
+        "start": 1203.34,
+        "end": 1208.9,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1203"
+    },
+    {
+        "text": " incorporate when it's making a prediction of the next word. This is why long conversations with",
+        "start": 1208.9,
+        "end": 1214.14,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1208"
+    },
+    {
+        "text": " certain chatbots like the early versions of chat GPT often gave the feeling of the bot kind of",
+        "start": 1214.14,
+        "end": 1219.16,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1214"
+    },
+    {
+        "text": " losing the thread of conversation as you continued too long. We'll go into the details of attention",
+        "start": 1219.16,
+        "end": 1224.34,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1219"
+    },
+    {
+        "text": " in due time, but skipping ahead, I want to talk for a minute about what happens at the very end.",
+        "start": 1224.34,
+        "end": 1228.84,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1224"
+    },
+    {
+        "text": " Remember, the desired output is a probability distribution over all tokens that might come next.",
+        "start": 1229.34,
+        "end": 1234.76,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1229"
+    },
+    {
+        "text": " For example, if the very last word is Professor, and the context includes words like Harry Potter,",
+        "start": 1235.2,
+        "end": 1241.28,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1235"
+    },
+    {
+        "text": " and immediately proceeding, we see least favorite teacher, and also if you give me some leeway by",
+        "start": 1241.28,
+        "end": 1246.44,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1241"
+    },
+    {
+        "text": " letting me pretend that tokens simply look like full words, then a well-trained network that",
+        "start": 1246.44,
+        "end": 1250.86,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1246"
+    },
+    {
+        "text": " had built up knowledge of Harry Potter would presumably assign a high number to the word Snape.",
+        "start": 1250.86,
+        "end": 1256.02,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1250"
+    },
+    {
+        "text": " This involves two different steps. The first one is to use another matrix that maps the very last",
+        "start": 1256.36,
+        "end": 1261.92,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1256"
+    },
+    {
+        "text": " vector in that context to a list of 50,000 values, one for each token in the vocabulary.",
+        "start": 1261.92,
+        "end": 1267.54,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1261"
+    },
+    {
+        "text": " Then there's a function that normalizes this into a probability distribution. It's called",
+        "start": 1268.2599999999998,
+        "end": 1272.92,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1268"
+    },
+    {
+        "text": " Softmax, and we'll talk more about it in just a second, but before that, it might seem a little",
+        "start": 1272.92,
+        "end": 1277.28,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1272"
+    },
+    {
+        "text": " bit weird to only use this last embedding to make a prediction. When after all, in that last step,",
+        "start": 1277.28,
+        "end": 1282.68,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1277"
+    },
+    {
+        "text": " there are thousands of other vectors in the layer just sitting there with their own context-rich",
+        "start": 1282.86,
+        "end": 1287.8,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1282"
+    },
+    {
+        "text": " meanings. This has to do with the fact that in the training process, it turns out to be much more",
+        "start": 1287.8,
+        "end": 1292.6,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1287"
+    },
+    {
+        "text": " efficient if you use each one of those vectors in the final layer to simultaneously make a",
+        "start": 1292.6,
+        "end": 1297.9,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1292"
+    },
+    {
+        "text": " prediction for what would come immediately after it. There's a lot more to be said about training",
+        "start": 1297.9,
+        "end": 1302.28,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1297"
+    },
+    {
+        "text": " later on, but I just want to call that out right now. This matrix is called the Unimbedding",
+        "start": 1302.28,
+        "end": 1307.5,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1302"
+    },
+    {
+        "text": " Matrix, and we give it the label WU. Again, like all the weight matrices we see, its entries begin",
+        "start": 1307.5,
+        "end": 1313.12,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1307"
+    },
+    {
+        "text": " at random, but they are learned during the training process. Keeping score on our total parameter",
+        "start": 1313.12,
+        "end": 1317.92,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1313"
+    },
+    {
+        "text": " count, this unimbedding matrix has one row for each word in the vocabulary, and each row has the",
+        "start": 1317.92,
+        "end": 1323.52,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1317"
+    },
+    {
+        "text": " same number of elements as the embedding dimension. It's very similar to the embedding matrix just",
+        "start": 1323.52,
+        "end": 1328.28,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1323"
+    },
+    {
+        "text": " with the order swapped, so it adds another 617 million parameters to the network, meaning our count",
+        "start": 1328.28,
+        "end": 1333.8,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1328"
+    },
+    {
+        "text": " so far, is a little over a billion. A small but not wholly insignificant fraction of the 175",
+        "start": 1333.8,
+        "end": 1339.8,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1333"
+    },
+    {
+        "text": " billion that we'll end up with in total. As the very last mini-lesson for this chapter,",
+        "start": 1339.8,
+        "end": 1344.78,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1339"
+    },
+    {
+        "text": " I want to talk more about the softmax function, since it makes another appearance for us once we",
+        "start": 1344.78,
+        "end": 1349.34,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1344"
+    },
+    {
+        "text": " dive into the attention blocks. The idea is that if you want a sequence of numbers to act as a",
+        "start": 1349.34,
+        "end": 1354.76,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1349"
+    },
+    {
+        "text": " probability distribution, say a distribution over all possible next words, then each value has to",
+        "start": 1354.76,
+        "end": 1360.44,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1354"
+    },
+    {
+        "text": " be between 0 and 1, and you also need all of them to add up to 1. However, if you're playing the",
+        "start": 1360.44,
+        "end": 1366.68,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1360"
+    },
+    {
+        "text": " deep learning game, where everything you do looks like matrix vector multiplication, the outputs",
+        "start": 1366.68,
+        "end": 1371.92,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1366"
+    },
+    {
+        "text": " that you get by defaults don't abide by this at all. The values are often negative or much",
+        "start": 1371.92,
+        "end": 1377.0,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1371"
+    },
+    {
+        "text": " bigger than 1, and they almost certainly don't add up to 1. Softmax is a standard way to turn an",
+        "start": 1377.0,
+        "end": 1382.46,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1377"
+    },
+    {
+        "text": " arbitrary list of numbers into a valid distribution, in such a way that the largest values end up closest",
+        "start": 1382.46,
+        "end": 1388.06,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1382"
+    },
+    {
+        "text": " to 1, and the smaller values end up very close to 0. That's all you really need to know, but if",
+        "start": 1388.06,
+        "end": 1393.66,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1388"
+    },
+    {
+        "text": " you're curious, the way that it works, is to first raise e to the power of each of the numbers,",
+        "start": 1393.66,
+        "end": 1398.26,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1393"
+    },
+    {
+        "text": " which means you now have a list of positive values, and then you can take the sum of all those",
+        "start": 1398.26,
+        "end": 1403.26,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1398"
+    },
+    {
+        "text": " positive values and divide each term by that sum, which normalizes it into a list that adds up to 1.",
+        "start": 1403.26,
+        "end": 1409.48,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1403"
+    },
+    {
+        "text": " You'll notice that if one of the numbers in the input is meaningfully bigger than the rest,",
+        "start": 1410.08,
+        "end": 1413.96,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1410"
+    },
+    {
+        "text": " then in the output, the corresponding term dominates the distribution, so if you were sampling from it,",
+        "start": 1414.34,
+        "end": 1419.7,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1414"
+    },
+    {
+        "text": " you'd almost certainly just be picking the maximizing input. But it's softer than just picking the max",
+        "start": 1419.82,
+        "end": 1425.18,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1419"
+    },
+    {
+        "text": " in the sense that when other values are similarly large, they also get meaningful weight in the",
+        "start": 1425.18,
+        "end": 1430.04,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1425"
+    },
+    {
+        "text": " distribution, and everything changes continuously as you continuously vary the inputs. In some",
+        "start": 1430.04,
+        "end": 1435.42,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1430"
+    },
+    {
+        "text": " situations, like when Chatchy PT is using this distribution to create a next word, there's room",
+        "start": 1435.42,
+        "end": 1440.78,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1435"
+    },
+    {
+        "text": " for a little bit of extra fun, by adding a little extra spice into this function, with a constant",
+        "start": 1440.78,
+        "end": 1445.86,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1440"
+    },
+    {
+        "text": " T thrown into the denominator of those exponents. We call it the temperature, since it vaguely",
+        "start": 1445.86,
+        "end": 1451.76,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1445"
+    },
+    {
+        "text": " resembles the role of temperature in certain thermodynamics equations, and the effect is that when",
+        "start": 1451.76,
+        "end": 1456.42,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1451"
+    },
+    {
+        "text": " T is larger, you give more weight to the lower values, meaning the distribution is a little bit more",
+        "start": 1456.42,
+        "end": 1462.12,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1456"
+    },
+    {
+        "text": " uniform, and if T is smaller, then the bigger values will dominate more aggressively.",
+        "start": 1462.12,
+        "end": 1466.9,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1462"
+    },
+    {
+        "text": " We're in the extreme, setting T equal to zero means all of the weight goes to that maximum value.",
+        "start": 1467.7,
+        "end": 1472.72,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1467"
+    },
+    {
+        "text": " For example, I'll have GPT-3 generate a story with the seed text once upon a time there was A,",
+        "start": 1473.36,
+        "end": 1479.78,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1473"
+    },
+    {
+        "text": " but I'm going to use different temperatures in each case. Temperature zero means that it always",
+        "start": 1480.42,
+        "end": 1485.84,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1480"
+    },
+    {
+        "text": " goes with the most predictable word, and what you get ends up being kind of a trite derivative of",
+        "start": 1485.84,
+        "end": 1491.7,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1485"
+    },
+    {
+        "text": " Goldilocks. A higher temperature gives it a chance to choose less likely words, but it comes with a",
+        "start": 1491.7,
+        "end": 1497.56,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1491"
+    },
+    {
+        "text": " risk. In this case, the story starts out a bit more originally about a young web artist from South",
+        "start": 1497.56,
+        "end": 1502.64,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1497"
+    },
+    {
+        "text": " Korea, but it quickly degenerates into nonsense. Technically speaking, the API doesn't actually let",
+        "start": 1502.64,
+        "end": 1509.3,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1502"
+    },
+    {
+        "text": " you pick a temperature bigger than two. There is no mathematical reason for this. It's just an",
+        "start": 1509.3,
+        "end": 1513.5,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1509"
+    },
+    {
+        "text": " arbitrary constraint imposed, I suppose, to keep their tool from being seen generating things that",
+        "start": 1513.5,
+        "end": 1518.2,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1513"
+    },
+    {
+        "text": " are too nonsensical. So, if you're curious the way this animation is actually working,",
+        "start": 1518.2,
+        "end": 1522.34,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1518"
+    },
+    {
+        "text": " is I'm taking the 20 most probable next tokens that GPT-3 generates, which seems to be the maximum",
+        "start": 1522.78,
+        "end": 1528.34,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1522"
+    },
+    {
+        "text": " they'll give me, and then I tweak the probabilities based on an exponent of one fifth.",
+        "start": 1528.34,
+        "end": 1532.54,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1528"
+    },
+    {
+        "text": " As another bit of jargon, in the same way that you might call the components of the output of",
+        "start": 1533.16,
+        "end": 1537.42,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1533"
+    },
+    {
+        "text": " this function probabilities, people often refer to the inputs as logits, or some people say logits,",
+        "start": 1537.42,
+        "end": 1543.74,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1537"
+    },
+    {
+        "text": " some people say logits, I'm going to say logits. So for instance, when you feed in some text,",
+        "start": 1543.94,
+        "end": 1548.28,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1543"
+    },
+    {
+        "text": " you have all these word embeddings flow through the network, and you do this final multiplication",
+        "start": 1548.42,
+        "end": 1552.12,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1548"
+    },
+    {
+        "text": " with the unembedding matrix, machine learning people would refer to the components in that raw,",
+        "start": 1552.12,
+        "end": 1557.42,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1552"
+    },
+    {
+        "text": " unnormalized output, as the logits for the next word prediction.",
+        "start": 1557.6,
+        "end": 1561.32,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1557"
+    },
+    {
+        "text": " A lot of the goal with this chapter was to lay the foundations for understanding the attention",
+        "start": 1562.88,
+        "end": 1567.36,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1562"
+    },
+    {
+        "text": " mechanism, Karate Kid Waxon Wax Off-Style. You see, if you have a strong intuition for word embeddings,",
+        "start": 1567.36,
+        "end": 1573.82,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1567"
+    },
+    {
+        "text": " for softmax, for how dot products measure similarity, and also the underlying premise that most",
+        "start": 1574.14,
+        "end": 1579.52,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1574"
+    },
+    {
+        "text": " of the calculations have to look like matrix multiplication with matrices full of tunable parameters,",
+        "start": 1579.52,
+        "end": 1584.46,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1579"
+    },
+    {
+        "text": " then understanding the attention mechanism, this cornerstone piece in the whole modern boom in AI",
+        "start": 1584.98,
+        "end": 1590.68,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1584"
+    },
+    {
+        "text": " should be relatively smooth. For that, come join me in the next chapter.",
+        "start": 1590.68,
+        "end": 1594.44,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1590"
+    },
+    {
+        "text": " As I'm publishing this, a draft of that next chapter is available for review by Patreon supporters.",
+        "start": 1596.5,
+        "end": 1601.22,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1596"
+    },
+    {
+        "text": " A final version should be up in public in a week or two, it usually depends on how much I end up",
+        "start": 1601.76,
+        "end": 1606.12,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1601"
+    },
+    {
+        "text": " changing based on that review. In the meantime, if you want to dive into attention, and if you want",
+        "start": 1606.12,
+        "end": 1610.64,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1606"
+    },
+    {
+        "text": " to help the channel out a little bit, it's there waiting.",
+        "start": 1610.64,
+        "end": 1612.66,
+        "url": "https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1610"
+    }
+]

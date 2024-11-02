@@ -1,0 +1,1484 @@
+[
+    {
+        "text": " If you feed a large language model the phrase, Michael Jordan plays the sport of blank,",
+        "start": 0.0,
+        "end": 4.54,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=0"
+    },
+    {
+        "text": " and you have it predict what comes next, and it correctly predicts basketball.",
+        "start": 5.06,
+        "end": 9.0,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=5"
+    },
+    {
+        "text": " This would suggest that somewhere inside its hundreds of billions of parameters,",
+        "start": 9.58,
+        "end": 13.92,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=9"
+    },
+    {
+        "text": " it's baked in knowledge about a specific person and his specific sport.",
+        "start": 14.36,
+        "end": 18.3,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=14"
+    },
+    {
+        "text": " And I think in general anyone who's played around with one of these models",
+        "start": 18.86,
+        "end": 21.66,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=18"
+    },
+    {
+        "text": " has the clear sense that it's memorized tons and tons of facts.",
+        "start": 21.66,
+        "end": 25.42,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=21"
+    },
+    {
+        "text": " So a reasonable question you could ask is,",
+        "start": 25.7,
+        "end": 27.6,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=25"
+    },
+    {
+        "text": " how exactly does that work, and where do those facts live?",
+        "start": 27.6,
+        "end": 30.9,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=27"
+    },
+    {
+        "text": " Last December a few researchers from Google DeepMind posted about work on this question,",
+        "start": 35.6,
+        "end": 40.64,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=35"
+    },
+    {
+        "text": " and they were using this specific example of matching athletes to their sports.",
+        "start": 41.04,
+        "end": 44.42,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=41"
+    },
+    {
+        "text": " And although a full mechanistic understanding of how facts are stored remains unsolved,",
+        "start": 44.94,
+        "end": 49.46,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=44"
+    },
+    {
+        "text": " they had some interesting partial results, including the very general high-level conclusion",
+        "start": 49.68,
+        "end": 53.96,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=49"
+    },
+    {
+        "text": " that the facts seem to live inside a specific part of these networks, known",
+        "start": 53.96,
+        "end": 58.2,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=53"
+    },
+    {
+        "text": " fancifully as the multi-layer perceptrons, or MLPs for short.",
+        "start": 58.2,
+        "end": 62.6,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=58"
+    },
+    {
+        "text": " In the last couple of chapters, you and I have been digging into the details behind",
+        "start": 63.08,
+        "end": 66.58,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=63"
+    },
+    {
+        "text": " Transformers, the architecture underlying large language models, and also underlying a lot",
+        "start": 67.14,
+        "end": 71.58,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=67"
+    },
+    {
+        "text": " of other modern AI. In the most recent chapter we were focusing on a piece called Attention,",
+        "start": 71.58,
+        "end": 76.24,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=71"
+    },
+    {
+        "text": " and the next step for you and me is to dig into the details of what happens inside these",
+        "start": 76.82,
+        "end": 81.68,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=76"
+    },
+    {
+        "text": " multi-layer perceptrons, which make up the other big portion of the network.",
+        "start": 81.68,
+        "end": 85.0,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=81"
+    },
+    {
+        "text": " The computation here is actually relatively simple, especially when you compare it to attention.",
+        "start": 85.72,
+        "end": 90.06,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=85"
+    },
+    {
+        "text": " It boils down essentially to a pair of matrix multiplications with a simple something in between.",
+        "start": 90.58,
+        "end": 94.94,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=90"
+    },
+    {
+        "text": " However, interpreting what these computations are doing is exceedingly challenging.",
+        "start": 95.47999999999999,
+        "end": 100.46,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=95"
+    },
+    {
+        "text": " Our main goal here is to step through the computations and make them memorable,",
+        "start": 101.5,
+        "end": 104.98,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=101"
+    },
+    {
+        "text": " but I'd like to do it in the context of showing a specific example of how one of these blocks could,",
+        "start": 105.46,
+        "end": 110.16,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=105"
+    },
+    {
+        "text": " at least in principle, store a concrete fact. Specifically, it'll be storing the fact that",
+        "start": 110.16,
+        "end": 115.6,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=110"
+    },
+    {
+        "text": " Michael Jordan plays basketball. I should mention the layout here is inspired by a conversation I",
+        "start": 115.6,
+        "end": 120.7,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=115"
+    },
+    {
+        "text": " had with one of those deep-mind researchers, Neil Nanda. For the most part, I will assume that you've",
+        "start": 120.7,
+        "end": 125.74,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=120"
+    },
+    {
+        "text": " either watched the last two chapters, or otherwise you have a basic sense for what a Transformer is,",
+        "start": 125.74,
+        "end": 130.26,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=125"
+    },
+    {
+        "text": " but refreshers never hurt, so here's the quick reminder of the overall flow.",
+        "start": 130.62,
+        "end": 134.58,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=130"
+    },
+    {
+        "text": " You and I have been studying a model that's trained to take in a piece of text and predict what",
+        "start": 135.22,
+        "end": 140.58,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=135"
+    },
+    {
+        "text": " comes next. That input text is first broken into a bunch of tokens, which means little chunks that",
+        "start": 140.58,
+        "end": 146.48,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=140"
+    },
+    {
+        "text": " are typically words or little pieces of words, and each token is associated with a high-dimensional",
+        "start": 146.48,
+        "end": 152.26,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=146"
+    },
+    {
+        "text": " vector, which is to say a long list of numbers. This sequence of vectors then repeatedly passes through",
+        "start": 152.26,
+        "end": 159.26,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=152"
+    },
+    {
+        "text": " two kinds of operation. Attention, which allows the vectors to pass information between one another,",
+        "start": 159.26,
+        "end": 165.08,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=159"
+    },
+    {
+        "text": " and then the multi-layer perceptrons, the thing that we're going to dig into today. And also,",
+        "start": 165.6,
+        "end": 170.26,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=165"
+    },
+    {
+        "text": " there's a certain normalization step in between. After the sequence of vectors has flowed through",
+        "start": 170.34,
+        "end": 175.48,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=170"
+    },
+    {
+        "text": " many, many different iterations of both of these blocks. By the end, the hope is that each vector",
+        "start": 175.48,
+        "end": 181.28,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=175"
+    },
+    {
+        "text": " has soaked up enough information, both from the context, all of the other words in the input,",
+        "start": 181.28,
+        "end": 186.82,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=181"
+    },
+    {
+        "text": " and also from the general knowledge that was baked into the model weights through training,",
+        "start": 186.82,
+        "end": 191.56,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=186"
+    },
+    {
+        "text": " that it can be used to make a prediction of what token comes next. One of the key ideas that I",
+        "start": 191.86,
+        "end": 198.14,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=191"
+    },
+    {
+        "text": " want you to have in your mind is that all of these vectors live in a very, very high-dimensional",
+        "start": 198.14,
+        "end": 202.36,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=198"
+    },
+    {
+        "text": " space, and when you think about that space, different directions can encode different kinds of meaning.",
+        "start": 202.36,
+        "end": 208.76,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=202"
+    },
+    {
+        "text": " So a very classic example that I like to refer back to is how if you look at the embedding of",
+        "start": 209.72,
+        "end": 214.7,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=209"
+    },
+    {
+        "text": " woman and subtract the embedding of man, and you take that little step and you add it to another",
+        "start": 214.7,
+        "end": 220.28,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=214"
+    },
+    {
+        "text": " masculine noun, something like uncle, you land somewhere very, very close to the corresponding",
+        "start": 220.28,
+        "end": 225.3,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=220"
+    },
+    {
+        "text": " feminine noun. In this sense, this particular direction encodes gender information.",
+        "start": 225.3,
+        "end": 230.82,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=225"
+    },
+    {
+        "text": " The idea is that many other distinct directions in this super-high-dimensional space could correspond",
+        "start": 231.52,
+        "end": 237.02,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=231"
+    },
+    {
+        "text": " to other features that the model might want to represent. In a transformer, these vectors don't",
+        "start": 237.02,
+        "end": 243.36,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=237"
+    },
+    {
+        "text": " merely encode the meaning of a single word, though. As they flow through the network,",
+        "start": 243.36,
+        "end": 248.26,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=243"
+    },
+    {
+        "text": " they imbibe a much richer meaning based on all the context around them, and also based on the",
+        "start": 248.72,
+        "end": 254.38,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=248"
+    },
+    {
+        "text": " model's knowledge. Ultimately, each one needs to encode something far, far beyond the meaning of",
+        "start": 254.38,
+        "end": 259.74,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=254"
+    },
+    {
+        "text": " a single word, since it needs to be sufficient to predict what will come next. We've already seen how",
+        "start": 259.74,
+        "end": 265.54,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=259"
+    },
+    {
+        "text": " attention blocks let you incorporate context, but a majority of the model parameters actually live",
+        "start": 265.54,
+        "end": 270.88,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=265"
+    },
+    {
+        "text": " inside the MLP blocks, and one thought for what they might be doing is that they offer extra",
+        "start": 270.88,
+        "end": 276.32,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=270"
+    },
+    {
+        "text": " capacity to store facts. Like I said, the lesson here is going to center on the concrete toy example",
+        "start": 276.32,
+        "end": 282.26,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=276"
+    },
+    {
+        "text": " of how exactly it could store the fact that Michael Jordan plays basketball.",
+        "start": 282.26,
+        "end": 286.08,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=282"
+    },
+    {
+        "text": " Now this toy example is going to require that you and I make a couple of assumptions about that",
+        "start": 287.04,
+        "end": 290.88,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=287"
+    },
+    {
+        "text": " high-dimensional space. First, we'll suppose that one of the directions represents the idea of",
+        "start": 290.88,
+        "end": 295.72,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=290"
+    },
+    {
+        "text": " a first name Michael, and then another nearly perpendicular direction represents the idea of",
+        "start": 295.72,
+        "end": 301.48,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=295"
+    },
+    {
+        "text": " the last name Jordan, and then yet a third direction will represent the idea of basketball.",
+        "start": 301.48,
+        "end": 306.4,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=301"
+    },
+    {
+        "text": " So specifically what I mean by this is if you look in the network and you pluck out one of the",
+        "start": 307.2,
+        "end": 311.08,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=307"
+    },
+    {
+        "text": " vectors being processed, if it's dot product with this first name Michael direction is one,",
+        "start": 311.08,
+        "end": 316.36,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=311"
+    },
+    {
+        "text": " that's what it would mean for the vector to be encoding the idea of a person with that first name.",
+        "start": 316.98,
+        "end": 322.36,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=316"
+    },
+    {
+        "text": " Otherwise, that dot product would be zero or negative, meaning the vector doesn't really",
+        "start": 323.36,
+        "end": 327.52,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=323"
+    },
+    {
+        "text": " align with that direction. And for simplicity, let's completely ignore the very reasonable question",
+        "start": 327.52,
+        "end": 332.74,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=327"
+    },
+    {
+        "text": " of what it might mean if that dot product was bigger than one. Similarly, it's dot product with",
+        "start": 332.74,
+        "end": 337.92,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=332"
+    },
+    {
+        "text": " these other directions would tell you whether it represents the last name Jordan, or basketball.",
+        "start": 337.92,
+        "end": 343.72,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=337"
+    },
+    {
+        "text": " So let's say a vector is meant to represent the full name Michael Jordan, then it's dot product",
+        "start": 344.68,
+        "end": 350.02,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=344"
+    },
+    {
+        "text": " with both of these directions would have to be one. Since the text Michael Jordan spans two",
+        "start": 350.02,
+        "end": 355.86,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=350"
+    },
+    {
+        "text": " different tokens, this would also mean we have to assume that an earlier attention block has",
+        "start": 355.86,
+        "end": 360.44,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=355"
+    },
+    {
+        "text": " successfully passed information to the second of these two vectors so as to ensure that it can",
+        "start": 360.44,
+        "end": 365.78,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=360"
+    },
+    {
+        "text": " encode both names. With all of those as the assumptions, let's now dive into the meat of the",
+        "start": 365.78,
+        "end": 371.18,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=365"
+    },
+    {
+        "text": " lesson. What happens inside a multi-layer perceptron? You might think of this sequence of vectors",
+        "start": 371.18,
+        "end": 379.2,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=371"
+    },
+    {
+        "text": " flowing into the block and remember each vector was originally associated with one of the tokens",
+        "start": 379.2,
+        "end": 384.42,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=379"
+    },
+    {
+        "text": " from the input text. What's going to happen is that each individual vector from that sequence",
+        "start": 384.42,
+        "end": 389.18,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=384"
+    },
+    {
+        "text": " goes through a short series of operations, we'll unpack them in just a moment, and at the end,",
+        "start": 389.18,
+        "end": 394.34,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=389"
+    },
+    {
+        "text": " we'll get another vector with the same dimension. That other vector is going to get added to the",
+        "start": 394.48,
+        "end": 399.3,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=394"
+    },
+    {
+        "text": " original one that flowed in and that sum is the result flowing out. This sequence of operations",
+        "start": 399.3,
+        "end": 404.86,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=399"
+    },
+    {
+        "text": " is something you apply to every vector in the sequence associated with every token in the input",
+        "start": 404.86,
+        "end": 410.14,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=404"
+    },
+    {
+        "text": " and it all happens in parallel. In particular, the vectors don't talk to each other in this step,",
+        "start": 410.14,
+        "end": 414.62,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=410"
+    },
+    {
+        "text": " they're all kind of doing their own thing. And for you and me, that actually makes it a lot simpler",
+        "start": 414.78,
+        "end": 418.88,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=414"
+    },
+    {
+        "text": " because it means if we understand what happens to just one of the vectors through this block,",
+        "start": 418.88,
+        "end": 423.32,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=418"
+    },
+    {
+        "text": " we effectively understand what happens to all of them. When I say this block is going to encode the",
+        "start": 423.62,
+        "end": 429.04,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=423"
+    },
+    {
+        "text": " fact that Michael Jordan plays basketball, what I mean is that if a vector flows in that encodes",
+        "start": 429.04,
+        "end": 434.26,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=429"
+    },
+    {
+        "text": " first name Michael and last name Jordan, then this sequence of computations will produce something",
+        "start": 434.26,
+        "end": 439.3,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=434"
+    },
+    {
+        "text": " that includes that direction basketball, which is what we'll add on to the vector in that position.",
+        "start": 439.3,
+        "end": 443.96,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=439"
+    },
+    {
+        "text": " The first step of this process looks like multiplying that vector by a very big matrix,",
+        "start": 445.28,
+        "end": 449.64,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=445"
+    },
+    {
+        "text": " no surprises there, this is deep learning, and this matrix like all of the other ones we've seen",
+        "start": 450.1,
+        "end": 454.78,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=450"
+    },
+    {
+        "text": " is filled with model parameters that are learned from data, which you might think of as a bunch of",
+        "start": 454.78,
+        "end": 459.62,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=454"
+    },
+    {
+        "text": " knobs and dials that get tweaked and tuned to determine what the model behavior is.",
+        "start": 459.82,
+        "end": 463.54,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=459"
+    },
+    {
+        "text": " Now, one nice way to think about matrix multiplication is to imagine each row of that matrix as being",
+        "start": 464.34,
+        "end": 469.18,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=464"
+    },
+    {
+        "text": " its own vector and taking a bunch of dot products between those rows and the vector being processed,",
+        "start": 469.18,
+        "end": 474.78,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=469"
+    },
+    {
+        "text": " which I'll label as E for embedding. For example, suppose that very first row happened to equal this",
+        "start": 475.08,
+        "end": 480.94,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=475"
+    },
+    {
+        "text": " first name Michael direction that were presuming exists, that would mean that the first component in",
+        "start": 480.94,
+        "end": 486.46,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=480"
+    },
+    {
+        "text": " this output, this dot product right here, would be one if that vector encodes the first name Michael",
+        "start": 486.58,
+        "end": 492.64,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=486"
+    },
+    {
+        "text": " and zero or negative otherwise. Even more fun, take a moment to think about what it would mean if",
+        "start": 492.64,
+        "end": 498.7,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=492"
+    },
+    {
+        "text": " that first row was this first name Michael plus last name Jordan direction. And for simplicity,",
+        "start": 498.7,
+        "end": 504.36,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=498"
+    },
+    {
+        "text": " let me go ahead and write that down as m plus j. Then taking a dot product with this embedding E,",
+        "start": 504.58,
+        "end": 510.32,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=504"
+    },
+    {
+        "text": " things distribute really nicely so it looks like m dot E plus j dot E. And notice how that means",
+        "start": 510.32,
+        "end": 516.2,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=510"
+    },
+    {
+        "text": " the ultimate value would be two if the vector encodes the full name Michael Jordan. And otherwise",
+        "start": 516.2,
+        "end": 522.18,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=516"
+    },
+    {
+        "text": " it would be one or something smaller than one. And that's just one row in this matrix. You might",
+        "start": 522.18,
+        "end": 527.92,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=522"
+    },
+    {
+        "text": " think of all of the other rows as in parallel asking some other kinds of questions probing at some",
+        "start": 527.92,
+        "end": 533.14,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=527"
+    },
+    {
+        "text": " other sorts of features of the vector being processed. Very often this step also involves adding",
+        "start": 533.14,
+        "end": 538.5,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=533"
+    },
+    {
+        "text": " another vector through the output, which is full of model parameters learned from data.",
+        "start": 538.5,
+        "end": 542.24,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=538"
+    },
+    {
+        "text": " This other vector is known as the bias. For our example, I want you to imagine that the value of",
+        "start": 542.74,
+        "end": 547.6,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=542"
+    },
+    {
+        "text": " this bias in that very first component is negative one, meaning our final output looks like that",
+        "start": 547.6,
+        "end": 553.44,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=547"
+    },
+    {
+        "text": " relevant dot product, but minus one. You might very reasonably ask why I would want you to assume",
+        "start": 553.44,
+        "end": 559.24,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=553"
+    },
+    {
+        "text": " that the model has learned this. And in a moment, you'll see why it's very clean and nice.",
+        "start": 559.24,
+        "end": 563.46,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=559"
+    },
+    {
+        "text": " If we have a value here, which is positive, if and only if a vector encodes the full name",
+        "start": 563.46,
+        "end": 569.2,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=563"
+    },
+    {
+        "text": " Michael Jordan, and otherwise it's zero or negative. The total number of rows in this matrix,",
+        "start": 569.2,
+        "end": 574.9,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=569"
+    },
+    {
+        "text": " which is something like the number of questions being asked in the case of GPT3, whose numbers we've",
+        "start": 574.9,
+        "end": 580.52,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=574"
+    },
+    {
+        "text": " been following is just under 50,000. In fact, it's exactly four times the number of dimensions in",
+        "start": 580.52,
+        "end": 585.8,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=580"
+    },
+    {
+        "text": " this embedding space. That's a design choice you could make it more, you could make it less,",
+        "start": 585.8,
+        "end": 589.34,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=585"
+    },
+    {
+        "text": " but having a clean multiple tends to be friendly for hardware. Since this matrix full of weights",
+        "start": 589.34,
+        "end": 594.24,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=589"
+    },
+    {
+        "text": " maps us into a higher dimensional space, I'm going to give it the shorthand W up. I'll continue",
+        "start": 594.24,
+        "end": 599.94,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=594"
+    },
+    {
+        "text": " labeling the vector we're processing as E, and let's label this bias vector as B up and put that",
+        "start": 599.94,
+        "end": 605.98,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=599"
+    },
+    {
+        "text": " all back down in the diagram. At this point, a problem is that this operation is purely linear,",
+        "start": 605.98,
+        "end": 612.54,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=605"
+    },
+    {
+        "text": " but language is a very non-linear process. If the entry that we're measuring is high for Michael",
+        "start": 612.98,
+        "end": 618.66,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=612"
+    },
+    {
+        "text": " Plus Jordan, it would also necessarily be somewhat triggered by Michael Plus Phelps, and also Alexis",
+        "start": 618.66,
+        "end": 624.8,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=618"
+    },
+    {
+        "text": " Plus Jordan, despite those being unrelated conceptually. What you really want is a simple yes or no",
+        "start": 624.8,
+        "end": 631.02,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=624"
+    },
+    {
+        "text": " for the full name. So the next step is to pass this large intermediate vector through a very simple",
+        "start": 631.02,
+        "end": 636.7,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=631"
+    },
+    {
+        "text": " non-linear function. A common choice is one that takes all of the negative values and maps them to",
+        "start": 636.7,
+        "end": 641.88,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=636"
+    },
+    {
+        "text": " zero, and leaves all of the positive values unchanged. And continuing with the deep learning",
+        "start": 641.88,
+        "end": 647.96,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=641"
+    },
+    {
+        "text": " tradition of overly fancy names, this very simple function is often called the rectified linear",
+        "start": 647.96,
+        "end": 653.86,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=647"
+    },
+    {
+        "text": " unit, or Rayloo, for short. Here's what the graph looks like. So taking our imagined example where",
+        "start": 653.86,
+        "end": 660.16,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=653"
+    },
+    {
+        "text": " this first entry of the intermediate vector is one, if and only if the full name is Michael Jordan,",
+        "start": 660.16,
+        "end": 665.64,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=660"
+    },
+    {
+        "text": " and zero, or negative otherwise, after you pass it through the Rayloo, you end up with a very",
+        "start": 666.2,
+        "end": 671.58,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=666"
+    },
+    {
+        "text": " clean value where all of the zero and negative values just get clipped to zero. So this output would",
+        "start": 671.58,
+        "end": 676.86,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=671"
+    },
+    {
+        "text": " be one for the full name Michael Jordan, and zero otherwise. In other words, it very directly mimics",
+        "start": 676.86,
+        "end": 682.58,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=676"
+    },
+    {
+        "text": " the behavior of an AND gate. Often, models will use a slightly modified function that's called the",
+        "start": 682.58,
+        "end": 688.9,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=682"
+    },
+    {
+        "text": " J-LU, which has the same basic shape, it's just a bit smoother, but for our purposes, it's a little",
+        "start": 688.9,
+        "end": 693.92,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=688"
+    },
+    {
+        "text": " bit cleaner if we only think about the Rayloo. Also, when you hear people refer to the neurons of a",
+        "start": 693.92,
+        "end": 699.52,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=693"
+    },
+    {
+        "text": " transformer, they're talking about these values right here. Whenever you see that common neural",
+        "start": 699.52,
+        "end": 704.4,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=699"
+    },
+    {
+        "text": " network picture with a layer of dots and a bunch of lines connecting to the previous layer,",
+        "start": 704.4,
+        "end": 708.7,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=704"
+    },
+    {
+        "text": " which we had earlier in this series, that's typically meant to convey this combination of a linear",
+        "start": 708.9,
+        "end": 714.48,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=708"
+    },
+    {
+        "text": " step, a matrix multiplication, followed by some simple, termwise non-linear function, like a Rayloo.",
+        "start": 714.48,
+        "end": 721.28,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=714"
+    },
+    {
+        "text": " You would say that this neuron is active whenever this value is positive, and that it's inactive",
+        "start": 722.14,
+        "end": 727.5,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=722"
+    },
+    {
+        "text": " if that value is zero. The next step looks very similar to the first one. You multiply by a very",
+        "start": 727.5,
+        "end": 733.9,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=727"
+    },
+    {
+        "text": " large matrix, and you add on a certain bias term. In this case, the number of dimensions in the",
+        "start": 733.9,
+        "end": 738.78,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=733"
+    },
+    {
+        "text": " output is back down to the size of that embedding space, so I'm going to go ahead and call this the",
+        "start": 738.78,
+        "end": 744.04,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=738"
+    },
+    {
+        "text": " down projection matrix. And this time, instead of thinking of things row by row, it's actually nicer",
+        "start": 744.04,
+        "end": 749.7,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=744"
+    },
+    {
+        "text": " to think of it column by column. You see, another way that you can hold matrix multiplication in your",
+        "start": 749.7,
+        "end": 755.2,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=749"
+    },
+    {
+        "text": " head is to imagine taking each column of the matrix, and multiplying it by the corresponding term in",
+        "start": 755.2,
+        "end": 761.04,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=755"
+    },
+    {
+        "text": " the vector that it's processing, and adding together all of those rescaled columns. The reason it's",
+        "start": 761.04,
+        "end": 767.6,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=761"
+    },
+    {
+        "text": " nicer to think about this way is because here, the columns have the same dimension as the embedding",
+        "start": 767.6,
+        "end": 772.46,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=767"
+    },
+    {
+        "text": " space, so we can think of them as directions in that space. For instance, we will imagine that the",
+        "start": 772.46,
+        "end": 777.72,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=772"
+    },
+    {
+        "text": " model has learned to make that first column into this basketball direction that we suppose exists.",
+        "start": 777.72,
+        "end": 782.86,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=777"
+    },
+    {
+        "text": " What that would mean is that when the relevant neuron in that first position is active,",
+        "start": 783.96,
+        "end": 788.22,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=783"
+    },
+    {
+        "text": " we'll be adding this column to the final result. But if that neuron was inactive, if that number",
+        "start": 788.22,
+        "end": 793.58,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=788"
+    },
+    {
+        "text": " was zero, then this would have no effect. And it doesn't just have to be basketball, the model could",
+        "start": 793.58,
+        "end": 798.88,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=793"
+    },
+    {
+        "text": " also bake into this column many other features that it wants to associate with something that has the",
+        "start": 798.88,
+        "end": 804.0,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=798"
+    },
+    {
+        "text": " full name Michael Jordan. And at the same time, all of the other columns in this matrix are telling",
+        "start": 804.0,
+        "end": 811.44,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=804"
+    },
+    {
+        "text": " you what will be added to the final result if the corresponding neuron is active. And if you",
+        "start": 811.44,
+        "end": 818.18,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=811"
+    },
+    {
+        "text": " have a bias in this case, it's something that you're just adding every single time, regardless of",
+        "start": 818.18,
+        "end": 822.66,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=818"
+    },
+    {
+        "text": " the neuron values. You might wonder what's that doing, as with all parameter field objects here,",
+        "start": 822.66,
+        "end": 827.72,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=822"
+    },
+    {
+        "text": " it's kind of hard to say exactly, maybe there's some book keeping that the network needs to do,",
+        "start": 827.98,
+        "end": 832.02,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=827"
+    },
+    {
+        "text": " but you can feel free to ignore it for now. Making our notation a little more compact again,",
+        "start": 832.38,
+        "end": 836.76,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=832"
+    },
+    {
+        "text": " I'll call this big matrix W down, and similarly call that bias vector B down, and put that back into",
+        "start": 836.98,
+        "end": 843.66,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=836"
+    },
+    {
+        "text": " our diagram. Like I previewed earlier, what you do with this final result is add it to the vector",
+        "start": 843.66,
+        "end": 849.26,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=843"
+    },
+    {
+        "text": " that flowed into the block at that position, and that gets you this final result. So for example,",
+        "start": 849.26,
+        "end": 854.66,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=849"
+    },
+    {
+        "text": " if the vector flowing in encoded both first name Michael and last name Jordan, then because this",
+        "start": 855.12,
+        "end": 861.0,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=855"
+    },
+    {
+        "text": " sequence of operations will trigger that AND gate, it will add on the basketball direction,",
+        "start": 861.0,
+        "end": 866.04,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=861"
+    },
+    {
+        "text": " so what pops out will encode all of those together. And remember, this is a process happening to",
+        "start": 866.36,
+        "end": 871.86,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=866"
+    },
+    {
+        "text": " every one of those vectors in parallel. In particular, taking the GPT-3 numbers, it means that",
+        "start": 871.86,
+        "end": 877.88,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=871"
+    },
+    {
+        "text": " this block doesn't just have 50,000 neurons in it, it has 50,000 times the number of tokens in the input.",
+        "start": 877.88,
+        "end": 884.82,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=877"
+    },
+    {
+        "text": " So that is the entire operation, two matrix products each with a bias added, and a simple",
+        "start": 888.2400000000001,
+        "end": 893.94,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=888"
+    },
+    {
+        "text": " clipping function in between. Any of you who watched the earlier videos of the series will recognize",
+        "start": 893.94,
+        "end": 899.22,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=893"
+    },
+    {
+        "text": " this structure as the most basic kind of neural network that we studied there. In that example,",
+        "start": 899.22,
+        "end": 903.78,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=899"
+    },
+    {
+        "text": " it was trained to recognize handwritten digits. Over here, in the context of a transformer for a",
+        "start": 903.96,
+        "end": 909.26,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=903"
+    },
+    {
+        "text": " large language model, this is one piece in a larger architecture, and any attempt to interpret",
+        "start": 909.26,
+        "end": 915.28,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=909"
+    },
+    {
+        "text": " what exactly it's doing is heavily intertwined with the idea of encoding information into vectors",
+        "start": 915.28,
+        "end": 921.16,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=915"
+    },
+    {
+        "text": " of a high dimensional embedding space. That is the core lesson, but I do want to step back and",
+        "start": 921.16,
+        "end": 926.98,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=921"
+    },
+    {
+        "text": " reflect on two different things. The first of which is a kind of bookkeeping, and the second of",
+        "start": 926.98,
+        "end": 931.8,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=926"
+    },
+    {
+        "text": " which involves a very thought-provoking fact about higher dimensions that I actually didn't know",
+        "start": 931.8,
+        "end": 936.48,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=931"
+    },
+    {
+        "text": " until I dug into Transformers. In the last two chapters, you and I started counting up the total",
+        "start": 936.48,
+        "end": 944.34,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=936"
+    },
+    {
+        "text": " number of parameters in GPT-3, and seeing exactly where they live. So let's quickly finish up the",
+        "start": 944.34,
+        "end": 950.2,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=944"
+    },
+    {
+        "text": " game here. I already mentioned how this up projection matrix has just under 50,000 rows,",
+        "start": 950.2,
+        "end": 955.42,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=950"
+    },
+    {
+        "text": " and that each row matches the size of the embedding space, which for GPT-3 is 12,288.",
+        "start": 955.9799999999999,
+        "end": 962.46,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=955"
+    },
+    {
+        "text": " Multiplying those together, it gives us 604 million parameters just for that matrix,",
+        "start": 963.18,
+        "end": 968.12,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=963"
+    },
+    {
+        "text": " and the down projection has the same number of parameters just with a transposed shape.",
+        "start": 969.24,
+        "end": 973.84,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=969"
+    },
+    {
+        "text": " So together, they give about 1.2 billion parameters. The bias vector also accounts for a couple more",
+        "start": 974.44,
+        "end": 980.16,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=974"
+    },
+    {
+        "text": " parameters, but it's a trivial proportion of the total, so I'm not even going to show it.",
+        "start": 980.16,
+        "end": 984.06,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=980"
+    },
+    {
+        "text": " In GPT-3, this sequence of embedding vectors flows through not one, but 96 distinct MLPs,",
+        "start": 984.7,
+        "end": 991.28,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=984"
+    },
+    {
+        "text": " so the total number of parameters devoted to all of these blocks adds up to about 116 billion.",
+        "start": 991.7,
+        "end": 998.1,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=991"
+    },
+    {
+        "text": " This is around two-thirds of the total parameters in the network, and when you add it to everything",
+        "start": 998.94,
+        "end": 1003.24,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=998"
+    },
+    {
+        "text": " that we had before for the attention blocks, the embedding, and the unembedding, you do indeed get",
+        "start": 1003.24,
+        "end": 1008.3,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1003"
+    },
+    {
+        "text": " that grand total of 175 billion as advertised. It's probably worth mentioning there's another set of",
+        "start": 1008.3,
+        "end": 1014.94,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1008"
+    },
+    {
+        "text": " parameters associated with those normalization steps that this explanation has skipped over,",
+        "start": 1014.94,
+        "end": 1019.38,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1014"
+    },
+    {
+        "text": " but like the bias vector, they account for a very trivial proportion of the total.",
+        "start": 1019.66,
+        "end": 1023.86,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1019"
+    },
+    {
+        "text": " As to that second point of reflection, you might be wondering if this central toy example we've",
+        "start": 1025.88,
+        "end": 1030.6,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1025"
+    },
+    {
+        "text": " been spending so much time on reflects how facts are actually stored in real-large language models.",
+        "start": 1030.6,
+        "end": 1035.66,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1030"
+    },
+    {
+        "text": " It is true that the rows of that first matrix can be thought of as directions in this embedding",
+        "start": 1036.22,
+        "end": 1040.96,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1036"
+    },
+    {
+        "text": " space, and that means the activation of each neuron tells you how much a given vector aligns",
+        "start": 1040.96,
+        "end": 1046.18,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1040"
+    },
+    {
+        "text": " with some specific direction. It's also true that the columns of that second matrix tell you what",
+        "start": 1046.18,
+        "end": 1051.48,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1046"
+    },
+    {
+        "text": " will be added to the result if that neuron is active. Both of those are just mathematical facts.",
+        "start": 1051.48,
+        "end": 1056.74,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1051"
+    },
+    {
+        "text": " However, the evidence does suggest that individual neurons very rarely represent a single clean",
+        "start": 1057.72,
+        "end": 1063.68,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1057"
+    },
+    {
+        "text": " feature like Michael Jordan. And there may actually be a very good reason this is the case,",
+        "start": 1063.68,
+        "end": 1068.34,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1063"
+    },
+    {
+        "text": " related to an idea floating around interpretability researchers these days known as superposition.",
+        "start": 1068.76,
+        "end": 1074.14,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1068"
+    },
+    {
+        "text": " This is a hypothesis that might help to explain both why the models are especially hard to interpret,",
+        "start": 1074.68,
+        "end": 1079.6,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1074"
+    },
+    {
+        "text": " and also why they scale surprisingly well. The basic idea is that if you have an",
+        "start": 1080.0,
+        "end": 1085.66,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1080"
+    },
+    {
+        "text": " end-dimensional space and you want to represent a bunch of different features using directions that",
+        "start": 1085.66,
+        "end": 1090.84,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1085"
+    },
+    {
+        "text": " are all perpendicular to one another in that space, you know, that way if you add a component in one",
+        "start": 1090.84,
+        "end": 1095.96,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1090"
+    },
+    {
+        "text": " direction, it doesn't influence any of the other directions. Then the maximum number of vectors you",
+        "start": 1095.96,
+        "end": 1100.98,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1095"
+    },
+    {
+        "text": " can fit is only n, the number of dimensions. To a mathematician actually this is the definition",
+        "start": 1100.98,
+        "end": 1106.72,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1100"
+    },
+    {
+        "text": " of dimension, but where it gets interesting is if you relax that constraint a little bit and you",
+        "start": 1106.72,
+        "end": 1112.6,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1106"
+    },
+    {
+        "text": " tolerate some noise. Say you allow those features to be represented by vectors that aren't exactly",
+        "start": 1112.6,
+        "end": 1118.12,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1112"
+    },
+    {
+        "text": " perpendicular, they're just nearly perpendicular, maybe between 89 and 91 degrees apart.",
+        "start": 1118.12,
+        "end": 1123.68,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1118"
+    },
+    {
+        "text": " If we were in two or three dimensions, this makes no difference, that gives you hardly any",
+        "start": 1124.82,
+        "end": 1129.32,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1124"
+    },
+    {
+        "text": " extra wiggle room to fit more vectors in, which makes it all the more counterintuitive that for",
+        "start": 1129.32,
+        "end": 1134.08,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1129"
+    },
+    {
+        "text": " higher dimensions, the answer changes dramatically. I can give you a really quick and dirty illustration",
+        "start": 1134.08,
+        "end": 1139.58,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1134"
+    },
+    {
+        "text": " of this using some scrappy python that's going to create a list of 100-dimensional vectors,",
+        "start": 1139.58,
+        "end": 1144.92,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1139"
+    },
+    {
+        "text": " each one initialized randomly, and this list is going to contain 10,000 distinct vectors,",
+        "start": 1144.92,
+        "end": 1150.82,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1144"
+    },
+    {
+        "text": " so 100 times as many vectors as there are dimensions. This plot right here shows the",
+        "start": 1151.26,
+        "end": 1156.7,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1151"
+    },
+    {
+        "text": " distribution of angles between pairs of these vectors, so because they started at random,",
+        "start": 1156.7,
+        "end": 1162.2,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1156"
+    },
+    {
+        "text": " those angles could be anything from 0 to 180 degrees, but you'll notice that already, even just",
+        "start": 1162.48,
+        "end": 1167.62,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1162"
+    },
+    {
+        "text": " for random vectors, there's this heavy bias for things to be closer to 90 degrees. Then what I'm",
+        "start": 1167.62,
+        "end": 1172.8400000000001,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1167"
+    },
+    {
+        "text": " going to do is run a certain optimization process that iteratively nudges all of these vectors,",
+        "start": 1173.12,
+        "end": 1178.1,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1173"
+    },
+    {
+        "text": " so that they try to become more perpendicular to one another. After repeating this many different",
+        "start": 1178.62,
+        "end": 1183.44,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1178"
+    },
+    {
+        "text": " times, here's what the distribution of angles looks like. We have to actually zoom in on it here,",
+        "start": 1183.44,
+        "end": 1188.9,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1183"
+    },
+    {
+        "text": " because all of the possible angles between pairs of vectors sit inside this narrow range between 89",
+        "start": 1189.26,
+        "end": 1195.52,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1189"
+    },
+    {
+        "text": " and 91 degrees. In general, a consequence of something known as the Johnson-Lindon-Strauss-Lemma,",
+        "start": 1195.52,
+        "end": 1201.98,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1195"
+    },
+    {
+        "text": " is that the number of vectors you can cram into a space that are nearly perpendicular like this",
+        "start": 1201.98,
+        "end": 1207.38,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1201"
+    },
+    {
+        "text": " grows exponentially with the number of dimensions. This is very significant for large language models,",
+        "start": 1207.38,
+        "end": 1214.34,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1207"
+    },
+    {
+        "text": " which might benefit from associating independent ideas with nearly perpendicular directions.",
+        "start": 1214.62,
+        "end": 1219.76,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1214"
+    },
+    {
+        "text": " It means that it's possible for it to store many, many more ideas than there are dimensions in",
+        "start": 1220.32,
+        "end": 1225.4,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1220"
+    },
+    {
+        "text": " the space that it's allotted. This might partially explain why model performance seems to scale",
+        "start": 1225.4,
+        "end": 1230.78,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1225"
+    },
+    {
+        "text": " so well with size. A space that has 10 times as many dimensions can store way, way more than 10 times",
+        "start": 1230.78,
+        "end": 1237.94,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1230"
+    },
+    {
+        "text": " as many independent ideas. And this is relevant not just to that embedding space where the vectors",
+        "start": 1237.94,
+        "end": 1243.5,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1237"
+    },
+    {
+        "text": " flowing through the model live, but also to that vector full of neurons in the middle of that",
+        "start": 1243.5,
+        "end": 1248.4,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1243"
+    },
+    {
+        "text": " multi-layer perceptron that we just studied. That is to say, at the sizes of GPT-3, it might not just",
+        "start": 1248.4,
+        "end": 1254.48,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1248"
+    },
+    {
+        "text": " be probing at 50,000 features, but if it instead leveraged this enormous added capacity by using",
+        "start": 1254.48,
+        "end": 1260.6,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1254"
+    },
+    {
+        "text": " nearly perpendicular directions of the space, it could be probing at many, many more features of",
+        "start": 1260.6,
+        "end": 1266.0,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1260"
+    },
+    {
+        "text": " the vector being processed. But if it was doing that, what it means is that individual features",
+        "start": 1266.0,
+        "end": 1271.36,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1266"
+    },
+    {
+        "text": " aren't going to be visible as a single neuron lighting up. It would have to look like some",
+        "start": 1271.36,
+        "end": 1275.84,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1271"
+    },
+    {
+        "text": " specific combination of neurons instead, a superposition. For any of you curious to learn more,",
+        "start": 1275.84,
+        "end": 1281.94,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1275"
+    },
+    {
+        "text": " a key relevant search term here is sparse autoencoder, which is a tool that some of the interpretability",
+        "start": 1281.94,
+        "end": 1287.72,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1281"
+    },
+    {
+        "text": " people use to try to extract what the true features are, even if they're superimposed on all these",
+        "start": 1287.72,
+        "end": 1292.56,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1287"
+    },
+    {
+        "text": " neurons. I'll link to a couple really great anthropic posts all about this.",
+        "start": 1292.56,
+        "end": 1296.78,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1292"
+    },
+    {
+        "text": " At this point, we haven't touched every detail of a transformer, but you and I have hit the",
+        "start": 1297.84,
+        "end": 1302.4,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1297"
+    },
+    {
+        "text": " most important points. The main thing that I want to cover in a next chapter is the training process.",
+        "start": 1302.4,
+        "end": 1307.58,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1302"
+    },
+    {
+        "text": " On the one hand, the short answer for how training works is that it's all back propagation,",
+        "start": 1307.58,
+        "end": 1312.36,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1307"
+    },
+    {
+        "text": " and we covered back propagation in a separate context with earlier chapters in the series.",
+        "start": 1312.86,
+        "end": 1316.88,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1312"
+    },
+    {
+        "text": " But there is more to discuss, like the specific cost function used for language models,",
+        "start": 1317.46,
+        "end": 1321.96,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1317"
+    },
+    {
+        "text": " the idea of fine tuning, using reinforcement learning with human feedback, and the notion of",
+        "start": 1322.54,
+        "end": 1327.04,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1322"
+    },
+    {
+        "text": " scaling laws. Quick note for the active followers among you, there are a number of non-machine",
+        "start": 1327.04,
+        "end": 1332.52,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1327"
+    },
+    {
+        "text": " learning related videos that I'm excited to sync my teeth into before I make that next chapter,",
+        "start": 1332.52,
+        "end": 1336.66,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1332"
+    },
+    {
+        "text": " so it might be a while, but I do promise it'll come in due time.",
+        "start": 1336.66,
+        "end": 1340.04,
+        "url": "https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=1336"
+    }
+]

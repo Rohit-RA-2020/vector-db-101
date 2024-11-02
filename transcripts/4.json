@@ -1,0 +1,758 @@
+[
+    {
+        "text": " The hard assumption here is that you've watched Part 3, giving an intuitive walkthrough of",
+        "start": 4.059999999999996,
+        "end": 8.62,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=4"
+    },
+    {
+        "text": " the back propagation algorithm.",
+        "start": 8.62,
+        "end": 9.86,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=8"
+    },
+    {
+        "text": " Here we get a little bit more formal and dive into the relevant calculus.",
+        "start": 10.74,
+        "end": 14.1,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=10"
+    },
+    {
+        "text": " It's normal for this to be at least a little confusing so the mantra to regularly pause",
+        "start": 14.74,
+        "end": 18.56,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=14"
+    },
+    {
+        "text": " and ponder certainly applies as much here as anywhere else.",
+        "start": 18.56,
+        "end": 21.34,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=18"
+    },
+    {
+        "text": " Our main goal is to show how people in machine learning commonly think about the chain rule",
+        "start": 21.86,
+        "end": 26.66,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=21"
+    },
+    {
+        "text": " from calculus in the context of networks.",
+        "start": 26.66,
+        "end": 28.94,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=26"
+    },
+    {
+        "text": " Which has kind of a different feel from how most introductory calculus courses approach",
+        "start": 29.62,
+        "end": 33.08,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=29"
+    },
+    {
+        "text": " the subject.",
+        "start": 33.08,
+        "end": 33.68,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=33"
+    },
+    {
+        "text": " For those of you uncomfortable with the relevant calculus, I do have a whole series on the topic.",
+        "start": 34.22,
+        "end": 38.66,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=34"
+    },
+    {
+        "text": " Let's just start off with an extremely simple network, one where each layer has a single",
+        "start": 40.08,
+        "end": 44.86,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=40"
+    },
+    {
+        "text": " neuron in it.",
+        "start": 44.86,
+        "end": 45.7,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=44"
+    },
+    {
+        "text": " So this particular network is determined by three weights and three biases, and our goal",
+        "start": 46.24,
+        "end": 51.14,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=46"
+    },
+    {
+        "text": " is to understand how sensitive the cost function is to these variables.",
+        "start": 51.14,
+        "end": 54.78,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=51"
+    },
+    {
+        "text": " That way we know which adjustments to those terms is going to cause the most efficient",
+        "start": 55.660000000000004,
+        "end": 59.16,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=55"
+    },
+    {
+        "text": " decrease to the cost function.",
+        "start": 59.16,
+        "end": 60.76,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=59"
+    },
+    {
+        "text": " And we're just going to focus on the connection between the last two neurons.",
+        "start": 61.74,
+        "end": 64.72,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=61"
+    },
+    {
+        "text": " Let's label the activation of that last neuron with a superscript L indicating which layer",
+        "start": 65.84,
+        "end": 70.7,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=65"
+    },
+    {
+        "text": " it's in.",
+        "start": 70.7,
+        "end": 71.16,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=70"
+    },
+    {
+        "text": " So the activation of the previous neuron is a L minus 1.",
+        "start": 71.68,
+        "end": 75.52,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=71"
+    },
+    {
+        "text": " These are not exponents, they're just a way of indexing what we're talking about since",
+        "start": 76.42,
+        "end": 80.22,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=76"
+    },
+    {
+        "text": " I want to save subscripts for different indices later on.",
+        "start": 80.22,
+        "end": 82.82,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=80"
+    },
+    {
+        "text": " Now let's say that the value we want this last activation to be for a given training",
+        "start": 83.82,
+        "end": 87.94,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=83"
+    },
+    {
+        "text": " example is y, for example, y might be 0 or 1.",
+        "start": 87.94,
+        "end": 92.12,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=87"
+    },
+    {
+        "text": " So the cost of this simple network for a single training example is AL minus y squared.",
+        "start": 92.76,
+        "end": 99.32,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=92"
+    },
+    {
+        "text": " We'll denote the cost of that one training example as C0.",
+        "start": 99.94,
+        "end": 104.32,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=99"
+    },
+    {
+        "text": " As a reminder, this last activation is determined by a weight, which I'm going to call WL,",
+        "start": 106.17999999999999,
+        "end": 111.38,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=106"
+    },
+    {
+        "text": " times the previous neurons activation plus some bias, which I'll call BL.",
+        "start": 111.84,
+        "end": 116.64,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=111"
+    },
+    {
+        "text": " And then you pump that through some special nonlinear function like the sigmoid or a ray",
+        "start": 117.46,
+        "end": 121.26,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=117"
+    },
+    {
+        "text": " loop.",
+        "start": 121.26,
+        "end": 121.38,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=121"
+    },
+    {
+        "text": " It's actually going to make things easier for us if we give a special name to this weighted",
+        "start": 121.88,
+        "end": 125.38,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=121"
+    },
+    {
+        "text": " sum, like Z, with the same superscript as the relevant activations.",
+        "start": 125.38,
+        "end": 129.26,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=125"
+    },
+    {
+        "text": " So this is a lot of terms and a way that you might conceptualize it is that the weight,",
+        "start": 130.1,
+        "end": 134.56,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=130"
+    },
+    {
+        "text": " the previous action and the bias altogether are used to compute Z, which in turn lets",
+        "start": 134.9,
+        "end": 140.2,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=134"
+    },
+    {
+        "text": " us compute A, which finally, along with a constant Y, lets us compute the cost.",
+        "start": 140.2,
+        "end": 145.32,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=140"
+    },
+    {
+        "text": " And of course, AL minus 1 is influenced by its own weight and bias and such.",
+        "start": 146.92000000000002,
+        "end": 151.48,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=146"
+    },
+    {
+        "text": " But we're not going to focus on that right now.",
+        "start": 152.72,
+        "end": 154.7,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=152"
+    },
+    {
+        "text": " Now all of these are just numbers, right?",
+        "start": 155.64,
+        "end": 157.6,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=155"
+    },
+    {
+        "text": " And it can be nice to think of each one as having its own little number line.",
+        "start": 158.08,
+        "end": 161.04,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=158"
+    },
+    {
+        "text": " Our first goal is to understand how sensitive the cost function is to small changes in",
+        "start": 161.76,
+        "end": 167.44,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=161"
+    },
+    {
+        "text": " our weight, WL.",
+        "start": 167.44,
+        "end": 168.8,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=167"
+    },
+    {
+        "text": " Or phrase differently, what is the derivative of C with respect to WL?",
+        "start": 169.76000000000002,
+        "end": 174.68,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=169"
+    },
+    {
+        "text": " When you see this Dell W term, think of it as meaning some tiny nudge to W, like a change",
+        "start": 175.64,
+        "end": 181.2,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=175"
+    },
+    {
+        "text": " by 0.01.",
+        "start": 181.2,
+        "end": 182.32,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=181"
+    },
+    {
+        "text": " And think of this Dell C term as meaning whatever the resulting nudge to the cost is.",
+        "start": 183.2,
+        "end": 188.08,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=183"
+    },
+    {
+        "text": " What we want is their ratio.",
+        "start": 188.62,
+        "end": 190.2,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=188"
+    },
+    {
+        "text": " Conceptually, this tiny nudge to WL causes some nudge to ZL, which in turn causes some",
+        "start": 191.22,
+        "end": 197.82,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=191"
+    },
+    {
+        "text": " nudge to AL, which directly influences the cost.",
+        "start": 197.82,
+        "end": 201.22,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=197"
+    },
+    {
+        "text": " So we break things up by first looking at the ratio of a tiny change to ZL to this tiny",
+        "start": 202.86,
+        "end": 208.02,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=202"
+    },
+    {
+        "text": " change W. That is, the derivative of ZL with respect to WL.",
+        "start": 208.02,
+        "end": 212.86,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=208"
+    },
+    {
+        "text": " Likewise, you then consider the ratio of the change to AL to the tiny change in ZL",
+        "start": 213.68,
+        "end": 218.7,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=213"
+    },
+    {
+        "text": " that caused it, as well as the ratio between the final nudge to C and this intermediate",
+        "start": 218.7,
+        "end": 223.54,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=218"
+    },
+    {
+        "text": " nudge to AL.",
+        "start": 223.54,
+        "end": 224.58,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=223"
+    },
+    {
+        "text": " This right here is the chain rule, where multiplying together these three ratios gives",
+        "start": 225.35999999999999,
+        "end": 230.8,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=225"
+    },
+    {
+        "text": " us the sensitivity of C to small changes in WL.",
+        "start": 230.8,
+        "end": 234.78,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=230"
+    },
+    {
+        "text": " So on screen right now, there's kind of a lot of symbols, and take a moment to just",
+        "start": 236.92,
+        "end": 241.02,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=236"
+    },
+    {
+        "text": " make sure it's clear what they all are.",
+        "start": 241.02,
+        "end": 242.82,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=241"
+    },
+    {
+        "text": " Because now we're going to compute the relevant derivatives.",
+        "start": 243.54,
+        "end": 246.12,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=243"
+    },
+    {
+        "text": " The derivative of C with respect to AL works out to be 2 times AL minus Y.",
+        "start": 246.96,
+        "end": 253.02,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=246"
+    },
+    {
+        "text": " Notice, this means that its size is proportional to the difference between the networks output",
+        "start": 254.02,
+        "end": 258.88,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=254"
+    },
+    {
+        "text": " and the thing that we want it to be.",
+        "start": 258.88,
+        "end": 260.76,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=258"
+    },
+    {
+        "text": " So if that output was very different, even slight changes stand to have a big impact on",
+        "start": 261.32,
+        "end": 266.08,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=261"
+    },
+    {
+        "text": " the final cost function.",
+        "start": 266.08,
+        "end": 267.08,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=266"
+    },
+    {
+        "text": " The derivative of AL with respect to ZL is just the derivative of our sigmoid function,",
+        "start": 268.12,
+        "end": 273.7,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=268"
+    },
+    {
+        "text": " or whatever non-linearity you choose to use.",
+        "start": 273.94,
+        "end": 276.14,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=273"
+    },
+    {
+        "text": " And the derivative of ZL with respect to WL?",
+        "start": 277.0,
+        "end": 280.18,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=277"
+    },
+    {
+        "text": " In this case comes out just to be AL minus 1.",
+        "start": 281.09999999999997,
+        "end": 284.34,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=281"
+    },
+    {
+        "text": " Now I don't know about you, but I think it's easy to get stuck head down in the formulas",
+        "start": 286.04,
+        "end": 289.44,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=286"
+    },
+    {
+        "text": " without taking a moment to sit back and remind yourself of what they all actually mean.",
+        "start": 289.44,
+        "end": 293.52,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=289"
+    },
+    {
+        "text": " In the case of this last derivative, the amount that that small nudge to the weight influenced",
+        "start": 294.06,
+        "end": 298.88,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=294"
+    },
+    {
+        "text": " the last layer depends on how strong the previous neuron is.",
+        "start": 298.88,
+        "end": 302.74,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=298"
+    },
+    {
+        "text": " Remember, this is where that neurons that fire together wire together idea comes in.",
+        "start": 303.3,
+        "end": 307.36,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=303"
+    },
+    {
+        "text": " And all of this is the derivative with respect to WL only of the cost for a specific single training example.",
+        "start": 308.72,
+        "end": 315.74,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=308"
+    },
+    {
+        "text": " Since the full cost function involves averaging together all those costs across many different training examples,",
+        "start": 316.06,
+        "end": 321.8,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=316"
+    },
+    {
+        "text": " its derivative requires averaging this expression that we found over all training examples.",
+        "start": 322.22,
+        "end": 327.38,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=322"
+    },
+    {
+        "text": " And of course that is just one component of the gradient vector,",
+        "start": 328.12,
+        "end": 331.48,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=328"
+    },
+    {
+        "text": " which itself is built up from the partial derivatives of the cost function,",
+        "start": 331.84,
+        "end": 336.04,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=331"
+    },
+    {
+        "text": " with respect to all those weights and biases.",
+        "start": 336.04,
+        "end": 338.04,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=336"
+    },
+    {
+        "text": " But even though that's just one of the many partial derivatives we need,",
+        "start": 340.32,
+        "end": 343.44,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=340"
+    },
+    {
+        "text": " it's more than 50% of the work.",
+        "start": 343.64,
+        "end": 345.24,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=343"
+    },
+    {
+        "text": " The sensitivity to the bias, for example, is almost identical.",
+        "start": 346.28,
+        "end": 349.62,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=346"
+    },
+    {
+        "text": " We just need to change out this del Z del W term for a del Z del B.",
+        "start": 350.24,
+        "end": 354.92,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=350"
+    },
+    {
+        "text": " And if you look at the relevant formula, that derivative comes out to be 1.",
+        "start": 358.44,
+        "end": 362.38,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=358"
+    },
+    {
+        "text": " Also, and this is where the idea of propagating backwards comes in,",
+        "start": 366.04,
+        "end": 369.74,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=366"
+    },
+    {
+        "text": " you can see how sensitive this cost function is to the activation of the previous layer.",
+        "start": 370.18,
+        "end": 375.52,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=370"
+    },
+    {
+        "text": " Namely, this initial derivative in the chain rule expression,",
+        "start": 376.06,
+        "end": 379.14,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=376"
+    },
+    {
+        "text": " the sensitivity of Z to the previous activation, comes out to be the weight, WL.",
+        "start": 379.68,
+        "end": 385.54,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=379"
+    },
+    {
+        "text": " And again, even though we're not going to be able to directly influence that previous layer activation,",
+        "start": 386.5,
+        "end": 391.0,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=386"
+    },
+    {
+        "text": " it's helpful to keep track of.",
+        "start": 391.0,
+        "end": 392.72,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=391"
+    },
+    {
+        "text": " Because now, we can just keep iterating this same chain rule idea backwards",
+        "start": 393.02,
+        "end": 397.66,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=393"
+    },
+    {
+        "text": " to see how sensitive the cost function is to previous weights and previous biases.",
+        "start": 397.66,
+        "end": 402.38,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=397"
+    },
+    {
+        "text": " And you might think that this is an overly simple example,",
+        "start": 403.38,
+        "end": 405.9,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=403"
+    },
+    {
+        "text": " since all layers just have one neuron, and that things are going to get exponentially more complicated for a real network.",
+        "start": 406.12,
+        "end": 410.96,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=406"
+    },
+    {
+        "text": " But honestly, not that much changes when we give the layers multiple neurons.",
+        "start": 411.58,
+        "end": 415.62,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=411"
+    },
+    {
+        "text": " Really, it's just a few more indices to keep track of.",
+        "start": 416.22,
+        "end": 418.68,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=416"
+    },
+    {
+        "text": " Rather than the activation of a given layer simply being AL,",
+        "start": 418.68,
+        "end": 422.24,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=418"
+    },
+    {
+        "text": " it's also going to have a subscript, indicating which neuron of that layer it is.",
+        "start": 422.86,
+        "end": 427.08,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=422"
+    },
+    {
+        "text": " Let's go ahead and use the letter K to index the layer L minus 1,",
+        "start": 427.68,
+        "end": 431.42,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=427"
+    },
+    {
+        "text": " and J to index the layer L.",
+        "start": 431.82,
+        "end": 434.36,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=431"
+    },
+    {
+        "text": " For the cost, again, we look at what the desired output is,",
+        "start": 435.12,
+        "end": 438.54,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=435"
+    },
+    {
+        "text": " but this time we add up the squares of the differences between these last layer activations and the desired output.",
+        "start": 438.82,
+        "end": 445.12,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=438"
+    },
+    {
+        "text": " That is, you take a sum over ALJ minus YJ squared.",
+        "start": 445.76,
+        "end": 450.82,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=445"
+    },
+    {
+        "text": " Since there's a lot more weights, each one has to have a couple more indices to keep track of where it is.",
+        "start": 452.86,
+        "end": 457.52,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=452"
+    },
+    {
+        "text": " So let's call the weight of the edge connecting this Kth neuron to the Jth neuron, WLJK.",
+        "start": 457.98,
+        "end": 464.72,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=457"
+    },
+    {
+        "text": " Those indices might feel a little backwards at first,",
+        "start": 465.42,
+        "end": 467.88,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=465"
+    },
+    {
+        "text": " but it lines up with how you'd index the weight matrix that I talked about in the Part 1 video.",
+        "start": 468.22,
+        "end": 472.68,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=468"
+    },
+    {
+        "text": " Just as before, it's still nice to give a name to the relevant weighted sum, like Z,",
+        "start": 473.35999999999996,
+        "end": 477.98,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=473"
+    },
+    {
+        "text": " so that the activation of the last layer is just your special function, like the sigmoid, applied to Z.",
+        "start": 478.32,
+        "end": 484.18,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=478"
+    },
+    {
+        "text": " You can kind of see what I mean, right, where all of these are essentially the same equations that we had before in the one neuron per layer case.",
+        "start": 484.92,
+        "end": 491.34,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=484"
+    },
+    {
+        "text": " It's just that it looks a little more complicated.",
+        "start": 491.74,
+        "end": 493.58,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=491"
+    },
+    {
+        "text": " And indeed, the chain ruled the rivetive expression describing how sensitive the cost is to a specific weight",
+        "start": 495.02,
+        "end": 501.52,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=495"
+    },
+    {
+        "text": " looks essentially the same. I'll leave it to you to pause and think about each of those terms if you want.",
+        "start": 501.52,
+        "end": 506.76,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=501"
+    },
+    {
+        "text": " What does change here, though, is the derivative of the cost with respect to one of the activations in the layer L minus 1.",
+        "start": 509.04,
+        "end": 516.64,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=509"
+    },
+    {
+        "text": " In this case, the difference is that the neuron influences the cost function through multiple different paths.",
+        "start": 517.44,
+        "end": 522.84,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=517"
+    },
+    {
+        "text": " That is, on the one hand, it influences AL0, which plays a role in the cost function,",
+        "start": 524.36,
+        "end": 530.3,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=524"
+    },
+    {
+        "text": " but it also has an influence on AL1, which also plays a role in the cost function, and you have to add those up.",
+        "start": 530.3,
+        "end": 537.38,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=530"
+    },
+    {
+        "text": " And that... well, that's pretty much it.",
+        "start": 540.54,
+        "end": 542.86,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=540"
+    },
+    {
+        "text": " Once you know how sensitive the cost function is to the activations in the second to last layer,",
+        "start": 543.62,
+        "end": 548.34,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=543"
+    },
+    {
+        "text": " you can just repeat the process for all the weights and biases feeding into that layer.",
+        "start": 548.82,
+        "end": 552.78,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=548"
+    },
+    {
+        "text": " So, pat yourself on the back. If all of this makes sense, you have now looked deep into the heart of back propagation.",
+        "start": 553.84,
+        "end": 560.0,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=553"
+    },
+    {
+        "text": " The workhorse behind how neural networks learn.",
+        "start": 560.0,
+        "end": 562.7,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=560"
+    },
+    {
+        "text": " These chain rule expressions give you the derivatives that determine each component in the gradient that helps minimize the cost of the network by repeatedly stepping downhill.",
+        "start": 563.42,
+        "end": 573.26,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=563"
+    },
+    {
+        "text": " If you sit back and think about all that, this is a lot of layers of complexity to wrap your mind around.",
+        "start": 574.62,
+        "end": 579.68,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=574"
+    },
+    {
+        "text": " So, don't worry if it takes time for your mind to digest it all.",
+        "start": 580.1,
+        "end": 582.94,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=580"
+    },
+    {
+        "text": " The first layer is a layer that is not used to the flow of the flow.",
+        "start": 616.0400000000001,
+        "end": 617.44,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=616"
+    },
+    {
+        "text": " The first layer is a layer that is not used to the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of the flow of",
+        "start": 617.42,
+        "end": 617.44,
+        "url": "https://www.youtube.com/watch?v=tIeHLnjs5U8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&t=617"
+    }
+]
